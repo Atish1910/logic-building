@@ -1,0 +1,21 @@
+Chapter 4: (Pattern Printing 1132 to 150) 
+print *  (4Rows , 5Col) => 113
+print Number 1 2 3  (4Rows , 5Col) => 114
+print Number 1 2 3 increment in row  (4Rows , 5Col) => 115
+print char a b c  (4Rows , 5Col) => 116
+print char a b c increment in row  (4Rows , 5Col) => 118
+print * in 1st row # in second row  => 119
+print * in 1st row # in second row (Approch 2)  => 120
+print Number in 1st row # in second row   => 120
+print Number Incremenet in 1st row # in second row   => 122
+print number in 1st column and * in 2nd column => 123
+print number increment in 1st column and * in 2nd column => 123
+print increment of char in ROW and second line numbers increment
+print increment of char in COLUMN and second line numbers increment
+print Bingo Line at middle with # and other should be $ => 125
+
+
+ 
+
+
+

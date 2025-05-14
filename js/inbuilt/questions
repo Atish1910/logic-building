@@ -1,0 +1,15 @@
+==============================================================================
+01 Is javascript a statically typed or a  dynamically typed language?
+-> JavaScript is a dynamically typed language. 
+In a dynamically typed  language, variable types are determined at runtime, allowing a  variable to hold values of any type without explicit type declarations. 
+allows variables to change types  during execution and accommodates a wide range of data types  without explicit type annotations.
+==============================================================================
+02 :  What is NaN?
+The NaN property in JavaScript represents a value that is "Not-a Number," indicating an illegal or undefined numeric value.
+To determine if a value is NaN, the  typeof isNaN()
+ operator, it returns 
+ function is employed. It 
+converts the given value to a Number type and then checks if it 
+equals NaN
+
+==============================================================================

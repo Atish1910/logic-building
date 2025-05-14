@@ -1,0 +1,46 @@
+80% of Candidates Get Rejected in the First 10 Minutes.
+
+Here’s why:
+ - You know HTML, CSS, and JavaScript
+ - You’re comfortable with React, Vue, and Angular
+ - You’ve used Redux, Tailwind CSS, and GraphQL.
+
+𝗕𝘂𝘁 𝘁𝗵𝗲𝗻 𝘁𝗵𝗲 𝗶𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄𝗲𝗿 𝗵𝗶𝘁𝘀 𝘆𝗼𝘂 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲 𝗯𝗶𝗴 𝗼𝗻𝗲:
+“Tell me about a complex UI component you built in production and how you optimized its performance.”
+
+And suddenly, your resume isn’t enough.
+
+𝗥𝗲𝗮𝗹 𝘁𝗮𝗹𝗸:
+Most candidates get filtered out, not because they don’t know the tools,
+but because they can’t explain how they used them in real-world scenarios.
+
+Here are 10 real-time, real-world questions to help you go from:
+
+❌ I studied this on YouTube to ✅ I’ve solved this in production
+
+𝟭. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗱𝗲𝘀𝗶𝗴𝗻 𝗮 𝘀𝗰𝗮𝗹𝗮𝗯𝗹𝗲, 𝗿𝗲𝘂𝘀𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁 𝗹𝗶𝗯𝗿𝗮𝗿𝘆 𝗳𝗼𝗿 𝗮 𝗹𝗮𝗿𝗴𝗲 𝘄𝗲𝗯 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻?
+ → Talk about design patterns, atomic design, and Storybook for isolated component testing.
+
+𝟮. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗲𝗻𝘀𝘂𝗿𝗲 𝗿𝗲𝘀𝗽𝗼𝗻𝘀𝗶𝘃𝗲𝗻𝗲𝘀𝘀 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗮𝗰𝗿𝗼𝘀𝘀 𝗱𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁 𝗱𝗲𝘃𝗶𝗰𝗲𝘀?
+ → Use of Flexbox, Grid, CSS media queries, and tools like CSS-in-JS (Styled Components, Emotion).
+
+𝟯. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗶𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁 𝗮𝗻𝗱 𝗼𝗽𝘁𝗶𝗺𝗶𝘇𝗲 𝗮 𝗨𝗜 𝗰𝗼𝗺𝗽𝗼𝗻𝗲𝗻𝘁 𝗹𝗶𝗸𝗲 𝗮 𝗺𝗼𝗱𝗮𝗹 𝗼𝗿 𝗮 𝗱𝗿𝗼𝗽𝗱𝗼𝘄𝗻?
+ → Explain event delegation, useRef, and the importance of closing events and ESC key press handling.
+
+𝟰. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗮𝗽𝗽𝗿𝗼𝗮𝗰𝗵 𝗺𝗮𝗻𝗮𝗴𝗶𝗻𝗴 𝘀𝘁𝗮𝘁𝗲 𝗶𝗻 𝗰𝗼𝗺𝗽𝗹𝗲𝘅 𝗥𝗲𝗮𝗰𝘁 𝗮𝗽𝗽𝘀?
+ → Explain Redux or Recoil, useReducer, Context API, and when you’d use each based on complexity.
+
+𝟱. 𝗪𝗵𝗮𝘁’𝘀 𝘆𝗼𝘂𝗿 𝗮𝗽𝗽𝗿𝗼𝗮𝗰𝗵 𝘁𝗼 𝗲𝗿𝗿𝗼𝗿 𝗯𝗼𝘂𝗻𝗱𝗮𝗿𝗶𝗲𝘀 𝗮𝗻𝗱 𝗵𝗮𝗻𝗱𝗹𝗶𝗻𝗴 𝘂𝗻𝗲𝘅𝗽𝗲𝗰𝘁𝗲𝗱 𝗲𝗿𝗿𝗼𝗿𝘀 𝗶𝗻 𝗥𝗲𝗮𝗰𝘁?
+ → Explain React error boundaries, logging with Sentry, and graceful error handling in UI.
+
+𝟲. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗵𝗮𝗻𝗱𝗹𝗲 𝗿𝗼𝘂𝘁𝗶𝗻𝗴 𝗶𝗻 𝘀𝗶𝗻𝗴𝗹𝗲-𝗽𝗮𝗴𝗲 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻𝘀?
+→ Discuss React Router, dynamic routing, nested routes, and lazy loading of routes.
+
+𝟳. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗲𝗻𝘀𝘂𝗿𝗲 𝗮𝗰𝗰𝗲𝘀𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆 𝗶𝗻 𝘆𝗼𝘂𝗿 𝘄𝗲𝗯 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻𝘀?
+ → Talk about ARIA roles, semantic HTML, keyboard navigation, and ensuring screen reader compatibility.
+
+𝟴. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗵𝗮𝗻𝗱𝗹𝗲 𝗳𝗼𝗿𝗺 𝘃𝗮𝗹𝗶𝗱𝗮𝘁𝗶𝗼𝗻 𝗶𝗻 𝗮 𝗥𝗲𝗮𝗰𝘁 𝗮𝗽𝗽?
+ → Discuss Yup, React Hook Form, and server-side validation with form error feedback.
+
+𝟵. 𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝗼𝗽𝘁𝗶𝗺𝗶𝘇𝗲 𝗮𝗻 𝗮𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗳𝗼𝗿 𝗵𝗶𝗴𝗵 𝗶𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗶𝘁𝘆 (𝗲.𝗴., 𝗰𝗼𝗺𝗽𝗹𝗲𝘅 𝗳𝗼𝗿𝗺𝘀 𝗼𝗿 𝗿𝗲𝗮𝗹-𝘁𝗶𝗺𝗲 𝘂𝗽𝗱𝗮𝘁𝗲𝘀)?
+→ Talk about debouncing, throttling, and WebSockets for real-time updates, and form libraries like Formik or React Hook Form.

@@ -1,0 +1,21 @@
+Here are the key questions I was asked:
+1. Can you describe the project you last worked on?
+ (Discussed architecture, key features, tech stack, and challenges.)
+2. What are Higher-Order Components (HOCs)?
+ (Explained how HOCs are functions that take a component and return a new component with additional props or logic.)
+3. Suppose there are 20 APIs in your application — how would you add headers inside the component?
+ (Talked about using Axios interceptors or a centralized API service to manage headers globally.)
+4. What is the difference between the Virtual DOM and the Real DOM?
+ (Explained how Virtual DOM improves performance by reducing direct DOM manipulations through diffing algorithms.)
+5. What is Variable Hoisting?
+ (Discussed how JavaScript hoists variable and function declarations during the compilation phase.)
+6. What is the difference between let, var, and const?
+ (Covered scope, redeclaration rules, and mutability.)
+7. What is the difference between a Single Page Application (SPA) and a Traditional Multi-Page Application?
+ (Explained how SPAs improve user experience by avoiding full-page reloads.)
+8. What is the difference between Class-Based and Functional Components in React?
+ (Mentioned state and lifecycle handling differences, and how functional components are more concise with hooks.)
+9. Explain all the lifecycle methods of a Class-Based Component.
+ (Walked through mounting, updating, and unmounting phases.)
+10. How can we achieve lifecycle methods in Functional Components?
+ (Described the use of useEffect and other hooks to replicate lifecycle behaviors.)

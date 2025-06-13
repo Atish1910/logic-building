@@ -13,4 +13,5 @@ interview({age : 28});
 
 
 // Objects are compared by reference, not by value.
-// In JavaScript, when you compare two objects using == or ===, it checks whether they reference the same memory location, not their content.
+// In JavaScript, when you compare two objects using == or ===, 
+// it checks whether they reference the same memory location, not their content.

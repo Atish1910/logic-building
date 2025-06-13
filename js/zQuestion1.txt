@@ -81,6 +81,7 @@ print Bingo Line at middle with # and other should be $ => 125
 -> all programs on pattern Printing from 51 to 90 is store inside below path 
 js/ Pattern / 51.js to 90.js
 ===============================================================
+
 ->All Programs On String 
 Print ASCII Table Value => 152
 // take a 1 letter and check where it is Capital or not with ASCII Value => 153 (65 to 90)
@@ -131,6 +132,8 @@ divisible by 2
 not divisible by 2
 -> odd number
 ==========================================================================================
+
+string sorting
 
 
 

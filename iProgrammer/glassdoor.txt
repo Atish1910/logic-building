@@ -1,0 +1,3 @@
+write a program : odd n even, sorting string , palindrome
+write syntax for object creation
+diff between let ,var ,const with examples

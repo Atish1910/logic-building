@@ -1,0 +1,41 @@
+1. What is the virtual DOM, and how does React use it?
+  Answer: The Virtual DOM (VDOM) is a lightweight JavaScript representation of the actual DOM (Document Object Model) in the browser. Instead of directly manipulating the real DOM — which is slow and expensive in terms of performance — React first updates the Virtual DOM.
+  Here’s how React uses it:
+  When a component’s state or props change, React creates a new Virtual DOM tree.
+  React then compares this new Virtual DOM with the previous one using a process called "diffing."
+  It identifies the minimal set of changes (called patches) required to update the real DOM.
+  Finally, React efficiently updates only the parts of the real DOM that actually changed, rather than re-rendering the entire page.
+
+
+2. Explain the difference between functional components and class components in React.
+  Functional components are preferred now because they are simpler and with React Hooks (useState, useEffect, etc.), they can do everything class components can.
+  Class components are still used in older React codebases, but modern React favors functional
+
+3. What is the purpose of useState and useEffect hooks?
+  -> useState Hook:
+  It is used to add state to functional components.
+  useState returns a state variable and a function to update it.
+  -> useEffect Hook:
+  It is used to handle side effects in functional components, like:
+  Fetching data
+  Directly updating the DOM
+  Setting up subscriptions or timers
+  It runs after the component renders.
+
+4. How does props differ from state in React?
+Props : 	Short for "properties"; data passed from parent to child component.
+          Read-only — cannot be modified by the receiving component.
+          Used to send data and event handlers to child components.
+          Controlled by	Parent component.
+State : Data managed within the component itself.
+        Mutable — can be changed using setState or useState.
+        Used to store dynamic data that can change over time (like user input, toggle states, etc.).
+        Controlled by	Component itself.          
+
+        
+5. What are controlled and uncontrolled components in React?
+6. How do you handle forms in React?
+7. What is React context, and how does it help in state management?
+8. How would you optimize a React application for performance?
+9. What is the difference between useMemo and useCallback hooks?
+10. Explain React's lifecycle methods and their equivalents in hooks.

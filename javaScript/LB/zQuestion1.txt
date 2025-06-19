@@ -1,0 +1,143 @@
+1 factorials approch 1 : 5-> 125
+2 factorials  Approch 2
+
+3 Write a program which checks whether number is even or odd. 
+4 Write a program which checks whether number is divisible by 3 and 5
+5 Write a program which accepts the marks and display the class accordingly
+
+6 Display "Jay Ganesh" 5 times on screen with updator
+7 Display "Jay Ganesh" 5 times on screen with user Input
+
+8 factors of 100 : 22
+9 factors of 100 Time complexity : O(N) : 22
+10 factors of 100 Time complexity : // O(N/2) : 22
+11 factors & Summation of factors
+12 factors & Summation of factors with Updator (-ve input ) 24, 25, 26
+
+13 find a perfect Number : 28is perfect number 
+
+14 Check Prime Number or Not 30 (2 Approches)
+
+15 take a base number & power calculte power 5^3 ? 625 (2 Approches)-> 32, 33, 34, 35
+
+17 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : for Loop
+18 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse for Loop with updator
+19 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : While Loop with updator
+20 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse While Loop with Updator
+
+: Take a number (12345) and returns its digits ->1 2 3 4 5 = 21
+: Take a number (12345) and returns its digits(with while loop) ->1 2 3 4 5 = 51
+: Take a number (12345) and returns Counts ->5 = 48
+: Take a number (12345) and returns Digits Sum ->15 = 50
+: Take a number (12345) and give digit(4) it is present is number or not? -> = 54
+: Display Digit with boolen (true or false) -> = 56
+: Count Digit Friquency -> = 57
+: Take a number (12345) and give digit(4) it is present is number or not Dynamically? -> = 59
+: Count Event Digits From Number 1234567 -> 3 = 61
+: Count Odd Digits From Number 1234567 -> 3 = 62
+
+take a Number and Reverse It (ip: 12345)->(o/p: 54321) 63 
+CheckPallindrome or not (IP: 123321) 65
+DigitsAverage (IP 12345): (OP: 15/5 = 3) = 66
+MinimumDigit (IP 12345): (OP: 1) : 67
+MaximumDigit (IP 12345): (OP: 5) : 69
+
+
+take array are return its Even Number : 76
+return numbers array addition [3,5,71,8] => 87
+take array are return its addition : 83
+take array are return its Odd Number : 83
+take array are return its Maximum Number : 83
+take array are return its Smallest Number : 84
+take array are return its Smallest & highest Number : 86
+Take array and search digit is presnet in array or not  : 88
+Take array and search digit & its occurance is presnet in array or not  : 90
+
+print * 5 times with for loop => 94
+print * 5 times with Reverse for loop => 100
+print 1 to 6 Numbers & *  for loop => 101
+print char from a to k with char increment  =>102
+print char & num  => 105
+print table of 4   => 106
+print 1 2 3 4 5 5 4 3 2 1  =>107
+print 1 2 3 4 5 4 3 2 1  => 108
+print -5 , -4, -3, -2, -1  => 110
+print -5 , -4, -3, -2, -1 0 1 2 3 4 5  => 111;
+
+Chapter 4: (Pattern Printing 1132 to 150) 
+print *  (4Rows , 5Col) => 113
+print Number 1 2 3  (4Rows , 5Col) => 114
+print Number 1 2 3 increment in row  (4Rows , 5Col) => 115
+print char a b c  (4Rows , 5Col) => 116
+print char a b c increment in row  (4Rows , 5Col) => 118
+print * in 1st row # in second row  => 119
+print * in 1st row # in second row (Approch 2)  => 120
+print Number in 1st row # in second row   => 120
+print Number Incremenet in 1st row # in second row   => 122
+print number in 1st column and * in 2nd column => 123
+print number increment in 1st column and * in 2nd column => 123
+print Bingo Line at middle with # and other should be $ => 125
+===============================================================
+-> all programs on pattern Printing from 51 to 90 is store inside below path 
+js/ Pattern / 51.js to 90.js
+===============================================================
+
+->All Programs On String 
+Print ASCII Table Value => 152
+// take a 1 letter and check where it is Capital or not with ASCII Value => 153 (65 to 90)
+take a 1 letter and check where it is Capital or not with charactor (a to z) => 154
+take a 1 letter and check where it is smallcase or not with ASCII Value => 155
+check it is digit or not => 156
+Enter the String and find lenght of its string (In built Operator) => 159
+Enter the String and find lenght of its string Without (In built Operator) => 161
+take a string and count its smallcase letter from string AtiSH : 2 small letter => 162 
+take a string and count its Capital  letter from string AtiSH : 3 Sapital letter => 163 
+take a string and count its Number from string At62iS6H1 : 4 Numbers => 164 
+take a string and count its vowels from string Atish : 2 vowels => 165 
+take a string and count its Blank spaces from string Atish Vinayak Kamble : 3 Blank spaces => 166 
+take a string and count its Specific Letter (a) from string Atish Vinayak Kamble : 2 (a) => 167 
+take a string and find first Occurance of its Specific Letter (a) from string ztishVinayakKamble : 8th index (a) => 171 
+take a string and find first Occurance of its Specific Letter (a) from string and filter if char is not present ztishVinayakKamble : Not Present (c) => 172 
+take a string and find Last Occurance of its Specific Letter (a) from string ztishVinayakKamble : 12th index (a) => 174
+Count small & Capital letter from String : AtiSh (small : 3, Capital : 2 ) => 175
+Replace blank Space with hyphen : At is h -> At_is_h => 176
+Replace All Capital letters With * : AtiSh -> *ti*h => 177
+Replace All Capital letters With * & small with $ : AtiSh -> *$$*$ => 178
+Convert Capital String To lower Strig : ATISH -> atish => 179
+Convert Capital String To lower Strig : atish -> ATISH => 180
+Convert Capital to small & Small To capital : AtisH -> aTISh => 181
+take string and save only capital letter in 1 veriable and print that veriable (ATisH -> ATH) => 183
+take string and save only Small letter in 1 veriable and print that veriable (ATisH -> is) => 183
+String Reverse (Atish -> hsitA) => 187
+Concat 2 string together (string 1 : Demo , STring 2 : Atish -> Demo Atish ) => 189
+
+==========================================================================================
+C++ Code Started from Here 203 to 252
+==========================================================================================
+take 2 number and console highest number (ip : 15, 17 op : 17)  => 204
+==========================================================================================
+java code conversion to js
+-> Chcek where the number is Armstrong number or not (true or false); => 332
+382
+==========================================================================================
+
+==========================================================================================
+take integer as parameter and return following string 
+ip 10
+op-> zero
+ip 5
+-> Five
+divisible by 2
+-> Even
+not divisible by 2
+-> odd number
+==========================================================================================
+
+string sorting
+
+
+
+ 
+
+
+

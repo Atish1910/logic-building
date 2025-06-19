@@ -1,7 +1,0 @@
-Advance Question
-: take 5 elements in input and return its array 73
-add a dynamic number of element (3) enter 3 digits and return all number 75
-add a dynamic number of element (3) enter 3 digits and return all number & addition :  76
-add a dynamic number of element (3) enter 3 digits and return odd number Count :  76
-
-take a array of number and search for digit you want and it lll diplsay it is available in array or not : 87

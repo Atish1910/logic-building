@@ -1,0 +1,48 @@
+1. What is MongoDB and why use it over SQL databases?
+2. Explain the concept of Middleware in Express.js.
+3. What is the Virtual DOM in React and how does it work?
+4. What is the difference between useEffect and useLayoutEffect in React?
+5. What is the Event Loop in Node.js and how does it work?
+6. How do you handle CORS issues in Express.js?
+7. What are Higher Order Components (HOC) in React?
+8. How does MongoDB handle indexing and why is it important?
+9. What is props drilling in React and how do you solve it?
+10. How do you secure a Node.js application?
+11. Explain RESTful APIs and how to implement them in Express.js.
+12. What is the difference between State and Props in React?
+13. What are Mongoose schemas and models?
+14. How do you handle form data in React?
+15. What is JWT and how do you implement authentication with it in the MERN stack?
+16. What is React Router and how do you implement route protection?
+17. What is the role of the package.json file in Node.js?
+18. How do you manage environment variables in a MERN application?
+19. Explain how you would deploy a MERN stack app to production.
+20. What are common performance optimization techniques in React?
+
+
+What is Callback Hell?
+↳ Talked about managing deeply nested async logic.
+
+What is React Fiber?
+↳ Discussed the revamped rendering engine and its performance edge.
+
+What is the render() function?
+↳ Explained how components output UI and when rendering triggers.
+
+What are Higher-Order Components (HOCs)?
+↳ Use cases for abstracting logic and enhancing reusability.
+
+What is a React Portal?
+↳ Rendering outside the parent DOM hierarchy — with real-world examples.
+
+What is memo in React?
+↳ Optimization strategy for avoiding unnecessary re-renders.
+
+Why use Fragments in React?
+↳ Covered clean DOM structuring without wrappers.
+
+Class-based vs Functional Components?
+↳ Syntax, state handling, and lifecycle differences.
+
+What is Prop Drilling?
+↳ Passing props through multiple layers + how to fix it.

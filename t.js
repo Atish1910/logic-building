@@ -1,7 +1,13 @@
+
 // return numbers array addition [3,5,71,8] => 87
-iArray = [2, 5, 6, 7, 88, 6, 44, 3, 2, 4, 5, 66, 7, 8, 9, 0];
-iSum = 0;
-for (i = 0; i <= iArray.length; i++) {
-  iSum = iSum + iArray[i];
-}
-console.log(iSum);
+
+var numArray = [2,3,44,5,6,4,6,74,89,7,5,46,7,8,9,4];
+
+iFind = 4;
+iCount = 0;
+numArray.map((num) => {
+  if(num == iFind){
+    iCount++;
+  }
+})
+console.log("Yes it is present in array "+ iCount);

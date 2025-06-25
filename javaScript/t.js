@@ -1,21 +1,16 @@
-// MinimumDigit (IP 12345): (OP: 1) : 67
+console.log("A");
 
-iValue = 984727;
+setTimeout(() => {
+  console.log("B");
+});
 
-function findMinimumDigit(iNo){
-  iDigit = 0;
-  iMin = 9;
+["C", "D"].forEach((x) => {
+  console.log(x);
+});
 
-  while(iNo > 0){
-    iDigit = iNo % 10;
-    iNo = (iNo / 10) | 0;
-    // console.log(iDigit);
+console.log("E");
 
-    if(iMin > iDigit){
-      iDigit = iMin;
-    }
-  }
-  console.log(iMin);
-}
-
-findMinimumDigit(iValue);
+// A
+// E
+// C D
+// B

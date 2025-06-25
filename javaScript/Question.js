@@ -5,42 +5,40 @@
 2 factorials  Approch 2
 3 Write a program which checks whether number is even or odd. 
 4 Write a program which checks whether number is divisible by 3 and 5
-5 Write a program which accepts the marks and display the class accordingly
-6 Display "Jay Ganesh" 5 times on screen with updator
-7 Display "Jay Ganesh" 5 times on screen with user Input
-8 factors of 100 : 22
-9 factors of 100 Time complexity : O(N) : 22
-10 factors of 100 Time complexity : // O(N/2) : 22
-11 factors & Summation of factors
-12 factors & Summation of factors with Updator (-ve input ) 24, 25, 26
+// 5 Write a program which accepts the marks and display the class accordingly
+6 factors of 100 : 22
+7 factors of 100 Time complexity : O(N) : 22
+8 factors of 100 Time complexity : // O(N/2) : 22
+9 factors & Summation of factors
+10 factors & Summation of factors with Updator (-ve input ) 24, 25, 26
 // 13 find a perfect Number : 28is perfect number 
-14 Check Prime Number or Not 30 (2 Approches)
-15 take a base number & power calculte power 5^3 ? 625 (2 Approches)-> 32, 33, 34, 35
-17 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : for Loop
-18 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse for Loop with updator
-19 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : While Loop with updator
-20 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse While Loop with Updator
-: Take a number (12345) and returns its digits ->1 2 3 4 5 = 21
-: Take a number (12345) and returns its digits(with while loop) ->1 2 3 4 5 = 51
-: Take a number (12345) and returns Counts ->5 = 48
-: Take a number (12345) and returns Digits Sum ->15 = 50
-// : Take a number (12345) and give digit(4) it is present is number or not? -> = 54
-: Display Digit with boolen (true or false) -> = 56
-: Count Digit Friquency -> = 57
-: Take a number (12345) and give digit(4) it is present is number or not Dynamically? -> = 59
-// : Count Event Digits From Number 1234567 -> 3 = 61
-: Count Odd Digits From Number 1234567 -> 3 = 62
+// 14 Check Prime Number or Not 30 (2 Approches)
+11 take a base number & power calculte power 5^3 ? 625 (2 Approches)-> 32, 33, 34, 35
+12 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : for Loop
+13 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse for Loop with updator
+14 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : While Loop with updator
+15 : Factorial (5!) = 5 * 4 * 3 * 2 * 1   = 120 : Reverse While Loop with Updator
+16 Take a number (12345) and returns its digits ->1 2 3 4 5 = 21
+17: Take a number (12345) and returns its digits(with while loop) ->1 2 3 4 5 = 51
+18 : Take a number (12345) and returns Counts ->5 = 48
+19 : Take a number (12345) and returns Digits Sum ->15 = 50
+20 // : Take a number (12345) and give digit(4) it is present is number or not? -> = 54
+21 : Display Digit with boolen (true or false) -> = 56
+22 : Count Digit Friquency -> = 57
+23 : Take a number (12345) and give digit(4) it is present is number or not Dynamically? -> = 59
+24 // : Count Event Digits From Number 1234567 -> 3 = 61
+25 : Count Odd Digits From Number 1234567 -> 3 = 62
 
-take a Number and Reverse It (ip: 12345)->(o/p: 54321) 63 
-CheckPallindrome or not (IP: 123321) 65
-DigitsAverage (IP 12345): (OP: 15/5 = 3) = 66
-MinimumDigit (IP 12345): (OP: 1) : 67
-MaximumDigit (IP 12345): (OP: 5) : 69
+26 // take a Number and Reverse It (ip: 12345)->(o/p: 54321) 63 
+27 // CheckPallindrome or not (IP: 123321) 65
+28 // DigitsAverage (IP 12345): (OP: 15/5 = 3) = 66
+29 // MinimumDigit (IP 12345): (OP: 1) : 67
+30 // MaximumDigit (IP 12345): (OP: 5) : 69
 
 
 // NUMBERS QUESTION ARRAY
-take array are return its Even Number : 76
-return numbers array addition [3,5,71,8] => 87
+// take array are return its Even Number : 76
+// return numbers array addition [3,5,71,8] => 87
 take array are return its addition : 83
 take array are return its Odd Number : 83
 take array are return its Maximum Number : 83

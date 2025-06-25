@@ -1,19 +1,7 @@
-// 2. Check if a String is a Palindrome 
-cStr = "markram";
-
-function isPelendrome(str){
-    iLength = str.length;
-    iRevStr = "";
-    i = 0;
-    while(iLength[i] != 0){
-        iRevStr = str[i] + iRevStr;
-        i--;
-    }
-    if(iRevStr == cStr){
-        console.log("String is Pelendrome");
-    }
-    else{
-        console.log("String is Not Pelendrome");
-    }
+// return numbers array addition [3,5,71,8] => 87
+iArray = [2, 5, 6, 7, 88, 6, 44, 3, 2, 4, 5, 66, 7, 8, 9, 0];
+iSum = 0;
+for (i = 0; i <= iArray.length; i++) {
+  iSum = iSum + iArray[i];
 }
-isPelendrome(cStr);
+console.log(iSum);

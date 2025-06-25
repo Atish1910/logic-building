@@ -1,22 +1,16 @@
-// prime number from 1 to 100;
+console.log("A");
 
-var iValue = 100;
+setTimeout(() => {
+  console.log("B");
+});
 
-function prime(iNo){
-    for(i = 2; i < iNo; i++){
-        
-        let iPrime = true;
-        
-        for(j = 0; j = i; j++){
-             if(i % j == 0){
-                iPrime = false;
-                break;
-             }
-        }
-    }
-    if(iPrime){
-        console.log(i)
-    }
-}
+["C", "D"].forEach((x) => {
+  console.log(x);
+});
 
-prime(iValue);
+console.log("E");
+
+// A
+// E
+// C D
+// B

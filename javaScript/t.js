@@ -1,19 +1,16 @@
-// take array are return its Manimum Number : 83
-iArr = [90, 1, 2, 3, 4, 566, 7, 89, 40, 50, 60, 70];
+iStr = 3284792347;
 
-function findMaxNum(iArr) {
-  iMax = 0;
-  iMax2 = 0;
-  n = iArr.length;
-  for (i = 0; i < n; i++) {
-    if (iMax < iArr[i]) {
-      iMax2 = iMax;
-      iMax = iArr[i];
-    } else if (iMax2 < iArr[i]) {
-      iMax2 = iArr[i];
+function Display(iStr){
+  iMin = 9;
+  iDigit = 0;
+  while(iStr != 0){
+    iDigit = iStr % 10;
+    iStr = (iStr / 10) | 0;
+    if(iDigit > iMin){
+      iDigit = iMin;
     }
   }
-  console.log(iMax2);
+  console.log(iMin);
 }
 
-findMaxNum(iArr);
+Display(iStr);

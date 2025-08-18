@@ -1,19 +1,12 @@
-// take array are return its Manimum Number : 83
-iArr = [90, 1, 2, 3, 4, 566, 7, 89, 40, 50, 60, 70];
+// take a string and return 1234 in between them;
 
-function findMaxNum(iArr) {
-  iMax = 0;
-  iMax2 = 0;
-  n = iArr.length;
-  for (i = 0; i < n; i++) {
-    if (iMax < iArr[i]) {
-      iMax2 = iMax;
-      iMax = iArr[i];
-    } else if (iMax2 < iArr[i]) {
-      iMax2 = iArr[i];
-    }
+const iStr = "users";
+function Display(iStr) {
+  iNewStr = "";
+  for (i = 0; i < iStr.length; i++) {
+    iNewStr = iNewStr + iStr[i] + (i + 1);
   }
-  console.log(iMax2);
+  console.log(iNewStr);
 }
 
-findMaxNum(iArr);
+Display(iStr);

@@ -1,5 +1,14 @@
+const http = require("http");
 
-// take a string and count its smallcase letter from string AtiSH : 2 small letter => 162
+const requestListner = (req, res) => {
+  console.log("i am Listeneing", req.method);
+  res.end("Hello World");
+};
 
-iName = "AtiSh";
+const server = http.createServer(requestListner);
 
+const PORT = 4200;
+
+server.listen(PORT, () => {
+  console.log("Server is Running at ", PORT);
+});

@@ -1,23 +1,12 @@
-const obj1 = {
-    name : "Atish",
-    age : 26,
-    designation : "Developer",
-    address : {
-        area : "swarget",
-        city : "pune"
-    }
-};
-
-// const shallowCopy = {...obj1};
-// shallowCopy.address.area ="katraj"; =
-
-// console.log(obj1.address.area);
-// console.log(shallowCopy.address.area);
+let a = 10;
+// console.log(10 > 5 && 10 < 15 || 10 === 20);
+// console.log(5 && 10); // 10
+// console.log(10 > 10); // false 
+// console.log(false < 15); // true 
+// console.log(true < 10); // true 
+// console.log(10 === 20); // true 
+onsole.log(a > 5 && a < 15 || a === 20);
 
 
-const deepcopy = JSON.parse(JSON.stringify(obj1));
+console.log(0 && "First" || "Second");
 
-deepcopy.address.area = "katraj";
-
-console.log(deepcopy.address.area);
-console.log(obj1.address.area);

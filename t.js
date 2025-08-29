@@ -1,12 +1,25 @@
-let a = 10;
-// console.log(10 > 5 && 10 < 15 || 10 === 20);
-// console.log(5 && 10); // 10
-// console.log(10 > 10); // false 
-// console.log(false < 15); // true 
-// console.log(true < 10); // true 
-// console.log(10 === 20); // true 
-onsole.log(a > 5 && a < 15 || a === 20);
+let iStr = [1, 2, 3, 2, 4, 1, 5, 3];
+function Display(arr) {
+  let uniqueArr = [];
+  let index = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let exists = false;
 
+    for (let j = 0; j < index; j++) {
+      if (arr[i] === uniqueArr[j]) {
+        exists = true;
+        break;
+      }
+    }
 
-console.log(0 && "First" || "Second");
+    if (!exists) {
+      uniqueArr[index] = arr[i];
+      index++;
+    }
+  }
 
+  console.log(uniqueArr);
+}
+
+Display(iStr);
+// [1, 2, 3, 4, 5]

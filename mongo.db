@@ -1,0 +1,11 @@
+db.users.updateOne({
+  _id: "682263",
+  "houses._id": "2178123"
+}, {
+  $push: {
+    "houses.$.rooms": {
+      "name": "Hall",
+      "size": "50"
+    }
+  }
+})

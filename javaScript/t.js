@@ -1,33 +1,21 @@
-{
-  "_id": "682263",
-  "userName": "sherif",
-  "email": "sharief@aucegypt.edu",
-  "password": "67834783ujk",
-  "houses": [
-    {
-      "_id": "2178123",
-      "name": "New Mansion",
-      "rooms": [
-        { "name": "4th bedroom", "size": "12" },
-        { "name": "kitchen", "size": "100" }
-      ]
+Arr = [9, 3, 4, 5, 7, 1, 6];
+
+function display(iArr) {
+  let n = iArr.length - 1;
+  console.log(Arr);
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - i; j++) {
+      if (iArr[j] > iArr[j + 1]) {
+        let iTemp = iArr[j];
+        iArr[j] = iArr[j + 1];
+        iArr[j + 1] = iTemp;
+        console.log("j", iArr[j]);
+      }
     }
-  ]
+    console.log("I", iArr[i]);
+  }
+
+  console.log(iArr);
 }
 
-// db -> select Current databse
-// users -> the collection that i am updateing;
-// updateOne -> Tell MongoDB to update only one Document  if we writ updadeMany
-
-db.users.updateOne(
-    // if both condition will satisfied then update
-    {_id : "682263", "houses._id" : "2178123"},
-    
-    {
-        // add new Element into Array
-        $push : {
-            // positional Operator 
-            "houses.$.rooms" : {"name" : "Hall", "size" : "50"}
-        }
-    }
-)
+display(Arr);

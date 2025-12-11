@@ -1,0 +1,109 @@
+Interview Flow
+
+1️⃣ Technical Round 1
+2️⃣ Technical Round 2 (Client Interview)
+3️⃣ Managerial Round (scenario-based questions)
+4️⃣ HR Round (salary, location, notice period)
+
+🔵 Technical Round 1 — JavaScript + React + Node
+
+Here’s the exact question list 👇
+
+🟦 JavaScript
+
+1. Explain Temporal Dead Zone. Why does it apply to let & const?
+
+
+2. What are Call Stack & Event Loop? Explain with an async example.
+
+
+3. Write a function to flatten a deep nested object (not an array).
+
+
+4. Reverse a string in 3 ways — loop, recursion, spread.
+
+
+5. What is event delegation? Why is it useful?
+
+
+6. Difference between Promise.all, Promise.any, Promise.race.
+
+
+7. What is memoization? Implement a memoized function.
+
+
+8. Shallow vs Deep copy — how do you create each one?
+
+
+
+🟦 React
+
+9. How does React Fiber architecture improve rendering?
+
+
+10. When to use useMemo, useCallback, and React.memo?
+
+
+11. Context API vs Redux — which scales better and why?
+
+
+
+🟦 Node + MongoDB
+
+12. How does MongoDB schema design impact performance?
+
+
+13. How do you handle CORS properly in a Node backend?
+
+
+14. What is the purpose of package-lock.json?
+
+
+15. A user refreshes the browser and loses login state — how do you persist auth properly in a MERN app?
+
+🔵 Technical Round 2 — System Design + Real Scenarios
+
+🟦 Frontend + Real-Time
+
+1. Design a multi-user To-Do Dashboard with real-time updates (WebSockets).
+
+
+2. Internal working of Redux — what happens when you dispatch an action?
+
+
+3. How to avoid expensive re-renders in large React components?
+
+
+🟦 Security + Auth
+
+4. Explain full JWT/OAuth authentication + authorization flow.
+
+
+5. Role Based Access Control across UI + API + DB — how to design it?
+
+
+🟦 Backend Architecture
+
+6. Best approach to validate input on both client & server.
+
+
+7. Architecture of a real-time Chat App (rooms, events, sockets).
+
+
+8. How to manage very large forms efficiently (Formik / RHF / Zustand).
+
+
+9. How to paginate millions of MongoDB records without delay?
+
+
+10. Explain compound indexes & TTL indexes — real use cases.
+
+
+11. How to build Express middleware for logging, auth, error handling?
+
+
+12. SQL vs NoSQL — when to pick which in a distributed system?
+
+
+13. Horizontal vs Vertical scaling with real examples.
+

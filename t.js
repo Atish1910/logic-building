@@ -1,25 +1,20 @@
-let iStr = [1, 2, 3, 2, 4, 1, 5, 3];
-function Display(arr) {
-  let uniqueArr = [];
-  let index = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let exists = false;
+// Input: "ggg.ttt.com"
+// Output: "ttt"
 
-    for (let j = 0; j < index; j++) {
-      if (arr[i] === uniqueArr[j]) {
-        exists = true;
-        break;
-      }
+let iStr = "ggg.ttt.com";
+
+function display(iStr){
+  iSubStr = "";
+  let iCnt = 0;
+  for(let i = 0; i< iStr.length; i++){
+    if(iStr[i] == "."){
+      iCnt++
     }
-
-    if (!exists) {
-      uniqueArr[index] = arr[i];
-      index++;
+    if(iCnt > 1){
+      iSubStr = iSubStr + iStr[i];
     }
   }
-
-  console.log(uniqueArr);
+  console.log(iSubStr);
 }
 
-Display(iStr);
-// [1, 2, 3, 4, 5]
+display(iStr)

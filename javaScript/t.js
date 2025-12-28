@@ -1,33 +1,6 @@
-{
-  "_id": "682263",
-  "userName": "sherif",
-  "email": "sharief@aucegypt.edu",
-  "password": "67834783ujk",
-  "houses": [
-    {
-      "_id": "2178123",
-      "name": "New Mansion",
-      "rooms": [
-        { "name": "4th bedroom", "size": "12" },
-        { "name": "kitchen", "size": "100" }
-      ]
-    }
-  ]
-}
+// remove duplicate from gicene array
 
-// db -> select Current databse
-// users -> the collection that i am updateing;
-// updateOne -> Tell MongoDB to update only one Document  if we writ updadeMany
+let iArr = [1,2,3,4,5,6,67,77,7,7,77,77,7,7,12,1];
 
-db.users.updateOne(
-    // if both condition will satisfied then update
-    {_id : "682263", "houses._id" : "2178123"},
-    
-    {
-        // add new Element into Array
-        $push : {
-            // positional Operator 
-            "houses.$.rooms" : {"name" : "Hall", "size" : "50"}
-        }
-    }
-)
+const uniqueArr = [...new Set(iArr)];
+console.log(uniqueArr);

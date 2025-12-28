@@ -24,3 +24,7 @@
 18. Convert a String to a Character Array 
 20. Convert a Sentence into an Acronym 
 23. Remove a Given Character from a String 
+
+interview questions from vanilla networks 
+"In JavaScript write a function that will remove the enclosing double quotes (") or single quotes (') at the beginning and end of a string if they are present. For example, if the string value is 'example', it returns example. If string is passed as, it returns as (quotes are removed)."
+In JavaScript, write a function that is passed a string and return the number of times the letter W occurs in the string.

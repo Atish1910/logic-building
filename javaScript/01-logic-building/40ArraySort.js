@@ -1,22 +1,18 @@
-function sortArray(arr) {
-  let n = arr.length -1;
-
-  for (let i = 0; i < n; i++) {
+let iArr = [64, 34, 25, 12, 22, 11, 90];
+function sortArray(iArr) {
+  for (let i = 0; i < iArr.length; i++) {
     // Compare each pair of elements
-    for (let j = 0; j < n - i; j++) {
-      if (arr[j] > arr[j + 1]) {
+    for (let j = 0; j < iArr.length - i; j++) {
+      if (iArr[j] > iArr[j + 1]) {
         // Swap if the current item is greater than the next
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+        let temp = iArr[j];
+        iArr[j] = iArr[j + 1];
+        iArr[j + 1] = temp;
       }
     }
   }
-
-  return arr;
+  console.log(iArr);
 }
 
 // Example:
-let numbers = [64, 34, 25, 12, 22, 11, 90];
-let sorted = sortArray(numbers);
-console.log(sorted); // Output: [11, 12, 22, 25, 34, 64, 90]
+sortArray(iArr); // Output: [11, 12, 22, 25, 34, 64, 90]

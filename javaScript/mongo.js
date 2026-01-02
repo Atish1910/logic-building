@@ -31,3 +31,19 @@ db.users.updateOne(
         }
     }
 )
+
+
+
+db.users.updateMany(
+    {_id : "09876", "houses._id" : "45678"},
+    {
+        $push : {
+            "houses.$.rooms" : {
+                $each : [
+                    {"name" : "Hall", "size" : "60"},
+                    {"name" : "Hall 2", "size" : "50"}
+                ]
+            }
+        }
+    }
+)

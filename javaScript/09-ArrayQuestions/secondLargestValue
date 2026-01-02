@@ -1,0 +1,25 @@
+// 3️⃣ Find the second largest number in an array
+const nums = [10, 45, 67, 23, 89];
+
+
+function display(nums){
+
+    let iMax = 0;
+    let iSecondMax = 0
+
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] > iMax){
+
+            iSecondMax = iMax;
+            
+            iMax = nums[i];
+        }
+        else if(nums[i] > iSecondMax && nums[i] != iMax){
+            iSecondMax = nums[i];
+        }
+    }
+    console.log(iSecondMax);
+}
+
+display(nums);
+

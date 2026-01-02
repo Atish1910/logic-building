@@ -1,20 +1,11 @@
-// Input: "ggg.ttt.com"
-// Output: "ttt"
+// Find the first element greater than 50
+const arr = [1, 2, 2, 3];
 
-let iStr = "ggg.ttt.com";
-
-function display(iStr){
-  iSubStr = "";
-  let iCnt = 0;
-  for(let i = 0; i< iStr.length; i++){
-    if(iStr[i] == "."){
-      iCnt++
-    }
-    if(iCnt > 1){
-      iSubStr = iSubStr + iStr[i];
-    }
+const iUnique = arr.reduce((acc, curr) => {
+  if (!acc.includes(curr)) {
+    acc.push(curr);
   }
-  console.log(iSubStr);
-}
+  return acc;
+}, []);
 
-display(iStr)
+console.log(iUnique);

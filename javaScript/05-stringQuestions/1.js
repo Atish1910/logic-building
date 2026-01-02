@@ -1,3 +1,5 @@
-// 7. Check if Two Strings are Anagrams 
+// 7. Check if Two Strings are Anagrams
 iStr1 = "atish";
-i
+function display(iStr1) {
+  let iRev = "";
+}

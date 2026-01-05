@@ -1,17 +1,13 @@
-let iStr = "atishvinaynitinakambldade";
+// calculate the price
 
-function longestPelendrome(str){
-    let iLongest = "";
-    for(let i = 0; i < str.length; i++){
-        for(let j = i+1; j <= str.length; j++){
-            let iSubStr = str.slice(i,j);
-            let iReverse = iSubStr.split("").reverse().join("");
-            
-            if(iSubStr == iReverse && iSubStr.length > iLongest.length){
-                iLongest = iSubStr;
-            }
-        }
-    }
-    console.log(iLongest);
+const cart = [
+  { item: "Book", price: 120 },
+  { item: "Pen", price: "" },
+  { item: "Bag", price: 300 },
+];
+
+let iTotal = 0;
+for (let i = 0; i < cart.length; i++) {
+  iTotal = iTotal + Number(cart[i].price);
 }
-longestPelendrome(iStr);
+console.log(iTotal);

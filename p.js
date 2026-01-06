@@ -5,9 +5,8 @@ const cart = [
   { item: "Pen", price: "" },
   { item: "Bag", price: 300 },
 ];
-
-let iTotal = 0;
+let iSum = 0;
 for (let i = 0; i < cart.length; i++) {
-  iTotal = iTotal + Number(cart[i].price);
+  iSum = iSum + Number(cart[i].price);
 }
-console.log(iTotal);
+console.log(iSum);

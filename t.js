@@ -13,16 +13,16 @@
 // 14. Remove All White Spaces from a String
 // 25. Find the Longest Palindromic Substring
 // 20. Convert a Sentence into an Acronym
-
-// 18. Convert a String to a Character Array
 // 19. Replace Spaces with %20 (URL Encoding)
+
 // 11. Find the Most Frequent Character
+// 16. Convert a String to Title Case
+// 18. Convert a String to a Character Array
 // 8. Find the Longest Substring Without Repeating Characters
 // 9. Convert a String to an Integer (atoi Implementation)
 // 10. Compress a String (Run-Length Encoding)
 // 12. Find All Substrings of a Given String
 // 15. Check if a String is a Valid Shuffle of Two Strings
-// 16. Convert a String to Title Case
 // 17. Find the Longest Common Prefix
 
 // 1. Reverse a String
@@ -201,23 +201,46 @@ let acronyn = iSentance
 console.log(acronyn);
 
 // ================================================================================================
-// 18. Convert a String to a Character Array
-
-let iStringName = "atishVinayakKamble";
-let iArrName = iStringName.split("");
-console.log(iArrName);
-
-// ================================================================================================
 // 19. Replace Spaces with %20 (URL Encoding)
 
-let iName = "atish Vinayak Kamble working as web Developer";
-let inewString = iName.split(" ").join("%20"); // option 1
-let inewString2 = iName.replaceAll(" ", "%10"); // option 2s
-console.log(inewString, inewString2);
+let iStrr01 = "atish Vinayak Kamble";
+console.log(iStrr01.split(" ").join("%20"));
 
 // ================================================================================================
 // 11. Find the Most Frequent Character
 
-iFrequentChar = "atishkamble";
+let iStrr02 = "atishatiatishatiatiashaata";
+let iMaxFreq = Object.entries(
+  iStrr02.split("").reduce((acc, curr) => {
+    acc[curr] = (acc[curr] | 0) + 1;
+    return acc;
+  }, {})
+).reduce((a, b) => (a[1] > b[1] ? a : b));
+console.log(iMaxFreq);
 
-let iCnt = iFrequentChar.split("");
+// ================================================================================================
+
+// 16. Convert a String to Title Case
+let iStr002 = "atish vinayak kamble";
+// Method 01
+let iTitleCase = iStr002
+  .split(" ")
+  .map((w) => {
+    return w[0].toUpperCase() + w.slice(1);
+  })
+  .join(" ");
+console.log(iTitleCase);
+
+// Method 02 with Regex
+
+let iStr003 = "kamble ashish vinayak";
+
+let iTitleCase02 = iStr003.replace(/\b\w/g, (char) => char.toUpperCase());
+console.log(iTitleCase02);
+
+// ================================================================================================
+
+// 18. Convert a String to a Character Array
+
+let iStrr003 = "atish";
+console.log(iStrr003.split(""));

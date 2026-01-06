@@ -13,16 +13,16 @@
 // 14. Remove All White Spaces from a String
 // 25. Find the Longest Palindromic Substring
 // 20. Convert a Sentence into an Acronym
-
-// 18. Convert a String to a Character Array
 // 19. Replace Spaces with %20 (URL Encoding)
 // 11. Find the Most Frequent Character
+
+// 16. Convert a String to Title Case
+// 18. Convert a String to a Character Array
 // 8. Find the Longest Substring Without Repeating Characters
 // 9. Convert a String to an Integer (atoi Implementation)
 // 10. Compress a String (Run-Length Encoding)
 // 12. Find All Substrings of a Given String
 // 15. Check if a String is a Valid Shuffle of Two Strings
-// 16. Convert a String to Title Case
 // 17. Find the Longest Common Prefix
 
 // 1. Reverse a String

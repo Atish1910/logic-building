@@ -15,9 +15,9 @@
 // 20. Convert a Sentence into an Acronym
 // 19. Replace Spaces with %20 (URL Encoding)
 // 11. Find the Most Frequent Character
-
 // 16. Convert a String to Title Case
 // 18. Convert a String to a Character Array
+
 // 8. Find the Longest Substring Without Repeating Characters
 // 9. Convert a String to an Integer (atoi Implementation)
 // 10. Compress a String (Run-Length Encoding)

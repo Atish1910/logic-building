@@ -1,12 +1,4 @@
-// calculate the price
+a = 5;
+b = 1;
 
-const cart = [
-  { item: "Book", price: 120 },
-  { item: "Pen", price: "" },
-  { item: "Bag", price: 300 },
-];
-let iSum = 0;
-for (let i = 0; i < cart.length; i++) {
-  iSum = iSum + Number(cart[i].price);
-}
-console.log(iSum);
+console.log(a++ + ++b);

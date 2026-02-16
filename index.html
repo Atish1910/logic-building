@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>hello World</h1>
+    <button class="btn" onclick="memoaize(20, 40)">calculate</button>
 </body>
 <script>
     async function getData(){
@@ -20,5 +21,26 @@
     }).catch((error) => {
         console.log(error);
     });
+</script>
+<script>
+    let catche = {};
+
+    function calculate(a, b){
+        let iResult = a + b * a -b * a*a*b*b*b;
+        return iResult;
+    }
+
+    function memoaize(a, b){
+        let key = a + " : " + b;
+        let iResult = calculate(a , b);
+        if(!catche[key]){
+            catche[key] = iResult;
+            console.log(iResult);
+        }else{
+            console.log("catche", catche[key]);
+            return catche[key]
+        }
+    }
+
 </script>
 </html>

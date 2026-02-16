@@ -16,6 +16,7 @@
 // 19. Replace Spaces with %20 (URL Encoding)
 // 18. Convert a String to a Character Array
 // 11. Find the Most Frequent Character
+// 26. Find longest word from string "Atish vinayak kamble";
 
 // 16. Convert a String to Title Case
 // 8. Find the Longest Substring Without Repeating Characters
@@ -69,11 +70,7 @@ console.log("// Method Two Reduce;", iUnique);
 
 // 4. Find the First Non-Repeating Character
 const iStr5 = "manthanashokshinde";
-
-const iResult = iStr5.split("").find((ch) => {
-  return iStr5.indexOf(ch) === iStr5.lastIndexOf(ch);
-});
-
+const iResult = iStr5.split("").find((ch) => iStr5.indexOf(ch) === iStr5.lastIndexOf(ch));
 console.log(iResult);
 
 // ================================================================================================
@@ -246,3 +243,80 @@ console.log(iTitleCase02);
 
 let iStrr003 = "atish";
 console.log(iStrr003.split(""));
+
+
+// 26. Find longest word from string "Atish vinayak kamble";
+const iStr004 = "atish vinayak Kambleeeeeee";
+function displayLongestWord(iStr){
+  let iCnt = 0;
+  let iMax = 0
+  for(let i = 0; i < iStr.length; i++){
+    if(iStr[i] != " "){
+      iCnt++
+    }else{
+      if(iCnt > iMax){
+        iMax = iCnt;
+      }
+
+      iCnt = 0;
+    }
+    if(iCnt > iMax){
+      iMax = iCnt;
+    }
+  }
+  console.log(iMax);
+}
+
+displayLongestWord(iStr004)
+
+
+// =================================================================
+
+
+// 26. Find longest word from string "Atish vinayak kamble";
+// Method 01 : without inbuilt
+const iStr007 = "atish vinaykdsklfdjlksfdjak mble";
+function displayLongestWord(iStr){
+  let iCnt = 0;
+  let iMax = 0
+  for(let i = 0; i < iStr.length; i++){
+    if(iStr[i] != " "){
+      iCnt++
+    }else{
+      if(iCnt > iMax){
+        iMax = iCnt;
+      }
+
+      iCnt = 0;
+    }
+    if(iCnt > iMax){
+      iMax = iCnt;
+    }
+  }
+  console.log(iMax);
+}
+
+displayLongestWord(iStr007);
+
+// Method 02 : without inbuilt
+const iStr005 = "atish vinayak kamble";
+function displayLongestWord02(iStr){
+    let word = iStr.split(" ");
+    let iMax = -Infinity;
+
+    for(let i = 0; i < word.length; i++){
+        if(word[i].length > iMax){
+            iMax = word[i].length;
+        }
+    }
+    console.log(iMax);
+}
+displayLongestWord02(iStr005);
+
+// Method 03 : inbuilt;
+
+const iStr006 = "atish vinayak dfsjlkfdjse";
+const iMax3 = iStr006.split(" ").reduce((curr, prev) => curr.length > prev.length ? curr.length : prev.length);
+console.log(iMax3)
+
+// ==========================================================================

@@ -74,7 +74,7 @@ var, let, and const are used to declare variables in JavaScript.
 - Must be initialized at declaration
 - Hoisted but stays in Temporal Dead Zone
 
-=======================================================================================================
+==============================================================================================
 
 05 ✅ Temporal Dead Zone (TDZ)
 

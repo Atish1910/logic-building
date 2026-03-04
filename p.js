@@ -19,10 +19,5 @@ function countService(iStr) {
       }
     }
     return iCnt;
-
   }
-
-
-
-
 }

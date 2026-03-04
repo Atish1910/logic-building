@@ -1,0 +1,14 @@
+# Difference between Redux and Flux:
+    
+    - Redux:
+        - Redux is basically simpliffied and improved implementation of Flux ideas.
+        - Only Single Store.
+        - No dispatcher
+        - Reducers are pure functions
+        - state is immutable
+
+    - Flux:
+        - Introduced by Facebook
+        - Multiple Stores
+        - dispatcher sends actions to stores
+        - stores update themselves.

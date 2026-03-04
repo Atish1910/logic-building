@@ -1,0 +1,141 @@
+# Longest Palindrom Substring:
+    
+    Step 1: If leangth of string is Zero then return ""
+    step 2: start and end = 0
+    step 3: create an helper function which takes (left, right)
+            if (left is greater than 0), (right is less than length of string) and (string[left]==string[right])
+                make left -=1
+                and right +=1
+
+                here we expanding the left and right 
+                <------ left right ---------> (until both are matching)
+            return (left+1, right-1);      <--- Corner case
+    setp 4: iterate over the string 
+    step 5: Two Cases:
+            1. Even Length Palindrome
+                calling helper function by passing (i,i+1) <-- i is index passed as left and right to "Expand"
+                let [left_01, right_01] = expand_function (i, i+1);
+            2. Odd Length Palindrome
+                calling helper function by passing (i,i) <-- i is index passed as left and right to "Expand"
+                let [left_02, right_02] = expand_function (i, i);
+    step 6: 
+            if the length of (right_01-left_01) > (end-start):
+                start = left_01;
+                end = right_01;
+
+            ---- same for the right_02 and left_02.
+
+    step 7: return start and end index by cutting substring from the string.
+            string.split(start, end+1);
+
+-----------------------------------------------------------------------------------------------------
+# Longest Substring Without Repeating Characters:
+
+1. brute force style (O(n²)):
+
+    abcabcbb --> abc length is ==> "3"
+    ----------------------------------
+
+    var lengthOfLongestSubstring = function(s) {
+        if (!s){
+            return 0;
+        }
+        let max_length = 0;
+        const n = s.length;
+        let temp = "";
+
+        for (let i=0; i<n; i++){
+            let j = i;
+            temp = "";
+            while (j<n){
+                if (temp.indexOf(s[j])!==-1){
+                    break;
+                }
+                temp += s[j];
+                j +=1;
+            }
+            if (temp.length > max_length){
+                max_length = temp.length;
+            }
+        }
+        return max_length;
+    };
+
+    let result_01 = lengthOfLongestSubstring("abcabcbb")
+
+---------------------------------------------------------------------------------------------
+# Longest Substring Without Repeating Characters:
+
+2. sliding window technique (O(n)):
+
+    var lengthOfLongestSubstring = function(s) {
+        let set = new Set();
+        let left = 0, max_length = 0;
+
+        for (let right = 0; right < s.length; right++) {
+            while (set.has(s[right])) {
+                set.delete(s[left]);
+                left++;
+            }
+            set.add(s[right]);
+            max_length = Math.max(max_length, right - left + 1);
+        }
+        return max_length;
+    };
+
+---------------------------------------------------------------------------------------------
+# Non-reapining Characters from the Given String:
+    "vaibhav"
+
+    function non_repeating_char (string_01){
+        let result_01 = "";
+        
+        for (let i=0; i<string_01.length; i++){
+            if ( string_01.indexOf(string_01[i]) === string_01.lastIndexOf(string_01[i]) ){
+                result_01 += string_01[i];
+            }
+        }
+
+        return result_01;
+    }
+
+    console.log(non_repeating_char("vaibhav"));
+
+    // If the First Index and Last Index is same - i.e. Character is not reapeating.
+------------------------------------------------------------------------------------------
+# Non-reapining Characters from the Given String:
+    "vaibhav"
+
+        function nonRepeatingChars(str) {
+            let freq = {};
+            let result = [];
+
+            for (let i = 0; i < str.length; i++) {
+                let ch = str[i];
+                freq[ch] = (freq[ch] || 0) + 1;
+
+                // If first time, tentatively add
+                if (freq[ch] === 1) {
+                    result.push(ch);
+                }
+                // If second time, remove from result
+                else if (freq[ch] === 2) {
+                    let idx = result.indexOf(ch);
+                    if (idx !== -1) result.splice(idx, 1);
+                }
+            }
+
+            return result.join("");
+        }
+
+        console.log(nonRepeatingChars("vaibhava")); // "ibh"
+
+    1. Creating and Dictionary which store Character as Key and number of Occurrence as Value. freq = {v:2, a:2};
+    2. if the freq of character is 1 then add it to result.
+    3. if the freq is 2 then remove it from the result
+    4. if the freq is 3 or more then we dont have any conditions it will pass.
+    5. return result
+
+-------------------------------------------------------------------------------------
+# Find missing number from array
+# [5,7,0,8,0]  arrange all "0" at last.

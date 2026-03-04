@@ -1,0 +1,65 @@
+# Window Object:
+    - Window Object represents window in browser.
+    - Window Object serves as the entry point for interacting with the browser.
+
+-----------------------------------------------------------------------
+# Browser APIs:
+    1. DOM API --> getElementById(), querySelector(), getElementsByClassName(), etc.
+    2. XMLHttpRequest(XHR) --> open(), send(), setRequestHeader() etc.
+    3. Fetch API --> fetch(), then(), json() etc.
+    4. Storage API --> localStorage(), sessionStorage() etc.
+    5. History API --> pushState(), replaceState(), go(), back() etc.
+    6. Geolocation API --> getCurrentPosition(), watchPosition(), clearWatch() etc.
+    7. Notification API --> Notification.requestPermission(), newNotification() and 
+                            notification.onclick() etc.
+    8. Canvas API --> getContext(), fillReact(), drawImage() etc.
+    9. Audio and Video APIs --> play(), pause(), currentTime(), volume() etc.
+
+-----------------------------------------------------------------------------------
+# Web Storage:
+    - Web Storage is used to store the data locally within the browser.
+
+    Types of Web Storage:
+        - 1. Local Storage
+        - 2. Session Storage
+    
+    Use of Web Storage:
+        - Storing user prefernces -> like theme selection (dark/light), langauge selection etc.
+        - Caching data to improve performance.
+        - User Actions and current state.
+        - Storing client-side Token.
+        - Implementing Offline Fnctionality.
+
+    ------------------------------------------------------------------------------------
+    # Local Storage:
+        - Store data locally on user browser.
+        - Store client side tokens.
+        - Store user preferences
+
+---------------------------------------------------------------------------------------
+# Session and Local Storage Difference:
+    1. Session: 
+        - Store data for temporary use.
+        - If we open the same site in new Tab/Window the same data will not available.
+        - Store temporary data like form inputs, filters, or data relevant only while a tab is open.
+        - Automatically cleared once the tab/window closes.
+
+    2. Local:
+        - Data remains as it is even the browser closed and opened again.
+        - Share the data across all the tabs and windows.
+        - Store long-term user preferences, user settings, cached data.
+        - must be cleared manually (using code) or browser settings.
+
+    both are store 5 to 10 MB of data per Origin -> it's limit is depend on browser user is using.
+----------------------------------------------------------------------------------------
+# Cookies:
+    - Cookies are small piece of data. It has send to the server with each request by wrapping in HTTP headers.
+    - Cookies have a small storage capacity - 4 KB per domain.
+    - Cookies are automatically set with every request. (Session/local storage need to set and remove/clear manually)
+    - Cookies have expiration date (which is set at the time of sending cookies)
+    - Cookies data are sended to server through HTTP headers.
+
+    - Use Case --> Cookies can store session token when yo make any request then server can know you are authanticated.
+        we can use limit of 1 session at a time using these session token by storing it in the cookies.
+
+---------------------------------------------------------------------------------------

@@ -1,0 +1,32 @@
+# useRef:
+    - percists the object over the re-render of the component.
+    - change in the object/ object values doesn't update the state.
+    - ref_value.current (current stores the current value. from object)
+
+    let hello = useRef(null);   <--- initial state
+
+---------------------------------------------------------------------------
+# Use Cases:
+
+    1. Percists the Object over the re-render of the component.
+    2. access directly to the DOM elements.
+
+---------------------------------------------------------------------------
+# percsists:
+    - Example
+        const myRef = useRef(null);
+
+        myRef.current = setInterval(()=>{
+            console.log("run on every second");
+        },1000)
+
+        clearInterval(myRef.cuurent);
+
+-----------------------------------------------------------------------------
+# Access the DOM element:
+    - Exmaple:
+        const divRef = useRef(null);
+
+        <div ref={divRef}></div>
+
+        divRef.current.style.backgroundColor = "red"; // bg color is updated.

@@ -1,0 +1,40 @@
+# Operators:
+
+    1. Airthmatic -> + - * / % ** 
+    2. Assignment -> = += -= *= /= %=
+    3. Comparison -> < > <= >= == ==== !=
+    4. Bitwise -> Bitwise AND (&) --> 0*0=0, 0*1=0, 1*0=0, 1+1=1 --> Multiplication
+                  Bitwise OR (|) --> 0+0=0, 0+1=1, 1+0=1, 1+1=1 --> Addition
+                  Bitwise XOR (^) --> 0+0=0, 0+1=1, 1+0=1, 1+1=0 --> For same input it will be Zero
+                  Bitwise NOT (~) --> enter 5=-6 basically it will give -(k+1) as an output
+    5. Logical -> AND (&&) OR (||) Not (!)
+    6. Ternary Operator ->  (condition) ? (if true) : (if false)
+------------------------------------------------------------------------
+
+1. Pre-Increment Operator:
+    ++Number -> First Increament then use
+2. Post-Increment Operator:
+    Number++ -> First use then increment
+3. Pre-Decrement Operator:
+    --Number -> First Decrement then use
+4. Post-Decrement Operator:
+    Number-- -> First use and then decrement
+-----------------------------------------------------------------------------------
+
+# Operator Precedence:
+
+    () -> a++,a-- (post) -> ++a,--a (pre) ->  ** -> *,/,% -> +,- -> >>,<< (Bitwise Shift) -> >,<,>=,<= (relational) -> ==,===,!= -> &,|,^ -> &&,||
+------------------------------------------------------------------------------
+
+# Unary operator:
+    - Unary Operator has single Operand.
+    ++a, a++, --a, a-- 
+
+# Binary Operator:
+    - It has Two Operands
+    a+b, a-b, a*b, a/b, a<b, a>b, a<=b, a>=b, a==b, a===b etc.
+
+# Ternary Operator:
+    - It has three Operands
+    condition ? (statement 1) : (statement 2)
+    

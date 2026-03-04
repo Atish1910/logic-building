@@ -1,0 +1,32 @@
+# useCallback Hook:
+    - Memoize the Function. 
+    - block the function from re-creation or re-render when component is re-renders, only re-create & re-run when dependecy changes.
+    - If Dependency (from Dependency array) changes then only function is re-rendered/re-created.
+    - It avoids the Re-render/ Re-creation of function when the state changes.
+
+    - As we known when the state of the component is changes -> the component is Re-render -> 
+        -> as Component is Re-render Function in component is also Re-render/Re-created.
+        (To avoid unneccesary Re-creatin of function we use the useCallback Hook which memoize the function and avoid unneccesarry re-creation.)
+
+--------------------------------------------------------------------------------------------
+// Contains Function + Dependency Array
+
+        const handlClick = useCallback(
+            ()=>{
+                setCount(count+1);
+            }, [count]);  <- Dependency array - re-render function when depency value changes
+  
+  2. Freeze
+        const handlClick = useCallback(
+            ()=>{
+                setCount(count+1);
+            }, []); <- Empty Dependency Array
+
+            // If Dependency array is empty that means it will never Re-created / Re-rendered
+
+--------------------------------------------------------------------------------------------
+# Handling Expensive Operations:
+    - useCallback can also be used for calculating expensive function agin on re-render.
+
+    - as state changes component is re-rendered and Expesnive Function is re-created and re-run to avoid this 
+      unneccesarry re-run of the expensive function.

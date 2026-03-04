@@ -1,0 +1,99 @@
+# Redux:
+    - Redux is a predictable state-management library for javascript applications.
+    - It helps to manage gloabal state in a single store.
+
+---------------------------------------------------------------------------------------
+
+# React-Redux:
+    - Used to connect Redux to React.
+    - It provides hooks --> { Provider, useSelector, useDispatch }
+
+    1. Provider:
+        - Provider allows redux-store to available to the entire React component tree.
+        - Provider acts as a bridge between "Redux Store" and "React components"
+
+        <Provider store={store}>
+            <App/>
+        </Provider>
+
+    2. useSelector:
+        - useSelector is used to read the data from the Redux store inside a React component.
+
+        - getting single value from store:
+            
+            const variable_name = useSelector( state => state.slice_name.value_name );
+
+        - getting multiple values from store:
+            
+            const variable_01 = useSelector( state => state.slcie_name.value_01 );
+            const variable_02 = useSelector( state => state.slcie_name.value_02 );
+        
+        - useSelctor is function which takes current state from the store as input & return current state value.
+
+    3. useDispatch:
+        - useDispatch is used to send dispatch action to the Redux store.
+        - useDispatch allows React components to Request state changes but never change state directly.
+        - Send request to Reducer to update the state.
+        
+        - Dispacting without Payload:
+            const dispatch = useDispatch();
+            dispatch(increment())                  <------- calling Reducer action to update state.
+
+        - Dispacting with Payload:
+            const dispatch = useDispatch();
+            dispatch(incrementByValue(amount))     <------- Amount is payload 
+
+--------------------------------------------------------------------------------------------------
+
+# Redux toolkit:
+    - It is installed using "@reduxjs/toolkit" library.
+    - It is used to write Redux Logic.
+    - Redux toolkit create store using 'configureStore' method.
+    - We can Create Reducers using the Redux toolkit.
+    - in '@reduxjs/toolkit' --> reduxjs is organization/scope and toolkit is package name.
+    - Redux toolkit creates Slice using 'createSlice' method.
+
+    1. configureStore:
+        - Creates store and configure it.
+
+        - Syntax:
+            configureStore({reducer});
+        
+        - example:
+
+            export const store = configureStore({
+                reducer:{
+                    slice_name: slice_method_name
+                }
+            });
+
+    2. createSlice:
+        - createSlice used to create reducers.
+        - its Autogenerate action action creatores and action types.
+        - createSlice contains following object:
+        - Syntax:
+
+            createSlice({
+                name,
+                initialState,
+                reducers
+            });
+        
+        - Example:
+
+            const my_slice = createSlice({
+                name:"shubham",
+                initialState: {value:"shubh"},
+                reducers: {
+                    changeName: state => {
+                        state.value = "ganesh";
+                    },
+                    changeNameByInput: (state, action) =>{
+                        state.value = action.payload;
+                    } 
+                }
+            })
+
+
+            export { changeName, changeNameByInput } = my_slice.actions;
+            export default my_slice.reducer;

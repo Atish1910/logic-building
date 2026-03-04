@@ -1,0 +1,44 @@
+# Lexical Enironment Scoping:
+    - The Lexical Scoping shows that the varible declared in outer scope is accessible to inner function.
+
+---------------------------------------------------------------------------------------------------------
+# Closure:
+    - It is combination of inner nested Function and varible from outer scope.
+
+---------------------------------------------------------------------------------------------------------
+# What is the concept of Data Encapsulation in the context of Closure:
+    - Data Encapsulation is bundling or wrapping data and function to provide data security/ data privacy.
+
+        function createCounter(){
+            let count = 0;
+            return function(){
+                count ++;
+                console.log("count: ",count);
+            }
+        }
+
+        ----------------------------------
+
+        let counter_01 = createCounter();
+
+        // 1. Data Privacy & Encapsulation
+        counter_01();   // output --> 1
+        counter_01();   // output --> 2
+
+        ----------------------------------
+
+        // 2. Persistant data and state
+        let counter_02 = createCounter();
+
+        counter_02();   // output --> 1
+        counter_01();   // output --> 3
+
+        ----------------------------------
+        
+        // The Closure is no longer needed
+        // 3. Release the reference
+        counter_01 = null;
+        counter_02 = null;
+
+        counter_01();   // output --> TypeError: counter_01 is not a function
+--------------------------------------------------------------------------------------------------------------

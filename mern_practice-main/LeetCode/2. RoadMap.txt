@@ -1,0 +1,53 @@
+🔢 Array-Based Questions
+
+0. Find the second Highest element in an array without sorting. 
+1. Find the third smallest element in an array without sorting. 
+2. Find all pairs whose sum equals a given target.
+3. Move all zeros to the end of the array while maintaining order.
+4. Find the missing number in an array containing numbers from 1 to N.
+5. Find the first repeating element in an array.
+6. Find the maximum product of two elements in an array.
+7. Find the longest increasing subarray.
+8. Rotate the array right by K steps.
+9. Find the majority element (appears more than n/2 times).
+10. Find the second largest even number in the array.
+
+🔤 String-Based Questions
+
+1. Find the non-repeating characters in a string while maintaining order.
+2. Find the first non-repeating character in a string.
+3. Remove duplicate characters while maintaining order.
+4. Check if two strings are anagrams.
+5. Find the longest substring without repeating characters.
+6. Count the frequency of each character.
+7. Reverse words in a sentence, not characters.
+8. Check if a string is a palindrome ignoring spaces and case.
+9. Find all duplicate characters in a string.
+10. Replace each character with its occurrence count.
+11. Find the character with maximum frequency.
+
+🎯 Target / Comparison Logic (Like Your Question #2)
+
+1. Find the farthest element from the target.
+2. Find K closest elements to the target.
+3. Find the floor and ceil of a number in a sorted array.
+4. Find the closest pair with minimum difference.
+5. Find the nearest greater element to the right.
+
+🧠 Logic / Edge-Case Focused
+
+1. Find the only non-repeating element where all others repeat twice.
+2. Find the intersection of two arrays.
+3. Find the union of two arrays.
+4. Check if array is sorted and rotated.
+5. Find the smallest subarray with sum ≥ target.
+
+🔥 Bonus (Interview Favorites)
+
+1. Implement atoi() (string to integer).
+2. Find the longest common prefix.
+3. Check if string contains only digits.
+4. Find all prime numbers in an array.
+5. Find the index of equilibrium in an array.
+
+https://www.geeksforgeeks.org/dsa/tcs-sde-sheet-interview-questions-and-answers/

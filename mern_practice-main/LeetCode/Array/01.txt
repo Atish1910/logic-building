@@ -1,0 +1,48 @@
+// Find Second max number
+
+const findSecondMax = (arr) =>{
+    let max = -Infinity;
+    let second_max = -Infinity;
+    
+    for (let i=0; i<arr.length; i++){
+        if (arr[i]>max){
+            second_max = max;
+            max = arr[i];
+        }
+        // This condition solve if the arr[0] is max number
+        else if (arr[i]>second_max && arr[i]!=max){
+            second_max = arr[i];
+        }
+    }
+    return second_max;
+}
+
+console.log(findSecondMax([30,10,5,20]));
+
+--------------------------------------------------------------------------
+// Find the second Highest element in an array without sorting. 
+
+const findSecondMax = ( arr )=>{
+
+    if (arr.length<2){
+        return -1;
+    }
+
+    let max = -Infinity;
+    let sec_max = -Infinity;
+
+    for (let i=0; i<arr.length; i++){
+        if (arr[i]>max){
+            sec_max = max;
+            max = arr[i];
+        }
+        else if (arr[i]>sec_max && arr[i]!=max){
+            sec_max = arr[i];
+        }
+    }
+    if (sec_max == -Infinity){
+        return -1;
+    }
+    return sec_max;
+}
+

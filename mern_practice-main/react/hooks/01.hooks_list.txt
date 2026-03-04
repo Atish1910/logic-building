@@ -1,0 +1,23 @@
+# Basic Hooks:
+    1. useState - manage the state 
+    2. useEffect - Update the state when depedency changes
+    3. useReducer - Alternative to useState for complex logic
+
+-----------------------------------------------------------------
+# Reference & DOM:
+    1. useRef - holds the value while state is changed
+    2. useImperativeHandle - customized instance value exposed with 'ref'
+    3. useLayoutEffect - like useEffect, but runs synchronously after DOM mutaion.
+
+-----------------------------------------------------------------
+# Context & Global State:
+    1. useContext - Access React Context values.
+    2. useSyncExternalStore - Subscribe to external stores (for concurrent mode)
+
+-----------------------------------------------------------------
+# Memoization & Performance:
+    1. useMemo - Memoizes expensive computations
+    2. useCallback - Memoizes functions to prevent re-renders
+    3. React.memo - Higher Order Component to prevent unncessary Re-render of component.
+
+-----------------------------------------------------------------

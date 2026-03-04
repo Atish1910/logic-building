@@ -1,0 +1,18 @@
+# React Diffing Algroithm:
+    - The diffing algorithm decides what changed and what stayed the same.
+
+        Step 1. React creates a new virtual DOM tree.
+        Step 2. It compares the new VDOM with the previous VDOM.
+        Step 3. Calculates the minimum number of changes needed.
+        Step 4. Updates the real DOM efficiently.
+        This process is called reconciliation.
+
+    - It has O(n) time Complexity.
+        const items1 = ['A', 'B', 'C'];
+        const items2 = ['A', 'C', 'D'];
+
+        It compares 'A' with 'A' component no change
+        It compares 'B' with 'C' component change Update component
+        It compares 'C' with 'D' component change Update component
+
+---------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+# React with TypeScript:
+    - Create React App supports TypeScript out of the box.
+    - Typescript helps to identify/catch error at compile time.
+
+    # Create a new project with TypeScript:
+        npx create-react-app my_app --template typescript
+    
+    # Add TypeScript to existing project:
+        npm install --save typescript @types/node @types/react

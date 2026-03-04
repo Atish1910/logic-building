@@ -1,0 +1,46 @@
+1. Fetching Data from API
+2. Downloading Files
+3. Uploadig Files
+4. Animaions & Transitions
+5. Time taking operations
+
+-----------------------------------------------------
+# Async Operations:
+    - setTimeout
+    - setInterval
+    - Callbacks
+    - Promises
+    - Async/await
+    - Generators with yield
+    - Event-driven programming
+
+------------------------------------------------------
+# Callback:
+    - Callback is an method where function is passed as an argument to another Function.
+
+------------------------------------------------------
+# Callback Hell:
+    - Callback Hell is a situation where multiple callabcks are added in nestead way.
+
+    operation_01 (function(){
+    ...
+        operation_02(function(){
+            ...
+                operation_03(function(){... [..nestead way]})
+        })
+    })
+
+    - Callback Hell also known as "pyramid of doom".
+    - which leads to code become difficult to read, understand, and maintain.
+
+------------------------------------------------------------------------
+# Avoid CallBack Hell:
+    - 1. Using Named Function 
+            - Instead of passing Entire Function Code- only pass the next function name to be called.
+    - 2. Using Promises:
+            - after the First function is resolved then run next function.
+    - 3. Async await:
+            - wait for prev function to finish before stating cuurent/new function.
+
+------------------------------------------------------------------
+# 

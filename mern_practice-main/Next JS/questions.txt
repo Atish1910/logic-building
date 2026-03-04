@@ -1,0 +1,46 @@
+🔹 Beginner-Level Next.js Interview Questions
+
+1. What is Next.js, and how is it different from React?
+2. Explain the difference between SSR, SSG, CSR, and ISR in Next.js.
+3. What is the difference between pages/ and app/ directories in Next.js 13?
+4. How does file-based routing work in Next.js?
+5. What is the difference between getStaticProps, getServerSideProps, and getStaticPaths?
+6. How do you handle API routes in Next.js?
+7. What are dynamic routes and how do you implement them in Next.js?
+8. How do you add CSS/SCSS/Tailwind to a Next.js project?
+9. What are environment variables in Next.js and how do you use them?
+10. How do you handle images in Next.js (Image Optimization / next/image)?
+
+🔹 Intermediate-Level Next.js Interview Questions
+
+1. Explain Incremental Static Regeneration (ISR) with an example.
+2. What are Middleware in Next.js 12+ and how do you use them?
+3. What are Server Components and Client Components in Next.js 13?
+4. How does API caching and revalidation work in Next.js?
+5. How would you implement authentication in Next.js (JWT, NextAuth, etc.)?
+6. Explain the difference between SSR in Next.js vs. SSR in plain React/Express.
+7. How can you improve SEO in a Next.js application?
+8. How do you use Head/Metadata API for SEO in Next.js?
+9. Explain the difference between Static Imports and Dynamic Imports in Next.js.
+10. How would you deploy a Next.js app on Vercel vs. custom Node server?
+
+🔹 Advanced-Level Next.js Interview Questions
+
+1. How does Next.js handle bundling and code splitting automatically?
+2. Explain how Middleware works under the hood in Next.js.
+3. What’s the difference between Edge Functions and Serverless Functions in Next.js?
+4. How does Next.js improve performance with Automatic Static Optimization?
+5. How do you implement internationalization (i18n) in Next.js?
+6. What are Layouts and Nested Layouts in the App Router?
+7. How do you handle error boundaries and error.tsx in Next.js 13+?
+8. Explain how streaming with React Server Components improves performance in Next.js.
+9. How does Next.js handle API rate-limiting or middleware-based authentication?
+10. How does next/script differ from normal <script> tags?
+
+✅ Bonus: Practical/Scenario-Based Questions
+
+1. How would you build a blog platform with Next.js (what rendering method and why)?
+2. A page shows product prices that update every hour — would you use SSR, SSG, or ISR? Why?
+3. How would you secure API routes in Next.js?
+4. How do you handle state management in Next.js (Redux, Context API, Zustand, etc.)?
+5. Explain a situation where CSR is better than SSR in Next.js.

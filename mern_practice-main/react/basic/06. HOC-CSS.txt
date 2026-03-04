@@ -1,0 +1,76 @@
+# Higher Order Component:
+    - Higher Order comonent is a component that takes another component as argument and add extra features
+      then return a new component with added features.
+    - It means wrapping and component with extra features adding to that component.
+    - It is used to providing Component logging functionality to all the components in a reusable way. - Track component is added, updated or removed.
+
+    Example:
+
+        # HOC component:
+            // Take component as an argument and retrun new component with extra features
+            // Here we tracking the component is added, updated or removed
+            
+            function withLogging(WrappedComponent){
+                // Return the function - if it contains props pass these as it is
+                return function LogginComponent (props){
+                    useEffect(()=>{
+                        console.log("Component Added/Mount");
+
+                        return () =>{
+                            console.log("Component Removed/Unmount");
+                        }
+                    },[]);
+
+                    useEffect(()=>{
+                        console.log("Component Updated");
+                    });
+
+                    return <WrappedComponent {...props} />;
+                };
+            }
+
+            // Normal Component:
+                function Dashboard() {
+                    return (<h1>Dashboard</h1>);
+                }
+
+            // Passing the normal component into the HOC 
+            export default withLogging(Dashboard);     // <-- here Dashboard is normal component passed in HOC component.
+
+-----------------------------------------------------------------------------------------------
+# 5 ways to apply css to React components:
+    1. Inline Styles
+    2. CSS Stylesheets
+    3. CSS Modules
+    4. Global Stylesheets
+    5. CSS Frameworks
+
+    1. Inline Styles:
+        - Styles are written directly inside the JSX using a javascript object.
+
+        <button style={{ backgroundcolor: "red", color: "white" }}> Click </button>
+    
+    2. CSS Stylesheets:
+        - import Stylesheet in component
+            import './style.css';
+    
+    3. CSS Modules:
+        - Normal CSS gets conflict at glabal stage, some variable consists of same names. To avoid this we can use CSS Modules. 
+        - We have to create css file with .module.css extension then import that file in component.
+
+        Button.module.css:
+            .btn {
+                background: blue;
+            }
+
+        Button.jsx:
+            import styles from "./Button.module.css";
+            function Button() {
+                return <button className={styles.btn}>Click</button>;
+            }
+    
+    4. Global Stylesheets:
+        - Single Stylesheet file imported in single parent component like index.js and applied to all pages.
+
+    5. CSS Frameworks:
+        - Utility / component based CSS libraries. (Tailwind, Bootstrap, MUI)

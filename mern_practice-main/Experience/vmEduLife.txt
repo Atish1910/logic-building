@@ -1,0 +1,9 @@
+1. Find the Second Largest number (if array contains less than two elements then return not found, array contains
+duplicate elements also)
+2. Find the nearest element from the target element from array. (if there are two elements are of same distance from
+target pick smaller one)
+
+3. Tell me About your last project
+4. Why are you switching ?
+5. Tell me about your roles & responsibilities
+6. Tell me about your company

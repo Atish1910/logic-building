@@ -1,0 +1,30 @@
+# How many types of validation is applied on input fields.?
+# How to apply validation using Javascript?
+# "ABC NITIN PQRS DAD XYZ" find the largest palindrome in string.
+# "vaibhav" find the non-repeated characters in same order.
+ First vowel from the string
+ Q2. DSA questions like finding anagram , or finding the duplicates
+# Object Cloning
+
+# Sorting Algorithms
+# Difference Between let, const, var
+# Find the second largest salary from employees 
+    -> SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 1
+# Best Sorting algorithm
+
+---------------------------------------------------------------------------------
+DSA, OOPS, SQL, Javascript
+
+---------------------------------------------------------------------------------
+Coding Questions:
+    - Longest Palindrome from the string
+
+----------------------------------------------------------------------------------
+# 14-02-2026
+
+# s={1,3,5,7} target = 8
+ Output = 6 {1,1,1,1,1,1,1,1}, {1,1,1,1,1,1,3}, {1,1,1,5}, {3,5}, {3,3,1,1}, {1,7}
+
+# find the small and large number from array
+# String = "this is String" count the length of largest element here 'String' = 6
+# String = "ccffcdykfby13n8" Count the numbrs in string here we get 1,3,8 = 3

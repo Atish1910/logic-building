@@ -1,0 +1,191 @@
+# Promise:
+    - Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+    - It return "Resolve" (complition) or "Reject" (Failure)
+        
+        let promise = new Promise(function(resolve, reject) {
+        // do something async
+        if (/* success */) {
+            resolve("Success!");
+        } else {
+            reject("Error!");
+        }
+        });
+        ------------------- OR -----------------------
+        let myPromise = new Promise (function (resolve, reject){
+            setTimeout(function(){
+                console.log("Solving Promise");
+                resolev("Successfully Resolved");
+            }, 5000);
+
+            reject("Not able to resove, Promise got Rejected!");
+        });
+---------------------------------------------------------------------------------
+# State of Promise:
+    1. Pending State --> Initial State , neither Resolve not Rejected.
+    2. Fulfilled State --> Promise is successfully Resolved.
+    3. Rejected State --> Promise is Rejected.
+
+---------------------------------------------------------------------------------
+# Catching Promise Error --- ###(Consuming Promise)
+    - then () -> get the output --> Contains Function we use an arrow function
+    - catch() -> catch the error if occurred --> contains Function we use an arrow function
+
+    let myPromise = new Promise (function(resolve, reject){
+        setTimeout(function(){
+            console.log("Running Resolve");
+            resolve("Success");
+        }, 0);
+
+        reject("Failure!");
+    })
+
+    // If promise is Success --> "then()" is used 
+
+    myPromise.then((value)=>{console.log(value)});
+
+    // If promise is failed --> "catch()" is used to catch the error
+    myPromise.catch((err)=>{console.log("Got an error:")});
+
+---------------------------------------------------------------------------------
+# Tacking Break after the promise resolved.:
+    
+    let age = 22;
+
+    let shubhPromise = new Promise(function(resolve, reject){
+        if (age>18){
+            console.log("You can Vote Now!!");
+            resolve("Success");
+        }
+        else{
+            console.log("You can not vote!");
+            reject("Failure");
+        }
+    });
+
+    shubhPromise.then((value)=>{console.log("You are passed, Result is :", value)}).catch((err)=>{console.log("You are fail, Reason: ",err)});
+
+
+// Output:
+    You can Vote Now!!
+    You are passed, Result is : Success
+
+// Summary:
+    - if the promise is resolevd then() is called which contains an function.
+    - if the promise is failed catch(err) is called which contains an function.
+-----------------------------------------------------------------------------------
+# Nestead Promises:
+
+    // Promise - 1
+    let myPromise_01 = new Promise(function(resolve, reject){
+        setTimeout(()=>{
+            console.log("setTimeout 1 started");
+            resolve("myPromise_01 Resolved");
+        }, 2000);
+    });
+
+    // Promise - 2
+    myPromise_01.then(()=>{
+        let myPromise_02 = new Promise (function(resolve,reject){
+            setTimeout(()=>{
+                console.log("setTimeout 2 started");
+                resolve("myPromise_02 Resolved");
+            });
+        });
+    });
+
+    // Return the Promise - 2
+    myPromise_01.then((value)=>{
+        console.log(value);
+    }).catch((err)=>{
+        console.log("Got an error: ", err);
+    });
+
+
+// Output:
+    setTimeout 1 started
+    myPromise_01 Resolved
+    setTimeout 2 started
+
+
+// Summary:
+    - Here we are not applying then/catch on promise -2 so, the Resolve output is not displayed.
+
+-------------------------------------------------------------------------------------------------
+# Promise.all():
+    - Promise.all() is used to handle multiple promises concurrently.
+    - Promise.all() takes array of promises as an input and returns a single Promise.
+    - Promise.all() waits to resolve all promises, or either reject of one promise. 
+        (i.e. if one promise is rejected then it will stop the excution of another promises).
+    
+    const promise_01 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 1 resolved");
+        }, 1000);
+    });
+
+    const promise_02 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 2 resolved");
+        }, 1000);
+    });
+    
+    const promise_03 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 3 resolved");
+        }, 1000);
+    });
+
+    // Handling all the promises at once. -------------------------
+    Promise.all([promise_01, promise_02, promise_03]).then((res)=>{
+        console.log(res);
+    }).catch((err)=>{
+        console.log("Got an Error: ",err);
+    });
+
+    //------> Output:
+        [ 'promise 1 resolved', 'promise 2 resolved', 'promise 3 resolved' ]
+------------------------------------------------------------------------------------------------
+# Promise.race():
+    - It is same as Promise.all().
+    - The difference is only, its wait for one promise to resolve or reject.
+
+    const promise_01 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 1 resolved");
+        }, 2000);
+    });
+
+    const promise_02 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 2 resolved");
+        }, 1000);
+    });
+    
+    const promise_03 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("promise 3 resolved");
+        }, 3000);
+    });
+
+    // Handling all the promises at once. -------------------------
+    Promise.race([promise_01, promise_02, promise_03]).then((res)=>{
+        console.log(res);
+    }).catch((err)=>{
+        console.log("Got an Error: ",err);
+    });
+
+    //------> Output:
+        'promise 2 resolved'
+
+--------------------------------------------------------------------------------------------------
+# How to fetch data from multiple APIs in parallel and process the results together?
+
+    - Using Promise.all()
+
+    async function fetchData(){
+        const [data_01, data_02] = await Promise.all([
+            fetch("https://..../").then((response)=>response.json());
+            fetch("https://..../").then((response)=>response.json());
+        ]);
+        conosle.log(data_01, data_02);
+    };

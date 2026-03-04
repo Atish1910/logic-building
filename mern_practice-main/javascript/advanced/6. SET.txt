@@ -1,0 +1,35 @@
+# SET Object:
+    - Set Object contains only Unique values.
+    - It is unordered collection.
+    - Set Object is created using "new set" keyword.
+
+    // Set is used to remove duplicate values from array:
+        let my_arr = [1,2,3,4,4,4];
+        let new_arr = new Set(my_arr);    // copying and also converting the arr to Set.
+
+        let unique_values = [...new_arr];    // copying the array data using spread operator
+        console.log(unique_values);         // [1,2,3,4]
+
+------------------------------------------------------------------------------------------
+# Adding elements to SET:
+
+    const unique_values = [];
+    unique_values.add(10);
+    unique_values.add(20);
+    unique_values.add(10);   // Ignore the duplicate values
+    
+-----------------------------------------------------------
+# Find the Length:
+    "unique_values.size"
+    
+    console.log(unique_values.size);
+
+-----------------------------------------------------------
+# Check element is exist or not:
+
+    console.log(unique_values.has(10));    // true
+
+-----------------------------------------------------------
+# Delete the elements:
+
+    unique_values.delete(10);

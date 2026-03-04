@@ -1,0 +1,43 @@
+# Fetch API:
+    - Fetch API always returns 'PROMISE' when we calling GET method .
+    - Therefore we always use 'await' with fetch api.
+
+
+    async function utility() {
+    let content = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    let output = await content.json();
+    console.log(output);
+    }
+
+    utility();
+-----------------------------------------------------------
+# Fetch API with Payload Parameters:
+
+    async function helper(){
+
+        // Payload Values --
+        let options = {
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        };
+
+        let conetnt = await fetch('https://jsonplaceholder.typicode.com/posts/1', options);
+        let response = content.json();
+        return response;
+    }
+    
+    // Calling above function inside the function
+    function utility(){
+        // using await because above function is async function
+        let ans = await helper();
+        console.log(ans);
+    }
+
+    utility();

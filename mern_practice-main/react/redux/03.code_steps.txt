@@ -1,0 +1,44 @@
+# Redux Toolkit:
+
+    Step 1: wrap the store component under "configure Store":
+
+            import { configureStore } from '@redux-toolkit';
+
+            export const store = configureStore({
+                reducers: { reducerName:componentName },
+            });
+    
+    Step 2: Wrap the App.jsx inside the "Provider":
+
+            import { Provider } from 'react-redux';
+            import store from '../path';
+
+            <Provider store={store}>
+                <App />
+            </Provider>
+
+    Step 3: create Slice:
+            (It contains Object of ==> name, initialState, reducers)   <------- IMP
+
+            import { createSlice } from '@redux-toolkit';
+
+            const counterSlice = createSlice({
+                name: 'counter',
+                initialState: {
+                    value: 0
+                },
+                reducers: {
+                    increament: (state)=>{
+                        state.value +=1                        
+                    },
+                    decreament: (state) => {
+                        state.value -=1
+                    },
+                    increamentByValue: (state, action) =>{
+                        state.value += action.payload
+                    }
+                }
+            });
+
+            export { increament, decreament, increamentByValue } = counterSlice.actions;
+            export default counterSlice.reducer;

@@ -1,0 +1,36 @@
+Cleanup API calls
+Abort API Calls
+Pagination
+Search & filter
+Debouncing & throttling
+Virtualization (large lists)
+Creating custom hooks
+Hook reusability
+Async middleware (Thunk)
+Normalized state
+Global vs local state decisions
+Container / Presentational components
+Compound components
+Higher Order Components (HOC)
+Controlled vs uncontrolled patterns
+Error Boundaries
+Portals
+Refs forwarding
+Strict Mode
+Concurrent features (basic idea)
+
+🔹 Testing
+
+Jest
+React Testing Library
+Mocking API calls
+Unit vs Integration tests
+
+🔹 Production & Best Practices
+
+Security best practices
+Performance monitoring
+Accessibility (a11y)
+SEO basics (React + SSR intro)
+
+Diffing algorithm rules

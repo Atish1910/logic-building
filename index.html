@@ -1,46 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>hello World</h1>
     <button class="btn" onclick="memoaize(20, 40)">calculate</button>
-</body>
-<script>
-    async function getData(){
-        let iResult = await fetch("https://api.escuelajs.co/api/v1/products");
-        console.log( await iResult)
+  </body>
+  <script>
+    async function getData() {
+      let iResult = await fetch("https://api.escuelajs.co/api/v1/products");
+      console.log(await iResult);
     }
     getData();
 
-    let iResultOne = fetch("https://api.escuelajs.co/api/v1/products").then((data) => {
+    let iResultOne = fetch("https://api.escuelajs.co/api/v1/products")
+      .then((data) => {
         console.log(data);
-    }).catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
-    });
-</script>
-<script>
+      });
+  </script>
+  <script>
     let catche = {};
 
-    function calculate(a, b){
-        let iResult = a + b * a -b * a*a*b*b*b;
-        return iResult;
+    function calculate(a, b) {
+      let iResult = a + b * a - b * a * a * b * b * b;
+      return iResult;
     }
 
-    function memoaize(a, b){
-        let key = a + " : " + b;
-        let iResult = calculate(a , b);
-        if(!catche[key]){
-            catche[key] = iResult;
-            console.log(iResult);
-        }else{
-            console.log("catche", catche[key]);
-            return catche[key]
-        }
+    function memoaize(a, b) {
+      let key = a + " : " + b;
+      let iResult = calculate(a, b);
+      if (!catche[key]) {
+        catche[key] = iResult;
+        console.log(iResult);
+      } else {
+        console.log("catche", catche[key]);
+        return catche[key];
+      }
     }
-
-</script>
+  </script>
 </html>

@@ -1,0 +1,19 @@
+# MongoDB Queries:
+    - show dbs
+    - show collections
+
+    # Create 
+        1. insertOne()
+        2. insertMany()
+
+    # Read 
+        1. find()
+        2. findOne()
+
+    # Update
+        1. updateOne()
+        2. updateMany()
+
+    # Delete
+        1. deleteOne()
+        2. deleteMany()

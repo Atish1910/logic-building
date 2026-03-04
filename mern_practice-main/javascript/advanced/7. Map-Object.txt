@@ -1,0 +1,45 @@
+# Map Object:
+    - map object is collection of key-value pairs.
+    - It is oredered Collection of key-value pairs.
+    - keys can be of different data type.
+
+    const person_details = new Map();
+
+----------------------------------------------------------------------
+# add the data to map object:
+
+    person_details.set("name", "Shubham");
+    person_details.set("age", 22);
+
+-----------------------------------------------------------------------
+# read the data from map object:
+    
+    console.log(person_details.get("name"));           // "Shubham"
+
+-----------------------------------------------------------------------
+# check the property present or not:
+
+    console.log(person_details.has("name"));           // true
+
+----------------------------------------------------------------------
+# Delete the property:
+
+    person_details.delete("name");
+
+----------------------------------------------------------------------
+# Find the length of Map Object:
+
+    console.log(person_details.size);
+
+---------------------------------------------------------------------
+# Difference between "Map Object" and "Javascript Object":
+
+    1. Map Object:
+        - Keys in map can be of any data type, inlcuding strings, numbers, Objects and Functions etc.
+        - A map maintains a order of key-value pairs as they were inserted.
+        - Useful when keys has different data types and insertion order is important.
+
+    2. Javascript Object:
+        - Keys in regular Javascript object are limited too Stirngs and Symbols.
+        - In regular javascript object there is no gauranteed order of keys.
+        - Useful when keys are strings or symbols and there are simple set of properties.

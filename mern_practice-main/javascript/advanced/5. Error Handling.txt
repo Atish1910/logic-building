@@ -1,0 +1,63 @@
+# Error Handling:
+    try{
+        // ...
+    }
+    catch{
+        // ...
+    }
+    finally{
+        // ...
+    }
+
+--------------------------------------------------------
+# what is the purpose of throw statement in JS:
+    - throw statement stop the execution of current function and pass the error 
+        (which we have thrown) to the catch block of calling function.
+
+    function UserData(){
+        try{
+            validateUserAge(25);
+            validateUserAge("invalid");   // This will throw an error
+            validateUserAge(15);          // This will not execute
+        }
+        catch(error){
+            console.error("Error: ", error.message);
+        }
+    }
+
+    function validateUserAge(age){
+        if (typeof age !== 'number') {
+            throw new Error("age is not a number");
+        }
+        console.log("User Age is valid");
+    }   
+    UserData();
+
+    # Output ==> 
+                User Age is valid
+                ERROR!
+                Error:  age is not a number
+
+-------------------------------------------------------------------------------------------
+# Error Propagation:
+    - Error Propagation is term defines error occurred in one part of the code pass the error
+      to another part of the code using "throw" keyword.
+    - As per above example we throw an error in second function but got error catched in first function.
+    - If we do not use "try", "catch" blocks in our code then these thrown error will be becomes
+      "UNCOUGHT ERROR" -> that means errors are not catched.
+    
+    - If error is thrown -> Engine search for nearest "catch" block to execute & block the call stack.
+      -> If no catch block is found then it keeps going up the call-stack. 
+      if it reaches its end (i.e. top of the call-stack) then the error will becomes uncought error.
+    
+    - for browser uncought error is handled at ==> window.onerror
+    - for Node.js uncought error is handled at ==> uncoughtExecption Handler
+
+-----------------------------------------------------------------------------------------------
+# Types of Errors in JS:
+    1. Syntax Error --> syntax is
+    2. Reference Error --> varible is not declared 
+    3. Type Error --> is not an function
+    4. Range Error --> arr has 3 elements but we are trying to access 10th element
+
+-----------------------------------------------------------------------------------------------

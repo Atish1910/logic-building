@@ -1,0 +1,67 @@
+let: has block scope
+var: has gloabal scope
+const: has block scope & can not change the value once assigned.
+
+Types of Variables:
+1. Primitive Data Types:
+    a: String
+    b: Number
+    c: Big Int
+    d: Boolean
+    e: Undefined - A variable has been declared but not assigned a value.
+    f: Null - Variable has absence of value (declared value as NULL)
+    g: Symbol
+
+2. Refernce (or Non-Primitive) Data Types:
+    a: Objects
+        dot notation, bracket notation
+    b: Arrays
+    c: Functions
+    d: Date
+------------------------------------------------------------------------------------
+# Primitive Data Types:
+    - They are immutable - means there value can not be changed one decalred.
+    - let a = 10;    ------> Which will store in memory as (memory address) 888888 = 10
+    - a = 20;        ------> Here we changed the value     (memory address) 999999 = 20
+
+# Non-Primitive Data Types:
+    - These are mutable
+
+-------------------------------------------------------------------------------------
+# Symbol - Primitive Data Type:
+
+    const a = Symbol.for("shared");
+    const b = Symbol.for("shared");
+    console.log(a === b); // true
+    console.log(Symbol.keyFor(a)); // shared
+
+    AND
+
+    const a = Symbol("shared");
+    const b = Symbol("shared");
+    console.log(a === b); // false
+    console.log(Symbol.keyFor(a)); // undefined
+
+- While Symbol() always creates a new symbol, Symbol.for() checks a global registry and reuses a symbol with the same key.
+
+# Reason To Use Symbol Data Type:
+    - The main purpose is to create unique property keys on objects that won’t accidentally collide with other keys.
+
+# What is Symbol ?
+    - Symbol is immutable Primitive Data Type introduced in ES6.
+    - Every time you call Symbol(), it returns a new unique value, even if the description is the same.
+    - Symbol("Description") ---> Here Description is optional. mostly used for debugging.
+--------------------------------------------------------------------------------------------
+# Objects:
+    {}
+
+# Arrays:
+    []
+
+----------------------------------------------------------------------------------------
+# Type Corecion:
+    - Type Corecion means performing operations between varibales which has "different data types".
+
+    let string = "42"
+    let number = 42
+    console.log(string + number);    // output ==> "4242"

@@ -1,0 +1,20 @@
+# Getter & Setter:
+
+Getter (get) and Setter (set) methods are used in JavaScript to provide controlled access to object properties. Instead
+of directly exposing internal data, they let you add logic, validation, or transformation when reading or writing
+properties.
+
+# Encapsulation (Protect internal state)
+
+
+# Validation on Property Set
+    const product = {
+    _price: 0,
+    set price(value) {
+        if (value < 0) throw new Error("Price must be positive");
+        this._price = value;
+    },
+    get price() {
+        return `$${this._price}`;
+    }
+    };

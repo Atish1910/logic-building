@@ -1,0 +1,278 @@
+# Primitive and Non-Primitive data types in TS:
+    
+    - Primitive Data Types:
+        - It is also called as "Built-in Data Types".
+        - Built-in data types are used to store simple data.
+
+        1. String
+        2. Number
+        3. Boolean
+        4. Symbol
+        5. Null
+        6. Undefined
+        7. bigint
+        
+    - Non Primitive Data Types:
+        - It is also called as "User-Defined Data Types".
+        - User defined data types are used to store complex data.
+
+        1. Array
+        2. enum
+        3. Object
+        4. tuple
+        5. classes
+        6. interfaces
+        7. union
+        8. intersection
+        9. type
+
+    - Special Data Types:
+
+        1. any
+        2. unknown
+        3. void
+        4. never
+
+----------------------------------------------------------------------------------------
+# Define data type:
+
+    let age:number = 22;
+    let name:string = "shubhzz";
+
+----------------------------------------------------------------------------------------
+# "any" data type:
+    
+    - for "any" data type there is not type checking is done. (also it doesn't provide compile time error)
+    - It asks for data of any type.
+
+    let x:any;
+    x=1;                   // number
+    x="shubh";             // string
+    x=true;                // boolean
+    x();                   // function
+    x.property = "shubh";  // object
+
+    ----- Drawbacks:
+        - if we aleardy declared it as string and later using as function then it will give run time error - not the compile time.
+
+        let name: any = "shubh";
+        name.toUpperCase();          // this will be worked
+        name();                      // no error at compile time, will crash at run time, as name is not function its a string.
+
+--------------------------------------------------------------------------------------
+# "unknown" data type:
+    - doesn't know data type must check before use.
+    - It is used for safe use, no run time error like "any".
+    - It gives compile time error if we used without checking the data type.
+
+        let name: unknown = "shubh";
+        name.toUpperCase();          // will give compile time error -- must check the data type before use.
+
+        if (typeof name == "string"){
+            name.toUpperCase();        // this will works and hence it suggest safe to use.
+        }
+
+---------------------------------------------------------------------------------------
+# "enum" data type:
+    - enum stands for enumeration.
+    - An enum represents a group of related values.
+    - It used to define set of name constants /values <- which is used to avoid spelling mistakes and type error (lower and uppercase)
+
+    enum Status {
+        Pending,
+        Approved,
+        Rejected,
+    }
+
+    let currentStatus: Status = Status.Pending;           <--- here ":Status" means it can only accept the values from Status enum.
+
+    ---------- JavaScript we have following:
+        const Status = Object.freeze({
+            PENDING: "PENDING",
+            APPROVED: "APPROVED",
+            REJECTED: "REJECTED",
+        });
+
+        let status = Status.PENDING;
+
+---------------------------------------------------------------------------------------
+# Void:
+    - Function return nothing OR return undefined.
+    - Function completes normally.
+    
+        function test():void {
+            return;                 // return nothing will works
+            return;                 // return undefined will also works
+        }
+
+    - void is also used to define variable with "undefined" value.
+
+        let name:void;
+        name = undefined;     // will work
+        name = "shubh";       // will not work.
+
+    - void can be used to define promise which doesn't return anything
+
+        function save(): Promise<void> {
+            return fetch("/save").then(() => {});
+        }
+
+---------------------------------------------------------------------------------------
+# Never:
+    - Function Never completes.
+    - Function will run in loop of never ending i.e. function is endless.
+    - Function will stop only if the function throws error.
+    - Function doesn't return anything.
+    - Never is used where function can returns only the error.
+
+        function test():never {
+            loop();                // function never finishes run in endless loop
+            throw new Error();     // this will work
+        }
+
+---------------------------------------------------------------------------------------
+# Tuple:
+    - A tuple is a specific length of array where each positin has its own data type.
+
+        let user: [string, number];
+
+        user = ["Shubh", 22];
+        user = [22, "Shubh"];      // This will not work order is changed.
+
+    - It is mainly used when we receiving multiple data output, from function in array format. doing destructuring on it.
+
+        function getUser(): [string, number] {
+            return ["Shubh", 22];
+        }
+
+---------------------------------------------------------------------------------------
+# interfaces:
+    - Interface is used to define the structure (shape) of an object.
+    
+        interface User {
+            id: Number;
+            name: String;
+            isActive: Boolean;
+        };
+
+        // Use this interface to create the object
+        const user1: User {
+            id: 1,
+            name: "Shubhamzz",
+            isActive: true
+        };
+
+    - in Interface if we use wrong property or missed any property then it will give error.
+    - Define the return data type of function using interface object.
+
+        interface Person {
+            name: String;
+            greet(): String;
+        }
+
+        const p1: Person = {
+            name: "Shubham",
+            greet() {
+                return "Hello!";
+            }
+        }
+
+        // we can also add age in Person 
+        
+        interface Person {
+            age: Number;
+        }
+
+        // Now we can update the Person "p1" Object:
+        
+        const p1: Person = {
+            name: "Shubham",
+            greet() {
+                return "Hello!";
+            },
+            age: 22
+        }
+
+-------------------------------------------------------------------------------
+# Union Type: ( OR | )
+    - A union allows to a variable to be one of the multiple types.
+
+    let value: string | number;
+    value = "Hello";            // will work with string
+    value = 100;                // will work with number
+    value = true;               // will not work with other 
+
+    --- Using Function
+    
+    function printId (id: number | string){            // id can be number OR string
+        console.log(id);
+    }
+
+    - if we want to perform some action on "id" which is currently "union" type then must check the data type.
+
+        function printId (id: number | string){
+            if (typeof id == "string"){
+                console.log(id.uppercase());
+            }
+            else{
+                console.log(id.toFixed(2));
+            }
+        };
+
+--------------------------------------------------------------------------------------
+# intersection Type: ( AND & )
+    - It combines multiple types into one.
+
+    type Person = {         // Object 1
+        name: string;
+    };
+
+    type Employee = {       // object 2
+        employeeId: number;
+    };
+
+    type staff = Person & Employee;
+
+    const staff1: Staff = {
+        name: "Shubhamzz",
+        employeeId: 26
+    };
+
+    - Here staff must contains both 'name' and 'employee';
+
+-------------------------------------------------------------------------------------
+# type:
+    - A type alias lets you allows to create custom name for any type.
+    - It helps you reuse types instead of writing them again and again.
+
+    for example,
+        
+        let id : number | string;
+
+        // instead of this we are writing,
+
+        type id: number|string;
+
+        // this means where we are using "id" as a data type, that will be "number | string"
+
+        let userId : id;              <-- here userId will be "number | string".
+
+    --- for example:
+
+        type User = {
+            id:number,
+            name: string
+        };
+
+        let person: User;         // here person will object containing 2 parameters id: number and name:string.
+
+-------------------------------------------------------------------------------------------
+# Type assertion:
+    - Type Assertion is a technique that informs the compiler about the type of a variable.
+
+    let myname:any = "shubh";
+    let secondname = <String> myname;
+
+    - If we do not put the <String> in above code then, typescript will try to assume the type of "secondname" by itself.
+    - But by putting <String> we are asserting and infroming the compiler about the type of secondName. 
+      and hence Compiler will not do automatic type checking.

@@ -15,8 +15,16 @@
 // 19. Replace Spaces with %20 (URL Encoding)
 // 18. Convert a String to a Character Array
 // 11. Find the Most Frequent Character
+<<<<<<< HEAD
 // 26. take an array 1st letter should be capitalize
 // 20. Convert a Sentence into an Acronym
+=======
+// 26. Find longest word from string "Atish vinayak kamble";
+// remove dupliacte from below array
+// 1️⃣ Remove duplicate elements from an array
+// Find second largest number in array
+
+>>>>>>> d20cc33bc3ded13385390a89074515f679169211
 // 16. Convert a String to Title Case
 // 8. Find the Longest Substring Without Repeating Characters
 // 27 convert a number into Array
@@ -39,9 +47,9 @@ console.log(iReverse);
 // 2. Check if a String is a Palindrome
 const iStr2 = "MARKram";
 const iPelendrome =
-  iStr2.toLowerCase().split("").reverse().join("") == iStr2.toLowerCase()
-    ? "Pelendrome"
-    : "Not pelendrome";
+  iStr2.toLowerCase().split("").reverse().join("") == iStr2.toLowerCase() ?
+  "Pelendrome" :
+  "Not pelendrome";
 console.log(iPelendrome);
 
 // ================================================================================================
@@ -71,11 +79,7 @@ console.log("// Method Two Reduce;", iUnique);
 
 // 4. Find the First Non-Repeating Character
 const iStr5 = "manthanashokshinde";
-
-const iResult = iStr5.split("").find((ch) => {
-  return iStr5.indexOf(ch) === iStr5.lastIndexOf(ch);
-});
-
+const iResult = iStr5.split("").find((ch) => iStr5.indexOf(ch) === iStr5.lastIndexOf(ch));
 console.log(iResult);
 
 // ================================================================================================
@@ -102,9 +106,9 @@ const cStr1 = "siljhgent";
 const cStr2 = "liasten";
 const isAnamagram =
   cStr1.toLowerCase().split("").sort().join("") ==
-  cStr2.toLowerCase().split("").sort().join("")
-    ? "string is anagram"
-    : "not anaagram";
+  cStr2.toLowerCase().split("").sort().join("") ?
+  "string is anagram" :
+  "not anaagram";
 console.log(isAnamagram);
 
 // ================================================================================================
@@ -249,6 +253,7 @@ console.log(iTitleCase02);
 let iStrr003 = "atish";
 console.log(iStrr003.split(""));
 
+<<<<<<< HEAD
 // ================================================================================================
 
 // 26 : find nearest No From Array
@@ -317,3 +322,187 @@ function displayIntoArr(iStr) {
   console.log(iArr);
 }
 displayIntoArr(numbers);
+=======
+
+// 26. Find longest word from string "Atish vinayak kamble";
+const iStr004 = "atish vinayak Kambleeeeeee";
+
+function displayLongestWord(iStr) {
+  let iCnt = 0;
+  let iMax = 0
+  for (let i = 0; i < iStr.length; i++) {
+    if (iStr[i] != " ") {
+      iCnt++
+    } else {
+      if (iCnt > iMax) {
+        iMax = iCnt;
+      }
+
+      iCnt = 0;
+    }
+    if (iCnt > iMax) {
+      iMax = iCnt;
+    }
+  }
+  console.log(iMax);
+}
+
+displayLongestWord(iStr004)
+
+
+// =================================================================
+
+
+// 26. Find longest word from string "Atish vinayak kamble";
+// Method 01 : without inbuilt
+const iStr007 = "atish vinaykdsklfdjlksfdjak mble";
+
+function displayLongestWord(iStr) {
+  let iCnt = 0;
+  let iMax = 0
+  for (let i = 0; i < iStr.length; i++) {
+    if (iStr[i] != " ") {
+      iCnt++
+    } else {
+      if (iCnt > iMax) {
+        iMax = iCnt;
+      }
+
+      iCnt = 0;
+    }
+    if (iCnt > iMax) {
+      iMax = iCnt;
+    }
+  }
+  console.log(iMax);
+}
+
+displayLongestWord(iStr007);
+
+// Method 02 : without inbuilt
+const iStr005 = "atish vinayak kamble";
+
+function displayLongestWord02(iStr) {
+  let word = iStr.split(" ");
+  let iMax = -Infinity;
+
+  for (let i = 0; i < word.length; i++) {
+    if (word[i].length > iMax) {
+      iMax = word[i].length;
+    }
+  }
+  console.log(iMax);
+}
+displayLongestWord02(iStr005);
+
+// Method 03 : inbuilt;
+
+const iStr006 = "atish vinayak dfsjlkfdjse";
+const iMax3 = iStr006.split(" ").reduce((curr, prev) => curr.length > prev.length ? curr.length : prev.length);
+console.log(iMax3)
+
+// ==========================================================================
+
+
+// remove dupliacte from below array
+let iArr2 = [
+  10, 11, 1, 21, 12, 13, 1, 21, 12, 13, 1, 21, 12, 13, 1, 21, 12, 13, 1,
+];
+
+const iUnique001 = iArr2.reduce((prev, curr) => {
+  if (!prev.includes(curr)) {
+    prev.push(curr);
+  }
+  return prev;
+}, []);
+
+console.log(`reduces(). Remove duplicate whole array is : [${iUnique001}]`);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 1️⃣ Remove duplicate elements from an array
+const iArr001 = [1, 2, 2, 3, 4, 4];
+
+console.log("Approch 1 : WIthout inbuilt")
+
+function removeDuplicate(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false;
+
+    for (let j = 0; j < newArr.length; j++) {
+      if (arr[i] == newArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+
+    if (!isDuplicate) {
+      newArr.push(arr[i]);
+    }
+
+  }
+  console.log("Sort array withOut inbuilt operator : " + newArr);
+}
+
+removeDuplicate(iArr001);
+
+
+// peoblem solve with inbuilt opeatpor;
+
+console.log("Approch 2 : inbuilt (Set)")
+
+let uniqueArr = [...new Set(arr)];
+console.log("Sort array with inbuilt operator : " + uniqueArr);
+console.log("")
+
+// method 03
+
+
+console.log("Approch 2 : inbuilt (filter + indexOf )");
+const iArr3 = [1, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7, 2, 3, 4, 5, 6, 7];
+
+const iUnique3 = iArr3.filter((value, index) => {
+  return iArr3.indexOf(value) === index;
+});
+console.log(iUnique3);
+
+// method 04
+
+console.log("Approch 4 : inbuilt (forEach + includes )");
+const iArr4 = [1, 9, 0, 5, 6, 7, 2, 3, 4, 5, 6, 7];
+
+const iUnique4 = [];
+
+iArr4.forEach((val) => {
+  if (!iUnique4.includes(val)) {
+    iUnique4.push(val);
+  }
+})
+console.log(iUnique4);
+
+////////////////////////////////////////==========================////////////////////////////////////
+
+// Find second largest number in array
+const iArr = [10,11,121,3,14,15,6,74];
+
+function Display(iArr){
+  
+  let iMax = -Infinity;
+  iMax2 = -Infinity
+
+  for(let i = 0; i <iArr.length; i++){
+    if(iArr[i] > iMax){
+      iMax2 = iMax;
+      iMax = iArr[i];
+    }else if(iArr[i] > iMax2 && iArr[i] != iMax){
+      iMax2 = iArr[i];
+    }
+
+  }
+  console.log(iMax2);
+}
+
+Display(iArr);
+////////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> d20cc33bc3ded13385390a89074515f679169211

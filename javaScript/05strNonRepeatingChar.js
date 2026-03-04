@@ -12,12 +12,10 @@ console.log("First Non-Repeating Char is with inbuilt operator : ", nonRepeatCha
 let iStr = "asdfghjklasdfghjuklasdfghjkl";
 
 function Display(iStr){
-    let iCnt = 0;
     for(let i = 0; i < iStr.length; i++){
-        iChar = iStr[i];
         let iCnt = 0;
         for(let j = 0; j < iStr.length; j++){
-            if(iChar == iStr[j]){
+            if(iStr[i] == iStr[j]){
                 iCnt++
             }
         }

@@ -1,8 +1,8 @@
 // 1️⃣ Remove duplicate elements from an array
-const arr = [1, 2, 2, 3, 4, 4];
+const iArr001 = [1, 2, 2, 3, 4, 4];
 
 console.log("Approch 1 : WIthout inbuilt")
-function display(arr){
+function removeDuplicate(arr){
     let newArr = [];
     for(let i = 0; i < arr.length; i++){
         let isDuplicate = false;
@@ -22,7 +22,7 @@ function display(arr){
     console.log("Sort array withOut inbuilt operator : "+ newArr);
 }
 
-display(arr);
+removeDuplicate(iArr001);
 
 ////////////////////////////////////////==========================////////////////////////////////////
 

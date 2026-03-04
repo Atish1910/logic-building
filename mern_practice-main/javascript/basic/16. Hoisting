@@ -1,0 +1,73 @@
+JavaScript Interpretation:
+    - When javascript runs it goes from two phases:
+        1. Compilation Pahse (Hoisting)
+        2. Execution Phase
+
+-----------------------------------------------------------------------------------
+
+Hoisting in Javascipt:
+    - It is concept where "Function" or "varibale" are moved to the top of their scope.
+    - It happens during "complition phase" before execution.
+
+1. Hoisting of Varibale (var):
+
+        console.log(name);  // undefined
+        var name = "Shubh";
+
+    - Javascipt will treat (interpret) above code as an:
+
+        var name;
+        console.log(name); // undefined
+        name = "Shubh";
+
+        --- as the name is not assign any value so we are getting undefined as a result.
+--------------------------------------------------------------------------------------
+2. Hoisting of Variable (let):
+
+        console.log(name); // Reference Error
+        let name = "Shubh";
+
+    - Javascript will treat above code as an:
+
+    A] Compilation Phase (Hoisting)
+        store "let name" in Temporal Dead Zone (TDZ)
+    
+    B] Execution Phase :
+        console.log(name); // Reference Error -> name is in Temporal Dead Zone
+        let name = "Shubh"; // we got the initialization of "name" -> Temporal Dead Zone Ends here
+--------------------------------------------------------------------------------------
+3. Hoisting of Function:
+
+        Shubhzz();                     // Hello World
+        function Shubhzz(){
+            console.log("Hello World");
+        }
+
+    - Javascipt will treat above function code as an:
+        A] Compilation phase:
+            all the functions are stored in Hoisting.
+        B] Execution Phase:
+            Shubhzz(); // Function is called which stored in hoisting.
+-----------------------------------------------------------------------------------------
+4. Hoisting of Var-Function:
+
+        Shubhzz();                           // TypeError -> 'Shubhzz' is not a function
+        var Shubhzz = function (){
+            console.log("This is an Var function");
+        }
+
+    - Javascipt will treat above function code as an:
+        A] Compilation phase:
+            - 'Shubhzz' is declared as an Varibale 'var';
+            - declare and store it in hoisting as an 'undefined' value
+
+        B] Execution Phase:
+            - Javascipt code will see it as an undefined so it will give output as it is not an function.
+
+--------------------------------------------------------------------------------------------
+# Temporal Dead Zone:
+    - In Hoisting of Compilation phase all the Varibales and functions are goes on top of their scope.
+    - When it 'var' variable gets on top of the scop as it is global scop varibale that why is has been declared but not assigned any value.
+        var name;
+    - When it 'let' or 'const' variable are moved to the top of their scope but not been declared and remained in Temporal Dead Zone.
+        let name; <- not active present in Temporal Dead Zone.

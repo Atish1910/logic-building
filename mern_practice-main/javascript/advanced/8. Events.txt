@@ -1,0 +1,152 @@
+# Events:
+    - Events are functions that will run when any specific action is occurred.
+
+# Types of Events in JS:
+    1. addEventListener('click', handler);   // handler is an Function that will run 
+    2. addEventListener('mouseover', handler);
+    3. addEventListener('keydown', handler);
+    4. addEventListener('keyup', handler);
+    5. addEventListener('submit', handler);
+    6. addEventListener('focus', handler);
+    7. addEventListener('blur', handler);
+    8. addEventListener('change' handler);
+    9. addEventListener('load', handler);
+    10. addEventListener('resize', handler);
+
+--------------------------------------------------------------------------------------
+# Event Object:
+    - When any Event is trieggered then browser automatically creates an "Event Object"
+      and passed it as an argument to the event handler Function.
+    - The event object contains various properties and methods that provide information about the event,
+      such as the type of event, the element taht triggered the event etc.
+
+      button.addEventListener("click", handleClick);
+
+      // Event Hanlder Function
+      function handleClick(event){
+        console.log("Event Type: ", event.type);
+        console.log("Target element: ", event.target);
+      }
+
+------------------------------------------------------------------------------------
+# Event Delegation:
+    - Event Delegation is a technique where you attach a single event handler to a parent element.
+    - to handle events on its child elements.
+
+    <ul id="mylist">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    // applying sinlge event handler on parent element to handle individual event on each item.
+    var parentList = document.getElementById('mylist');
+    parentList.addEventListener("click", handleItemClick);
+
+    // Event Handler Function
+    function handleItemClick(event){
+        var target = event.target;                      // applying event on individual item
+        console.log("Clicked: ", taregt.textContent);
+    } 
+
+-------------------------------------------------------------------------------------
+# DOM Event Flow:
+    1. Capturing Phase
+    2. Target Phase
+    3. Bubbling Phase
+
+# Event Capturing --> Its direction is from  Root Node (Heighest Node) to Leaf Node.
+# Event Bubbling/ Propagation--> Its direction is from Leaf Node to Root Node (Heighest Node)
+
+-------------------------------------------------------------------------------------
+# Event Bubbling/ Event Propogation:
+    - If we have created event listener on parent and child also. then,
+    - at first Child will executes its event handler then pass the event to parent and parent handler will get execute.
+
+    <div id="grand-parent">
+        <div id="parent">
+            <button id="child">
+            Button
+            </button>
+        </div>
+    </div>
+
+    var grand_parent = document.getElementById("grand-parent");
+    var parent = document.getElementById("parent");
+    var child = document.getElementById("child");
+
+    grand_parent.addEventListener("click", clickHandler);
+    parent.addEventListener("click", clickHandler);
+    child.addEventListener("click", clickHandler);
+
+    function clickHandler(event){
+        console.log("Clicked: ", this.id);
+    }
+
+    ----- Output:
+        Clicked: child
+        Clicked: parent
+        Clicked: grand-parent
+
+--------------------------------------------------------------------------------------
+# How to avoid Event Bubbling/ Event Propagation?
+    - Use "event.stopPropagation()"    <-- To stop the event bubbling/ event propagation.
+
+    function clickHandler(event){
+        console.log("Clicked: ",this.id);
+        event.stopPropagation();                 // This will stop the Event Bubbling
+    }
+
+    ------ Output:
+        Clicked: child       // after this execution will stop
+
+-------------------------------------------------------------------------------------
+# Event Capturing:
+    - We have to set the "{capture:true}" which is third parameter in addEventListener to execute the function in capturing phase.
+
+     <div id="grand-parent">
+        <div id="parent">
+            <button id="child">
+            Button
+            </button>
+        </div>
+    </div>
+
+    var grand_parent = document.getElementById("grand-parent");
+    var parent = document.getElementById("parent");
+    var child = document.getElementById("child");
+
+    grand_parent.addEventListener("click", clickHandler, true);    // here we have added 3rd parameter as true
+    parent.addEventListener("click", clickHandler, true);
+    child.addEventListener("click", clickHandler, true);
+
+    function clickHandler(event){
+        console.log("Clicked: ", this.id);
+    }
+
+    ---------- OR -------------------------
+    grand_parent.addEventListener("click", (event)=>{
+        console.log("Clciked: ", this.id);
+    }, {capture:true});                                   // here we have added 3rd parameter as true.
+
+    ---------- Output:
+        Clciked: grand-parent
+        Clciked: parent
+        Clciked: child
+    
+-------------------------------------------------------------------------------------------------------
+# event.preventDefault():
+    - when submitting the form need to stop because we required all the fields.
+    - clciked on anchor tag link but need to stop the event action etc.
+
+    <form id="my_form">
+        <input type="text" name="name" placholder="Enter Your Name "/>
+        <button type="submit">Submit</button>
+    </form>
+
+    document.getElementById('my_form').addEventListener('submit', (event)=>{
+        event.preventDefault();                     // Stop the form from submitting 
+        console.log('From Submission Prevented/Stopped');
+    });
+
+-------------------------------------------------------------------------------------------------------

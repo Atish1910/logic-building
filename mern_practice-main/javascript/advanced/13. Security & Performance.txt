@@ -1,0 +1,120 @@
+# eval():
+    - It is an built-in javascript function.
+    - It excutes/evaluates string as javascript code and get the output.
+
+    const num_01 = 10;
+    const num_02 = 20;
+    const addition = "num_01 + num_02";
+
+    let add_01 = eval(addition);  // eval built-in function --> convert string to javascript code.
+    console.log(add_01);          // 30
+
+    // we can use it as an in our project like take JS input from user excute it through eval() and return the output to the user.
+
+--------------------------------------------------------------------------------
+# Best Practice for Security in JS:
+    - Always validate and Sanitize the inpt fields to prevent XSS (Cross-site Scripting) and SQL injection attacks.
+    - Avoid using eval() as it can excute untrusted code.
+    - Always use HTTPS (not an HTTP) for secure connection.
+    - Authentication & Authorization always use strong hashing algorithm.
+
+-------------------------------------------------------------------------------
+# Best Practice For Performance Optimization:
+    - minimize HTTP request -> make bundle of files and minify the javascript.
+    - Use Async Operations which can avoid the blocking main thread.
+    - minimize DOM manupulation.
+    - Remove EventListener when not required. 
+    - Store frequeantly used data in browser storage.
+    - Lazy Loading --> Load the data when it required.
+    - Image Optimization
+
+------------------------------------------------------------------------------------
+# Get the current URL of the Webpage:
+    - using "window.location.href"
+
+    const currentLocation = window.location.href;
+
+------------------------------------------------------------------------------------
+# Drag and Drop Functionality implementation:
+
+    <div draggable="true" id="dragElement"> Drag Me </div>
+
+    const draggableElement = document.getElementById("dragElement");
+
+    draggableElement.addEventListener("dragstart", (event)=>{
+        event.dataTransfer.setData("text/plain", event.target.id);
+    });
+
+----------------------------------------------------------------------------------
+# Remove White space from String:
+
+    const input_string = " happy,  int ";
+    console.log(input_string.replace(/\s/g,""));
+
+    // here we using "\s" flag for white space character.
+    // "g" flag for global search.
+    // i.e. / "\s flag" / "g flag"
+
+-----------------------------------------------------------------------------------
+# Input Validation:
+
+    1. Using HTML:
+        <input type="text" name="username" required minlength="3" maxlength="10" pattern="[A-Za-z0-9]+">
+        
+        // pattern="[A-Za-z0-9]+" ---> "+" means allowed one or more characters from defined range.
+            and no special character allowed.
+        
+        // If input type is Number then we can add number length validation
+        <input type="number" min="1" max="100">
+    
+    2. Using Javascript:
+        - getElementById
+        - inputElement.value.lnegth<3
+    
+    3. jQuery Validation:
+
+        $("#myForm").validate({
+            rules: {
+            username: { required: true, minlength: 3 },
+            email: { required: true, email: true }
+            }
+        });
+    
+    4. React Validation:
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            if (username.length < 3) {
+                setError("Username must be at least 3 characters");
+            } else {
+                setError("");
+                alert("Form submitted!");
+            }
+        };
+    
+--------------------------------------------------------------------------
+# Sanitization:
+    - Removing special Tags, if user have added in input field.
+
+    <input value="<script>alert('Hacked!')</script>">
+
+    Here we can see user have added <script> tag, so through sanitization it will be removed.
+
+----------------------------------------------------------------------------
+# Avoid Special Characters through sanitization:
+    
+    1. Convert Special Characters to specail code:
+
+        < --> &lt;
+        > --> &gt;
+        " --> &quot;
+    
+    2. Remove it using DOMPurify Javascript Library: // need to import this library
+
+        let clean_value = DOMPurify.sanitize(my_element_01.value);
+    
+    3. Allow only defined characters:
+
+        pattern="[A-Za-z0-9]+"
+    
+---------------------------------------------------------------------------------

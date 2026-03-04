@@ -1,0 +1,23 @@
+# Find 3rd min from array
+
+def findThirdMin(arr):
+    if len(arr)<3:
+        return "Third smallest doesn't exists"
+    first = second = third = float('inf')
+    
+    for i in range (len(arr)):
+        if arr[i]<first:
+            third = second
+            second = first
+            first = arr[i]
+        elif second > arr[i] > first:
+            third = second
+            second = arr[i]
+        elif third > arr[i] > second:
+            third = arr[i]
+    
+    if third == float('inf'):
+        return "Third smallest doesn't exists"
+    return third
+    
+print(findThirdMin([30,10,20,12,15,5]))

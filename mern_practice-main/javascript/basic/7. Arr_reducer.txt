@@ -1,0 +1,9 @@
+# Reduce the Array:
+
+    let arr = [1,2,3,4,5];
+
+    let totalSum = arr.reduce((accumulator, currentValue) => accumulator+currentValue, 0);
+    // 0 is initial value
+    // accumulator saves the total
+    // currentValue refers current value through iteration over the Array
+    console.log(totalSum);

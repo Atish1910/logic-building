@@ -1,0 +1,38 @@
+# useEffect:
+    1. without dependencies array:
+
+        useEffect(()=>{
+            console.log("run on every render");
+        });
+        # Run on every render
+    
+    2. with empty dependency array:
+
+        useEffect(()=>{
+            console.log("Run on first render only!");
+        })
+        # Run on first render only
+    
+    3. with one variable in dependecy array
+
+        useEffect(()=>{
+            console.log("Run only when value change");
+        }, [variable_01]);
+    
+    4. with multiple variables in dependecy array:
+
+        useEffect(()=>{
+            console.log("Run only when the any variable value changes.");   
+        },[variable_01, variable_02, variable_03]);
+    
+    5. with return the statement when function run again.
+
+        useEffect(()=>{
+            console.log("Function is Started its execution");
+            return console.log("Function is End, new function will execute");
+        },[variable_01, variable_02]);
+
+-----------------------------------------------------------------------
+# useEffect:
+    - useEffect runs after the component render.
+    - Update in useEffect cause re-render.

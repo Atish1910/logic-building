@@ -1,0 +1,6 @@
+# Control Statements/ Condition Statements:
+    1. If
+    2. If-Else
+    3. If-Else If - Else
+    4. Switch Cases
+    5. Ternary Operator    

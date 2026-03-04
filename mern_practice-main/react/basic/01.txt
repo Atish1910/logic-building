@@ -1,0 +1,138 @@
+React:
+    - React is a Library.
+    - It give components based architecture.
+    - Creates Virtual DOM and updates minimal changes to real DOM
+-----------------------------------------------------------------
+# State:
+    - State is represntation of data that descides the represntation, behaviour of the components.
+# Stateless:
+    - Any component that does not manage the state and can take data through props and render will be the stateless.
+# Stateful:
+    - Any component that manage the state and updates when state changes.
+# State- Management:
+    - if any event triggered or changes in data the state changes, as state change occurss components changes its behaviour on the basis on new state.
+ 
+----------------------------------------------------------------
+# Props:
+    - Props word comes from Properties.
+    - Props allows One-way data flow (Uni-directional Flow)
+    - Props are Read only.
+----------------------------------------------------------------
+# Conditional Rendering:
+    - If/Else statement
+    - Ternary Operator
+    - Switch statements
+    - && Operator
+----------------------------------------------------------------
+# Avoid Prop-Drilling:
+    - 1. Using ContextAPI
+    - 2. Using REDUX
+    - 3. Using component composition - (passing components as children instead passing data as props)
+    - 4. Using Callback Function
+    - 5. Using custom Hooks
+----------------------------------------------------------------
+# Virtual DOM:
+    - Virtual DOM is lightweight javascript copy of the Real DOM.
+    - Steps:
+        - React Creates an copy of real DOM called virtual DOM.
+        - Update the changes in Virtual DOM as per state changed.
+        - Now React compare Virtual DOM with Actual DOM.
+        - React Update only changed parts in the Real DOM.
+----------------------------------------------------------------
+# Reconcilation:
+    -  It is the process of comparing new and virtual DOM.
+----------------------------------------------------------------
+# Real DOM v/s Virtual DOM:
+    ---- Real DOM ----
+    - Actual Browser DOM
+    - Slow to Update
+    - Every Change re-renders directly
+    - Expensive DOM Manipulation
+    - Rendered on Browser
+ 
+    ---- Virtual DOM ----
+    - Lighweight JavaScript Object
+    - Fast to Update
+    - React Compare changes first
+    - Efficiently Update
+    - Used Internally by React.
+----------------------------------------------------------------
+# Keys in React List:
+    - Keys give each list item a unique identity.
+    - React uses Keys during reconcilation to optimize updates.
+    - without keys react may re-render unnecessary components.
+----------------------------------------------------------------
+# Controlled v/s Uncontrolled components
+    ---- Controlled components ----
+    - Form Data controlled by React State, Predictable Output, React catch the updated in value apply validation and update state if required.
+    - Better for Validation & control.
+    - (Controlled components are prefered in React because they provide
+        better control, validation, and predictable)
+ 
+        <input value={name} onChange={(event)=>setName(event.target.value)} />
+ 
+    ---- Uncontrolled Components ----
+    - Form Data controlled by DOM itself, React doesn't track changes in real time.
+    - Harder to validate on input, DOM stores the value, react can just read the value through 'ref'.
+ 
+        <input ref={inputRef} />
+----------------------------------------------------------------
+# React Window
+
+--------------------------------------------------------------------
+# Component Composition:
+    - Here we are passing components as a children.
+    - Component composition is a React technique where components are build by combining smaller components instead of passing data through out many layers.
+    - here we are using "{ children }" keyword It contains all the data as it is.
+
+    - Example 1:
+        <component_1>
+            <component_2>
+                <component_3 name={"shubham"} />
+            </component_2>
+        </component_1>
+
+        A. component_1 will be:
+
+            const component_1 = ({children}) =>{
+                return(
+                    <div>
+                        <p> This is component 01 </p>
+                        {children}                        <------ It pass all the children data as it is without knowing what is written inside.
+                    </div>
+                );
+            }
+
+        B. component_2 will be:
+
+            const component_2 = ({children}) =>{
+                return(
+                    <div>
+                        <p> This is component 01 </p>
+                        {children}                        <------ It pass all the children data as it is without knowing what is written inside.
+                    </div>
+                );
+            }
+        
+        C. component_3 will be can use Props data.
+
+    --------------------------------------------------
+    - Example 2:
+    
+        <component_1>
+            <h1>I am Inside Component but component doesn't known</h1>
+            <p>This is lorem ispum</p>
+        </component_1>
+
+        A. component_1 will be:
+
+            const component_1 = ({children}) =>{
+                return(
+                    <div>
+                        <p> This is component 01 </p>
+                        {children}                        <------ It pass all the children data as it is without knowing what is written inside.
+                    </div>
+                );
+            }
+
+------------------------------------------------------------------------------------------------------------------------

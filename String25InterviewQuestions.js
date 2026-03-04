@@ -12,13 +12,15 @@
 // 24. Find the Shortest Word in a String
 // 14. Remove All White Spaces from a String
 // 25. Find the Longest Palindromic Substring
-// 20. Convert a Sentence into an Acronym
 // 19. Replace Spaces with %20 (URL Encoding)
 // 18. Convert a String to a Character Array
 // 11. Find the Most Frequent Character
-
+// 26. take an array 1st letter should be capitalize
+// 20. Convert a Sentence into an Acronym
 // 16. Convert a String to Title Case
 // 8. Find the Longest Substring Without Repeating Characters
+// 27 convert a number into Array
+
 // 9. Convert a String to an Integer (atoi Implementation)
 // 10. Compress a String (Run-Length Encoding)
 // 12. Find All Substrings of a Given String
@@ -216,7 +218,7 @@ let iMaxFreq = Object.entries(
   iStrr02.split("").reduce((acc, curr) => {
     acc[curr] = (acc[curr] | 0) + 1;
     return acc;
-  }, {})
+  }, {}),
 ).reduce((a, b) => (a[1] > b[1] ? a : b));
 console.log(iMaxFreq);
 
@@ -246,3 +248,72 @@ console.log(iTitleCase02);
 
 let iStrr003 = "atish";
 console.log(iStrr003.split(""));
+
+// ================================================================================================
+
+// 26 : find nearest No From Array
+
+const iArr01 = [10, 15, 20, 25, 66, 100];
+let target = 50;
+function nearestNoFromArray(iArr01, target) {
+  let nearestValue = iArr01[0];
+  let minDiff = Math.abs(iArr01[0] - target);
+
+  for (let i = 0; i < iArr01.length; i++) {
+    let currentDiff = Math.abs(iArr01[i] - target);
+    if (currentDiff < minDiff) {
+      minDiff = currentDiff;
+      nearestValue = iArr01[i];
+    }
+  }
+  console.log(
+    ` here is array : ${iArr01} & taret value is ${target} : nearest No from array ${nearestValue}`,
+  );
+}
+nearestNoFromArray(iArr01, target);
+
+// -------------------------------------------------------------------------------------------------
+let iNearValue = iArr01.reduce((curr, prev) =>
+  Math.abs(curr - target) < Math.abs(prev - target) ? curr : prev,
+);
+
+console.log(
+  `INBUILT Operator here is array : ${iArr01} & taret value is ${target} : nearest No from array ${iNearValue}`,
+);
+
+// ================================================================================================
+
+let iArrOfName = ["atish", "manthan", "pratik"];
+let iArrOfName2 = ["atish", "manthan", "pratik"];
+function capitalizeFunction(iArr) {
+  for (let i = 0; i < iArr.length; i++) {
+    iArr[i] = iArr[i][0].toUpperCase() + iArr[i].slice(1);
+  }
+  console.log("1st letter should be capital for every name", iArr);
+}
+capitalizeFunction(iArrOfName);
+
+// method 2 inbuilt-----------
+
+let iCapitalize = iArrOfName2.map(
+  (word) => word[0].toLocaleUpperCase() + word.slice(1),
+);
+console.log("INBUILT 1st letter should be capital for every name", iCapitalize);
+
+// ================================================================================================
+
+// convert a number into Array
+
+let numbers = 123456;
+function displayIntoArr(iStr) {
+  let iArr = [];
+  let iDigit = 0;
+
+  while (iStr != 0) {
+    iDigit = iStr % 10;
+    iStr = (iStr / 10) | 0;
+    iArr.unshift(iDigit);
+  }
+  console.log(iArr);
+}
+displayIntoArr(numbers);

@@ -1,0 +1,178 @@
+# Store:
+    - Single source of truth.
+    - store the current gloabl state.
+
+# state:
+    - a plain javascript object that represents application data.
+    - Read Only - can not be modify directly, i.e. modifyed through dispatch actions.
+    - Read Only is also called as "Immutability" means ones the state is created can not be changed or mofifyed directly.
+
+# Action:
+    - Action is plain jaavscript object that holds type and payload (payload is optional).
+    - it shows what happend / event
+
+# Dispatch:
+    - Send an action to the redux store to update the state.
+
+# Reducers:
+    - Reducers are pure functions that takes current state & Action.
+    - Returns new State.
+    - predeictbale state are defined in reducer it is main logic to update state.
+
+-----------------------------------------------
+data flow:
+    UI -> dispatch(action) -> Reducer -> New State -> UI
+
+    1. Component.js ==> Interaction mouse click/ event trigger
+    2. Action Creators ==> Dispatch the action to store
+    3. Store.js ==> Store pass the prev. state and action to Reducer
+    4. Reducer ==> Send the new state to Store.js
+    5. Store.js ==> Update the current state
+    6. Component.js => component is updated as per current state
+
+-----------------------------------------------
+# Action Creators:
+    - Action is plain javascript object.
+    - Action Creator is a function that returns that object.
+
+    -------------------------------------------
+    # Action:
+
+        Action is just an object with "type" property:
+
+            {
+                type: "increment"
+            }
+
+        Here passing data is optional which will be defined with "payload" parameter:
+
+            {
+                type: "increment",
+                "payload": "10"
+            }
+    -----------------------------------------------
+    # Action Creator:
+
+        Instead of manually writing action objects everywhere, we create a function that returns them.
+
+            function increment(){
+                return {
+                    type: "increment"
+                };
+            }
+
+        - With payload it will be:
+
+            function increment(){
+                return {
+                    type: "increment",
+                    payload: "10"
+                };
+            }
+
+    ----------------------------------------------
+    # To call action we use dispatch
+
+        dispatch(increment());   <- function which contains action object
+
+    ----------------------------------------------
+    # Why do we need Action Creators?
+        - Avoid repeating action objects
+        - Prevent typos in action types
+        - Make code more readable
+        - Centralize action logic
+
+    ---------------------------------------------
+    # Action Creator in Redux toolkit:
+
+        const counterSlice = createSlice({
+            name: "counter",
+            initialState: { value: 0 },
+            reducers: {
+                increment: (state) => {
+                state.value += 1;
+                }
+            }
+        });
+
+        Redux Toolkit automatically creates:
+            counterSlice.actions.increment
+
+    We will be using this like:
+        
+        dispatch(counterSlice.actions.increment());
+
+----------------------------------------------------------------------------------------------------
+# Difference between Action Creator, Action Object, Action Type
+
+    1. Action Creator:
+        - Action creator is a function that create and return action object.
+
+        const increment = (amount) => {
+            return {
+                type: "Increment",
+                payload: {
+                    amount: amount,
+                },
+            };
+        };
+
+    2. Action Object:
+        - Action Object are plain javascript objects retruned by action creator functions.
+
+        {
+            type: "Increment",
+            payload: {
+                amount: amount,
+            },
+        }
+
+    3. Action Type:
+        - Action type is a string parameter that defiens the type of action.
+
+        increment.type;
+
+--------------------------------------------------------------------------------------------------------
+# connect():
+    - It is used in Class Based Components.
+    - connect is a function from React-Redux that connects a React component to the Redux store.
+    - It allows component to read data from Redux store. Dispatch action to Update the store.
+
+        import { connect } from 'react-redux';
+
+        Syntax:
+            
+            connect( mapStateToProps, mapDispatchToProps ) ( YourComponent )
+
+            - It is a Higher Order Component (HOC):
+            - Than means connect wrap your component an gives Redux data as props.
+
+
+    1. mapStateToProps: 
+        - Used to get the data from redux store.
+
+            const mapStateToProps = (state) =>{
+                return {
+                    count: state.count.value;
+                };
+            };
+
+            // here count will be acts as a props for your component
+
+    2. mapDispatchToProps:
+        - Used to send action to the store.
+
+            const mapDispatchToProps = (dispatch) =>{
+                return {
+                    increment: () => dispatch({ type: "INCREMENT" })
+                };
+            };
+
+            // here now "increment" function becomes a props.
+
+    -- This is used in previously in Class based components.
+    -- In function based components we are using "useSelector" and "useDispatch" hooks.
+    -- useSelector ==> mapStateToProps
+    -- useDispatch ==> mapDispatchToProps
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------

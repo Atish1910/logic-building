@@ -1,0 +1,72 @@
+# Module:
+    - Introduced In ES6.
+    - It stores the code (split the code) into separate files.
+    - export keyword is used to export the function.
+    - these exported function from one file is used in another file as an module.
+
+---------------------------------------------------------------------------------
+# Export:
+    1. named export
+    2. default export
+
+    1. named export:
+        - named export we can import multiple modules at once.
+        - named export function are required to imported through their names.
+
+        export const add = (a,b) =>{
+            return a+b;
+        }
+
+        export const sub = (a,b) =>{
+            return a-b;
+        }
+
+        // Importing those modules from another file
+        import {add, sub} from "./main.js";
+    
+    -----------------------------------------------------------------------
+
+    2. default export:
+        - default export allows to import only one element from the file.
+        - default export functions are can be import without declaring their name.
+
+        export default const addition = (a,b) =>{
+            return a+b;
+        }
+
+        // Importing default export:
+        import addition from "./main.js";
+
+---------------------------------------------------------------------------------------
+# Static Import V/S Dynamic Import:
+    - Static import is declared at once at the top of the code.
+    - Dynamic import is import the module when required and can handle the errors if get.
+
+    Static Import :
+        import {add} from "./main.js";
+
+    Dynamic Import:
+        import("./main.js")
+        .then((module)=>{
+            const {add} = module;   
+            // ..........
+            // use the imported module here   
+            // ..........
+        })
+        .catch((error)=>{
+            //... Error Handling ...
+            console.log("Got an Error");
+        });
+
+-------------------------------------------------------------------------------------------
+# Module Bundlers:
+    - Module Bundlers are those , where multiple files (modules) are combined into single optimized file called as Bundle.
+
+    Examples:
+        1. Webpack
+        2. Rollup
+        3. Parcel
+        4. Browserify
+        5. RequireJS
+
+-------------------------------------------------------------------------------------------

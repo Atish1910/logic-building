@@ -1,0 +1,30 @@
+// Find the 3rd Largest Element From Array
+
+const findThirdLargest = (arr) => {
+    if (arr.length<3){
+        return -1;
+    }
+    let first = -Infinity;
+    let second = -Infinity;
+    let third = -Infinity;
+    
+    for (let i=0; i<arr.length; i++){
+        if (arr[i]>first){
+            third = second;
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i]>second && arr[i]!=first){
+            third = second;
+            second = arr[i];
+        }
+        else if (arr[i]>third && arr[i]!=second && arr[i]!=first){
+            third = arr[i];
+        }
+    }
+    
+    if (third == -Infinity){
+        return "laregst third not found";
+    }
+    return third;
+}

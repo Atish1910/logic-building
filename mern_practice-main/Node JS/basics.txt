@@ -1,0 +1,99 @@
+# Node JS:
+    - Node JS is an open source cross-platform javascript runtime environment.
+    - Built on Google chrome's V8 engine, which compiles javascript code into fast machine-level code.
+    - It executes javascript outside the browser.
+--------------------------------------------------
+# Features:
+    - Asynchronous and event - driven
+    - Fast execution using V8 engine
+    - Single threaded but highly scalable.
+--------------------------------------------------
+# NPM:
+    - NPM stands for Node Package Manager.
+    - NPM is used to manage the packages (modules) in Node.js applications.
+    - NPM manages all the dependencies of your proect including React Library, Express etc.
+--------------------------------------------------
+# Difference between require() and import:
+    - require() is common js syntax is used in Node.js application.
+    - import is an ES6 module syntax.
+--------------------------------------------------
+# How do you handle Asynchronous operation in Node.js:
+    - Callbacks
+    - Promises 
+    - async/await
+            - If we don't write async function as an promise, it will return promise by default, so await required.
+            - await must be declared inside async function.
+            - If we are using "then()" and "catch()" blocks then await is not required.
+            -------------------------------------------------------------------------------
+            # Using await:
+                async function Shubham(){
+                    try{
+                        const response = await fetch("https://shubham.com");
+                        const data = await response.json();
+                        console.log(data);
+                    }
+                    catch(err){
+                        console.log("Error: ",err);
+                    }
+                }
+            -------------------------------------------------------------------------------
+            # using then() & catch():
+                function fetchData(){
+                    fetch("https://shubham.com")
+                    .then((response) => {response.json})
+                    .then((data)=>{console.log(data)})
+                    .catch((err) => {console.log(err)})
+                }
+    -----------------------------------------------------------------------------
+    # Callback:
+        - Callback is a function passed as an argument to another function.
+        - when the called function is executed it calles the next function (i.e. call the argument function)
+
+        function syHello (name, callbackFunction){
+            console.log("Hello ",name);
+            callbackFunction(); // calling the argument function after the execution of our functiuon
+        }
+
+        function sayBye(){
+            console.log("Good Bye");
+        }
+
+        // calling the 1st function
+        // passed 2 arguments one is name and another is Function as an argumnet.
+        sayHello("Shubham", sayBye);
+
+------------------------------------------------------------------------------------
+# Key Features of Node.js:
+
+    - Asynchronous and Event driven
+    - Single Threaded but Highly Scalable
+    - Fast Exection on V8 Engine
+    - Cross Platform
+------------------------------------------------------------------------------------
+# How Node.js Works?
+    - Node.js uses a non-blocking I/O model and an event loop.
+    - V8 Engine
+------------------------------------------------------------------------------------
+# What is the purpose of module.exports and exports?
+    - these terms are used in Node.js to export the functions, objects and variables from one Module (File). and use it in another file by importing.
+    - 1. module.exports:
+
+            function add(a,b){
+                return a+b;
+            }
+
+            module.exports = add; ------------------------------------ // Export a single item
+
+    - Import it using "require" keyword:
+
+            const add = require("../filename.js");
+            console.log(add(1,2));
+
+    - 2. exports:
+
+            const exports = module.exports;
+
+            exports.add(a,b){         ------------------------------------ // Export multiple named items
+                return a+b;
+            }
+------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,42 @@
+# Context API:
+    - Used to avoid prop-drilling.
+
+# When to use Context API:
+    - Theme (dark/light)
+    - Langauge
+    - Auth user info
+    - Feature flags (feature flag is true/false)
+    - App configureation etc.
+
+# context API limitations:
+    - Poor performance with frequent updates.
+    - No built in middleware
+    - No time-travel dubugging.
+    - Hard to scale for complex logic.
+----------------------------------------------------------------
+# Steps:
+    1. create Context:
+
+        const timerContext = createContext();
+
+    2. wrap under Provider & Pass the value:
+
+        <timerContext.Provider value={data}>
+            <Child_Component/>
+        </timerContext.Provider>
+
+        ------------------------------
+        If we want to pass multiple data 
+
+        <timerContext.Provider value={{ data_01:"abc", age:23 }}>
+
+    3. Export the Context:
+
+        export {timerContext};
+
+    4. context Consumer:
+
+        const { value } = useContext(timerContext);
+    
+---------------------------------------------------------------
+- We can create multiple context APIs inside one compoenent and pass to child compoennt.

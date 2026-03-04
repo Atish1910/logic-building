@@ -1,0 +1,233 @@
+# Object Contains -> Arrays, Function, another Objects
+-----------------------------------------------------------------------------------------
+# Function can be called inside the Object:
+
+let my_obj = { name:"Shubh", age:22, 
+                print_name: function(){
+                    console.log("I am inside the Function from Object");
+                    console.log(this.name); // this keyword refres the current object
+                } 
+            }
+
+my_obj.print_name() // call the function
+
+-------------------------------------------------------------------------------------------
+# Object Creation
+    1. Using Object Name Variable:
+        let my_obj = {a:1, b:2, c:3};
+
+    2. Using New Keyword:
+        let my_obj = new Object();
+        my_obj.a = 1;
+        my_obj.b = 2;
+        my_obj.c = 3;
+    
+    3. Using Object.create() Method:
+        let person = {
+            name: "",
+            age: 0,
+            role: ""
+        };
+        var me_01 = Object.create(person);          // Create Object using another Object --> copied by value
+        me_01.name = "Shubhamzz";
+        me_01.age = 22;
+        me_01.role = "Developer";
+
+------------------------------------------------------------------------------------------
+# Object creation using Functions:
+    - Function creats an Object and Return 
+
+    1. Factory Function
+    2. Constructor Function
+
+1. Factory Function:
+    - Create an object and return as an output
+    - Camel Case-notation is used - camelCaseHai
+
+    function createRectangle (len, bre){
+        // Return the Object 
+        return rectangle = {
+            length: len,
+            breadth: bre,
+            draw() {
+                console.log("Drawing Rectangle");
+            }
+        };
+    }
+
+    // Create an object variable
+    let rectangle_obj = createRectangle(5, 4);
+
+2. Constructor Function:
+    Pascal Notation is used - PascalNotationHai
+    - Creates a new empty object -- New Keyword is used to create an Constructor
+
+    function CreateRectangle (len, bre){
+        // does not return anything
+        this.length = len,
+        this.breadth = bre,
+        this.draw = function() {
+            console.log("Drawing Rectangle");
+        }
+    }
+
+    // Create an object variable - which will call Constructor Function using New Keyword
+    let rectangle_obj = new CreateRectangle(5, 4);
+
+
+    #---------------------------- return Non-Primitive
+    # If we Try to return anything (Non-Primitive) then Output will be override with return value.
+    function Person() {
+        this.name = "Bob";
+        return { age: 30 }; // Overrides the default return
+    }
+
+    const p = new Person();
+    console.log(p); // { age: 30 }
+
+    #----------------------------- return Primitive
+    # If we return Primitive data then it will be ignored
+    function Person() {
+        this.name = "Bob";
+        return "hello"; // Ignored
+    }
+
+    const p = new Person();
+    console.log(p); // Person { name: 'Bob' }
+
+---------------------------------------------------------------------------------------------------------
+# Deep Copy v/s Shallow Copy:
+    1. Shallow Copy:
+        - Shallow copy means copying only the first Object not the nestaed Object.
+       
+        let value_01 = {
+            name:"Shubh",
+            age:22,
+            address:{
+                city:"Pune",
+                state:"Maharashtra"
+            }
+        };
+
+        let value_02.{...value_01};
+        // If we change nestaed Object in value_01 will change in Object of value_02 also.
+    
+    2. Deep Copy:
+        - If changing nestaed Object in value_01 will not change in neasted Object of value_02.
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+Objects are Copied by there refernce - as they are non-Primitivedata types.
+
+# Object Cloning
+    1. Iteration      // Shallow Copy
+    2. Assign               // Shallow Copy
+    3. Spread Operator          // Shallow Copy
+    4. JSON.parse() & JSON.stringify()          // Deep Copy
+
+    1. Iteration using For-in Loop:
+
+        let object_1 = {a:1, b:2, c:3};
+        let new_obj = {};
+
+        for (let key_1 in object_1){
+            new_obj[key_1] = object_1[key];
+        }
+
+    2. Assign:
+
+        let object_1 = {a:1, b:2, c:3};
+        let new_obj = Object.assign({}, object_1);
+                                    # prev, New
+    3. Spread Operator:
+
+        let object_1 = {a:1, b:2, c:3};
+        let new_obj = {...object_1};
+    
+    4. JSON.parse() & JSON.stringify():
+
+        const Object_01 = {
+            name:"Shubh",
+            age:22,
+            address:{
+                city:"Pune",
+                state:"Maharashtra"
+            }
+        };
+
+        let Object_02 = JSON.parse(JSON.stringify(Object_01));
+        Object_01[address][city] = "Mumbai";
+        console.log(Object_01);                 // {name:"Shubh", age:22, address:{ city:"Mumbai", state:"Maharashtra"}};   <-- Change in object_01
+        console.log(Object_02);                 // {name:"Shubh", age:22, address:{ city:"Pune", state:"Maharashtra"}};   <-- will not Change in object_02
+
+----------------------------------------------------------------------------------
+# Garbage Colletion:
+    - Javascript uses automatic garbage collection.
+    - When an object is no longer referenced, it's cleanuped automatically by search engine.
+    - Therefore javascript doesn't have destructor.
+
+------------------------------------------------------------------------------------------
+# Delete Object Property:
+    let object_01 = {name:"Shubham", age:22};
+    delete object_01.name;              // To delete object Property we use "delete" keyword
+
+--------------------------------------------------------------------------------------------
+# Iterating over the Object Properties:
+    1. Using For-in Loop:
+
+        const person = {name:"Shubham", age:22};
+    
+        for (let keys_01 in person){
+            console.log(keys_01 + " : " + person[keys_01]);
+        }
+
+    2. using Object-keys and ForEach Loop:
+
+        Object.keys(person).forEach((keys_01) =>{
+            console.log(keys_01 + " : " + person[keys_01]);
+        })
+    
+    3. using Object-values and forEach Loop.
+
+        Object.values(person).forEach((values_01)=>{
+            console.log(values_01);
+        });
+
+-------------------------------------------------------------------------------------------------
+# Check Object Property is Present or not:
+
+    var person = {name:"Shubham", age:22};
+
+    1. Using "in" keyword/Operator:
+        
+        console.log("name" in person);    // true
+    
+    2. Using the hasOwnProperty() method:
+        
+        console.log(person.hasOwnProperty("name"));     // true
+    
+    3. Using comparing with undefined:
+
+        console.log(person.name !== undefined);   // true
+
+------------------------------------------------------------------------------------------------------
+JSON parse() <-- convert JSON String to JavaSCript Object
+JSON stringify() <-- Convert JavaScript object to JSON String
+
+-----------------------------------------------------------------------------------------------------
+# Object.seal(object_name)
+    - Allows to Read & Update Object Properties.
+    - Can not add new Properties or delete existing properties.
+
+    let my_obj = {"1":"first", "2":"second", "3":"third"};
+    Object.seal(my_obj);
+
+    // Now i can read & Update only the properties. Can't Add or Delete properties.
+
+# Object.freeze(object_name)
+    - Allows to Read Only the object properties.
+    - Can not Add, Update or Delete the Property in Object.
+
+    let my_obj = {"1":"first", "2":"second", "3":"third"};
+    Object.freeze(my_obj);
+
+-------------------------------------------------------------------------------------------------------

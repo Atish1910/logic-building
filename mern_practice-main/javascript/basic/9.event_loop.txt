@@ -1,0 +1,196 @@
+// -- Calculating performance using performance.now();
+
+    const t1 = performance.now();
+    for (let i=0; i<=100; i++){
+        let newElement = document.createElement('p');
+        newElement.textContent = "This is Para "+i;
+        
+        document.body.appendChild(newElement);
+    }
+    const t2 = performance.now();
+    console.log("This took: ",t2-t1);
+
+// -- Optimizing performance  
+    let myDiv = document.createElement('div');
+
+    for (let i=1; i<=100; i++){
+        let element = document.createElement('p');
+        element.textContent = 'This is Para '+i;
+        
+        myDiv.appendChild(element);
+    }
+
+    document.body.appendChild(myDiv);
+------------------------------------------------------------
+1. Document Fragment:
+    - Document is lightweight in-memory container used to hold DOM nodes.
+    - You can build a large set of DOM element in memory first and append them at once instead of appending one by one.
+
+    const fragment = document.createDocumentFragment();
+
+    for (let i=0; i<=10; i++){
+        const li = document.createElement("li");
+        li.textContent = `item ${i}`;
+        fragment.appendChild(li);
+    }
+
+    // append fragment at once
+    document.querySelector("ul").appendChild(fragment);
+
+------------------------------------------------------------
+2. Single Threaded - JavaScript
+    - Creating 2 functions and calling them to understand js is single threaded
+
+    function addPara(){
+        let para = document.createElement('p');
+        para.textContent = "JS is single threaded";
+        document.body.appendChild(para);
+    }
+
+    function appendNewMessage(){
+        let para = document.createElement('p');
+        para.textContent = "This is second Para";
+        document.body.appendChild(para);
+    }
+
+    addPara();
+    appendNewMessage();
+----------------------------------------------------------------
+3. Call Stack
+
+    function a(){
+        console.log("Function a is called!");
+        b();
+    }
+
+    function b(){
+        console.log("Function b is called!");
+    }
+    a();
+
+    Call Stack ===> main()-> a() ->console.log() -> b()-> console.log()
+----------------------------------------------------------------
+4. Event Loop:
+    - The JavaScript Event Loop is the mechanism that allows non-blocking asynchronous code execution in a single-threaded environment.
+
+    # How the Event Loop Works:
+        1. Call Stack:                                           ---> Single Thread
+            - Where function calls are placed and executed.
+            - JS runs code synchronously here. --- Single Thread
+        2. Web APIs: (Browser):
+            - When you use async tasks (setTimeout, fetch, addEventListener etc.), they’re handed off to browser APIs.
+        3. Callback Queue:
+            - Once done from browser function go to a queue.
+            - multiple functions standing in Queue.
+    # Event Loop
+        Constantly checks:
+        “Is the call stack empty?”
+        If yes, it pushes the next task from the queue to the stack.
+
+        Call Stack - (setTimeout) -> Web API - Browser (setTimeout - wait for the time) -> Callback Queue (function is in Queue) -> 
+        Asks to Call Stack if it empty ? to run the function present in Queue -> if present pass the function in Call Stack.
+
+    # Event Loop - Algorithm: ##########################################################
+        1. Run all synchronous code (top to bottom).
+        2. When it sees setTimeout, it:   -- (setTimeout means Async function/code)
+            1. Sends the callback to a timer (Web API).
+            2. After the delay, moves the callback to the task queue.
+        3. The event loop checks:
+            1. Is the call stack empty?
+        4. If yes → take the first task from the queue and run it.
+        5. Repeat.
+---------------------------------------------------------------
+# 5. setTimeout:
+    - we pass function and time in miliseconds.
+    - we gives minimum time to start its execution.
+    - It can take more time to start its execution - if the Call Stack is not empty then it will have to wait until the call Stack becomes empty.
+
+    setTimeout(function(){
+        console.log("5 Sec Completed!");
+    }, 5000);
+
+---------------------------------------------------------------
+# 6. Event Loop Example:
+
+    console.log("A");
+
+    setTimeout (function(){
+        console.log("function");
+    }, 5000);
+
+    console.log("B");
+
+output -> A,B,function
+
+--------------- OR ----------
+
+    console.log("A");
+
+    setTimeout (function(){
+        console.log("function");
+    }, 0);
+
+    console.log("B");
+
+output -> A,B,function
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+# Microtask and Macrotask:
+    1. Call Stack <-- Single threaded runs synchronously
+    2. WEB API <- Handles Async operations
+    3. Callback Queue <- It contains Macro Task and Micro tasks
+
+    Steps:
+        1. Run all the synchronous code from call stack.
+        2. Execute all the Microtasks.
+        3. Execute Only One Macrotask.
+        4. Repeat.
+
+    -- Here we only run one macrotask per loop.
+
+    1. MicroTask:
+
+            Promise.then()
+            Promise.catch()
+            Promise.finally()
+
+        console.log("Start");
+        Promise.resolve().then(console.log("Promise"));
+        console.log("End");
+
+        Output:
+            Start
+            End
+            Promise
+    
+    2. Macrotask:
+
+            setTimeout
+            setInterval
+            setImmediate
+            DOM Events (click, scroll)
+            I/O operations
+
+        console.log("Start");
+        setTimeout(()=>{
+            console.log("Timeout");
+        }.)
+        console.log("End");
+
+        Output:
+            Start
+            End
+            Timeout
+
+    3. Example:
+
+        setTimeout(()=> console.log("1"),0);
+        Promise.resolve().then(()=>console.log("2"));
+        console.log("3");
+
+        output: 
+            3
+            2
+            1
+

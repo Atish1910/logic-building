@@ -1,0 +1,138 @@
+# React Hooks:
+        - React hooks are inbuilt functions provided by React that allow functional components to use state and life cycle features.
+        - Before hooks, class components uses life cycle methods to updated state of the component.
+
+----------------------------------------------------------------------------------------
+# Class Components:
+        - Component Life Cycle phases:
+                1. Mounting Phase - instance of a component is created and inserted into the DOM.
+                2. Updating Phase - component is re-rendered due to changes in props or state.
+                3. Unmounting Phase - component is removed from the DOM.
+
+----------------------------------------------------------------------------------------
+# Mounting Phase:
+        1. constructor()
+        2. getDerivedStateFromProps()
+        3. render()
+        4. componentDidMount()
+
+        ---------------------------------------------------------------------------------
+        # constructor ():
+                - Initialize State 
+                - Bind Methods
+
+                        constructor(props){
+                                super(props);
+                                this.state = {count:0};
+                        }
+
+                # "super" keyword in constructor:
+                        - super keyword is used to call the parent class.
+                        - This ensure that the initialization logic of parent class is executed.
+
+        ---------------------------------------------------------------------------------
+        # getDerivedStateFromProps():
+                - Sync state with props.
+                - No access to "this" keyword
+                
+                static getDerivedStateFromProps(props, state){
+                        return null
+                }
+        
+        ---------------------------------------------------------------------------------
+        # render():
+                - Render() method returns the JSX.
+
+        ---------------------------------------------------------------------------------
+        # State maintained in Class Components:
+                1. this.setState() method is used to update the state.
+                2. this.state Property is used to render the updated state on DOM.
+        ---------------------------------------------------------------------------------
+        # componentDidMount():
+                - Performs Side Effects.
+                - It runs after the DOM is Updated.
+                - It is used to make API calls, Subscriptions after the component is rendered.
+
+-----------------------------------------------------------------------------------------------------------------
+# Updating Phase:
+        - When state or props change updating phase re-render the component.
+        1. static getDerivedStateFromProps:
+                static getDerivedStateFromProps(props, state) {
+                        return null;
+                }
+        
+        2. shouldComponentUpdate():
+                - Prevent unnecessary renders, render only if changes occurred.
+                - Performance Optimization.
+
+                shouldComponentUpdate(nextProps, nextState){
+                        return true;
+                }
+
+        3. render():
+                - return JSX
+                render(){
+                        return <h1>{this.state.count}</h1>;
+                }
+
+        4. getSnapshotBeforeUpdate():
+                - Capture DOM information befor DOM Updates.
+                - It is used in when we have to keep prevoius information about DOM before the update.
+                - Example Usage:
+                        - In infinite scrolling, I have re-rendered the list at some point, after the re-render the scrolling starts and its layout gets messy
+                          or its scroll jumps unexpectedly.
+                        - In chats app new notification is come and its jump unexpectedly. to avoid this we take an snapshot.
+                - A Snapshot saves any value you want to save:
+                        - Scroll Position.
+                        - Height/Width
+                        - Cursor Position
+                        - DOM measurements.
+
+                        Life Cycle Steps/Order:
+                                1. Render()  <-- return JSX
+                                2. getSnapshotBeforeUpdate() <-- take the snapshot
+                                3. DOM Updates <-- Update the UI
+                                4. componentDidMount(snapshot) <-- side Effects (API Calls)
+
+        5. componentDidUpdate():
+                - Runs once immediately after the component is rendered and added to the DOM.
+                - used for Side Effects/ API Calls and Subscriptions, setIntervals acess DOM elements.
+
+------------------------------------------------------------------------------------------------------------------
+# Difference between "componentDidMount" and "componentDidUpdate":
+        
+        1. componentDidMount():
+                - Runs once (as component is mount only once in component lifecycle)
+                - Runs After first render
+                - Inital API calls
+                - Setup logic.
+        2. componentDidUpdate():
+                - Runs on Every Update (as component is updated)
+                - Runs After re-render & DOM is Updated.
+                - Update base logic and API Calls.
+
+-------------------------------------------------------------------------------------------------------------------
+# Unmounting Phase:
+        1. componentWillUnmount():
+                - It is called just before the component is removed from the DOM.
+                - It acts as a cleanup function.
+                - React doesn't automatic cleanup the functions, need to remove through this function.
+                - Here we are removing:
+                        - clearInterval/ clearTimeout
+                        - Remove event listeners
+                        - Cancel API Subscriptions
+                        - close WebSockets
+                        - Remove observers
+
+-------------------------------------------------------------------------------------------------------------------
+# If we don't define Constructor in React component:
+        - React will automatically create a default constructor for you.
+        - This default constructor will call the constructor of the base class using super(props).
+
+-------------------------------------------------------------------------------------------------------------------
+# 5 main methods of component Life Cycle:
+        1. constructor()
+        2. render()
+        3. componentDidMount()
+        4. componentDidUpdate()
+        5. componentWillUnmount()

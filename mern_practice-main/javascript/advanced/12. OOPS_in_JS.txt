@@ -1,0 +1,276 @@
+# OOPS:
+    1. Class & Objects
+    2. Inheritance
+    3. Polymorphism
+    4. Abstraction
+    5. Data Encapsulation
+
+# Class:
+    - Classes are blueprints to crate objects and define thier structure and behaviour.
+
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            sayHello(){
+                console.log(`Hello, Name: ${this.name}, Age: ${this.age}`);
+            }
+        }
+
+
+        // Object Creation
+        var obj_01 = new Person("Shubham", 22);
+        var obj_02 = new Person("Tejas", 23);
+
+        obj_01.sayHello();
+        console.log(obj_02.name);
+
+---------------------------------------------------------------------------
+# Constructor:
+    - Constructor are special methods within classes that are automatically called when the object is created using "new" keyword.
+
+    class Person{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+Note: "Constructor Function" are used to create Objects - that are different from class Constructor. 
+    (i.e. used in Objects - with Factory Function) 
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;           // 'this' keyword is used to access current Object or Class.
+    }
+
+---------------------------------------------------------------------------
+# Prototypal Inheritance:
+    - It allows to Inherite Methods and Properties from Parent Objects.
+
+    // Parent Object --- which is "Prototype"
+    const vehicle = {
+        type: 'car',
+        drive(){
+            console.log("Driving...");
+        }
+    }
+
+    // Creating Child Object when can Inherite Parent Object Properties and Methods
+    const bmw = Object.create(vehicle);
+
+    console.log(bmw.type);     // car
+    bmw.drive();               // Driving...
+
+------------------------------------------------------------------------------
+# Prototype Inheritance:
+    - Every Object has hidden link to another object. That link is called Prototype.
+    - If Object doesn't have mentioned property then it looks into its prototype.
+
+    const user = { name: "Shubhzz" };
+    console.log(user.toString());
+
+    - toString() is not inside user, but javascript finds it in Object.prototype.
+
+    - When one Object uses properties of another Object through this hidden link is called as prototype Inheritance.
+
+------------------------------------------------------------------------------
+# Access Modifiers in JS:
+    1. Public 
+    2. Private 
+    -  Protected <- is not present in JS it is presnet in TypeScript.
+
+    1. Public:
+        - Everything in Classes are Public
+
+        class Person {
+            constructor (name){
+                this.name = name;    // public
+            }
+
+            sayHello () {
+                console.log("Hello "+this.name);      // public
+            }
+        }
+
+        const p = new Person("Shubh");
+        console.log(p.name);
+        p.sayHello();
+
+    2. Private:
+        - Private field is declared using "#"
+
+        class Person {
+            #salary;                       // Private Field
+            constructor (name, salary){
+                this.name = name;           // public
+                this.#salary = salary;      // private
+            }
+
+            getSalary(){
+                return this.#salary;
+            }
+        }
+
+        const p = new Person("Rahul", 5000);
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+# Polymorphism:
+    - Polymorphism means same name method can take multiple forms.
+
+    function MyName(name){
+        console.log(name);
+    }
+
+    function MyName(name, age){
+        console.log(name);
+    }
+
+    MyName("shubh");            // Not works
+    MyName("shubh", 22);        // Works
+
+    - Here Second function will completely overries the previous one.
+
+    1. Method Overloading
+    2. Method Overiding
+
+    1. Method Overloading:
+        - Method Overloading means same method name but different parameters.
+        - JavaScript doesn't support traditional method overloading.
+        - If we define multiple methods with the same name, the last one overrides the previous one.
+    
+         - above example
+
+    2. Method Overriding:
+        - Happens in Inheritance, Parent class provides his method in Child class.
+        - If child class contains same method as parent class then we have two option:
+            1. Run the child method using child class.
+            2. Run the parent method using "super" keyword.
+
+        1. Example:
+            class Animal {
+                speak(){
+                    console.log("Parent");
+                }
+            }
+
+            class Dog extends Animal {
+                speak(){
+                    console.log("Child");
+                }
+            }
+
+            const d = new Dog();
+            d.speak();                        // Child
+
+            --- Here Dog class overrides the Animal class's speak Method 
+
+        2. Example:
+            class Animal {
+                speak(){
+                    console.log("Parent");
+                }
+            }
+
+            class Dog extends Animal {
+                speak(){
+                    super.speak();              // runs the parent method using "super" keyword
+                    console.log("Child");
+                }
+            }
+
+            const d = new Dog;
+            d.speak();
+            
+
+            Output:
+                Parent
+                Child
+            --- Here it runs both using super keyword. or we can change the method name in child class to be call the parent class.
+
+----------------------------------------------------------------------
+# Data Encapsulation:
+    - Access Modifiers.
+
+    - Closure:
+        - Before "Private" variablle exists we are using "closures" for data Encapsulation.
+
+----------------------------------------------------------------------
+# Abstraction:
+    - Abstraction means hiding implementation details only showing the essentail features to user.
+
+    function startCar() {
+        ignition();
+        injectFuel();
+        startEngine();
+    }
+
+    function ignition() {
+        console.log("Ignition started");
+    }
+
+    function injectFuel() {
+        console.log("Fuel injected");
+    }
+
+    function startEngine() {
+        console.log("Engine started");
+    }
+
+    startCar();
+
+    --- Here startCar() is now abrstract method where all the internal code is hidden from user and user can see only the startCar() method.
+
+------------------------------------------------------------------- 
+# Inheritance:
+    - It is done using "extends" keyword.
+
+        class Employee{
+            Salary()
+        }
+
+        class PermanentEmployee extends Employee {
+            Salary();         // Accessible
+        }
+
+        - Using "extends" and "class" it is not possible for multiple Inheritance.
+
+    1. Single Inheritance
+    2. Multiple Inheritance   (JS doen't support multiple inheritance directly)
+    3. MultiLevel Inheritance
+    4. Hybrid Inheritance. (using multiple and MultiLevel)
+
+    # Multiple Inheritance:
+        - one derived class inherites from multiple Base class.
+        - JS doen't support multiple inheritance directly
+        - We can copy the Parent class methods to child class methods using object's "prototype inheritance".
+
+        const canEat = {
+            eat() {
+                    console.log("Eating");
+                }
+        };
+
+        const CanWalk = {
+            walk() {
+                console.log("Walking");
+            }
+        };
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        // Copy methods from multiple sources
+        Object.assign(Person.prototype, CanEat, CanWalk);          <-- Here we are copythinhg the methods to child class from parent or external
+
+        const p = new Person("Shubh");
+        p.eat();  // Eating
+        p.walk(); // Walking
+
+----------------------------------------------------------------------

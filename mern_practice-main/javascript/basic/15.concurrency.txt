@@ -1,0 +1,53 @@
+#Concurrancy:
+    - Concurrancy is the ability of a program to handle multiple tasks at a time.
+    - But JS is a single threaded language it executes one task at a time.
+    - JavaScript can acheive Concurrancy with the help of Asynchronous operations.
+
+-------------------------------------
+# Asynchronous Operations:
+    - Asynchronous operations are those operations that does not block main thread.
+    - AddeventListener / setTimeOut() etc.
+
+--------------------------------------
+# Non-Blocking:
+    - JS doesn't wait for a previous task to finish, before moving to the next task.
+    - If previous task is started its execution then JS allows next task to start there execution also.
+    - It doesn't wait to finish the previous task.
+
+    async function task1 (){
+        setTimeOut(()=>{
+            console.log("Task-1");
+        },5000) // this task1 will take 5 sec time to run.
+    }
+
+    async function task2(){
+        setTimeOut(()=>{
+            console.log("Task - 2");
+        }, 5000) // this task2 will take 5 sec time to run.
+    }
+
+    // calling task1 async function
+    task1();
+    // calling task2 async function
+    task2();
+
+    Output:
+        Task-1
+        Task-2
+    -------------------
+        Explanation:
+            - Here we getting both the output in 5 sec.
+            - Ideally it will require 10 sec time to run both the tasks one after another.
+            - Here as the first async function start it's execution, Non-blocking I/O starts execution of next async function also.
+
+-----------------------------------------------------------
+    - If we are using Synchronous Function (Operation) instead of Asynchronous function then It will bolck the main thread.
+    - Where as Async function doesn't block main thread, JS allows to run parallaly even the excution of async function is not completed (Finished).
+
+-----------------------------------------------------------
+#Event Loop:
+    - Event loop is the mechanism that allows javascript to execute code Asynchronously. 
+    - It continuously monitors the call stack() and the callback queue().
+    - If the call stack is empty then it takes the first function from callback queue and pushes it into the call stack.
+    - This allows javascript to handle Non-Blocking operations.
+    

@@ -1,0 +1,114 @@
+# ES6: (ECMA Script 2015)
+    - ECMA is a standarised scripting language, created by European Standards Organization.
+    - The purpose of the ECMA-Script is to standaries the syntax, semantics and behaviour of the Scripting Languages such as javaScript, JScript, Action Script.
+    - JavaScript is the most popular implememtation of the ECMA Script.
+
+----------------------------------------------------------------    
+ES6 JavaScript Includes:
+    - Arrow Function
+    - Classes
+    - Template Literals
+    - Destructuring
+    - Default Parameters
+    - Rest and Spread Operators
+    - Promises
+    - Symbols
+    - Generators
+    - modules --> It is way to Organize Code in Separate Files - define the function in file and export it, then these function is used as module.
+
+------------------------------------------------------------------
+# ECMA Specifications in JS:
+    - ECMA Specifications introduced many new features to JS, these features made JS more powerful and expressive language.
+
+------------------------------------------------------------------
+# concise Syntax:
+    - Arrow functions without {} is called as concise syntax.
+    - Here arrow function return single Operation therefore, no need to add {} brackets.
+
+        const multiply = (a,b) => a*b;
+
+------------------------------------------------------------------
+# this in Arrow Function:
+    - arrow function doesn't bind their own 'this' value instead they use the 'this' value of the enclosing scope.
+
+    [A] Example with 'this' from their own 'this' value:
+
+        // Object is created (Key-Value pairs)
+        const person = {
+            name:"John",
+            age:30,
+
+            // Normal Function key-value pair
+            sayName: function(){
+                console.log(this.name);
+            },
+
+            // Arrow Function Key-Value pair
+            syAge: ()=>{
+                console.log(this.age);
+            }
+        };
+
+        // Calling the function from the Object
+        person.sayName();   // op-> John
+        person.sayAge();    // op-> undefined
+    ----------------------------------------------------
+    [B] As arrow function uses 'this' value from their own lexical (brackets {}/ closing) scope only.
+
+        // Object is created
+        const person = {
+            name:"John",
+
+            //Normal Function
+            sayHello: function(){
+                console.log(name);
+            },
+
+            // Arrow function
+            sayAge: ()=>{
+                age: 30;
+                console.log(this.age);
+            }
+        }
+
+        // calling both the functions
+
+        person.sayName();    // op -> John
+        person.sayAge();    // op -> 30
+
+-------------------------------------------------------------------------------
+Difference Between Arrow Function and Normal Function.
+
+    - Arrow -> Inherits "this" from enclosing context.
+    - Normal -> Has its own "this" (take this from parent)
+    
+    - Arrow -> Can not be used as a constructor
+    - Normal -> Used as a constructor using 'New' keyword
+
+    - Arrow -> In arrow function argumnets Object doesn't exists.
+                - It gets lexical inheritance from parent scope.
+    - Normal -> Can take argumnets using argument keyword.
+
+-------------------------------------------------------------------------------
+# argumnets:
+    - It is an keyword used to get all the argumnets from passed to function.
+    - It provides output in key-value pair with type is argumnet -->  [Arguments] { '0': 'Hello', '1': 1, '2': false }
+    - arguments keyword can be used only in Normal functions it doesn't work in Arrow functions.
+
+        function shubham(){
+            console.log("Given argumnets are: ", arguments);
+        }
+        shubham("Hello",1,false);
+
+        OP --> Given argumnets are:  [Arguments] { '0': 'Hello', '1': 1, '2': false }
+        -----------------------------------------------------
+        const shubham = () =>{
+            console.log("Given argumnets are: ", arguments);
+        }
+        shubham("Hello",1,false);
+
+        OP ---> Reference error not defined 
+                OR
+                Gives random output from parent scope.
+
+--------------------------------------------------------------------------------------

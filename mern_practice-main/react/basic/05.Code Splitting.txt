@@ -1,0 +1,72 @@
+# Code Splitting:
+    - Breaking the bundles into small chunks.
+    - [ Lazy loading is Loading when needed. ]
+    - Code Splitting improves performance by loading only the required JavaScript instead of the entire application bundle.
+
+    1. Using React.lazy():
+        - example:
+            import { Suspense, lazy }from 'react';
+
+            // This will load lazy component
+            const my_component = lazy(() => import("./my_component));
+
+            const App () =>{
+                return(
+                    <div> 
+                        // here we are using that lazy loading variable until it loads we are deining suspense
+                        <Suspense fallback={<h2>Loading...</h2>}>
+                            <my_component/>
+                        </Suspense>
+                    </div>
+                );
+            }
+
+        - wrap the child component import inside the Lazy and apply suspense until compoenent is loaded/imported.
+        
+    2. Using Dynamic import:
+        - First import the component, once it is imported then use it.
+
+        - import("./utils").then(module => {
+            module.doSomething();
+        });
+
+    3. Vendor Splitting:
+        - Handled by Webpack.
+        - which separtes third party libraries such as react, and etc.
+------------------------------------------------------------------------------------------------
+# React.lazy():
+    - allows component to render Dynamically.
+    - Webpack detects React.lazy code and create a different chunk for that component i.e. not include in main bundle.
+    - browser loads the DOM while lazy component is loaded asynchronously.
+    - Unitil lazy component is loaded, fallback UI is shown.
+
+-------------------------------------------------------------------------------------------------
+# CSS Dynamically load in React using Code Splitting:
+    1. importing css inside lazy-loaded component.
+    2. Dynamically imports
+
+    1. CSS load with lazy component:
+        - When we lazy-load a component and import css inside that component, the bundler splits the css automatically.
+
+        // Impoting css in my_component
+        import './my_css.css';
+
+        export default my_component = () =>{
+            return(<div>Dashboard</div>);
+        }
+
+        // passing lazy component with css
+        const dashboard = React.lazy(()=>{
+            import("./my_component");
+        });
+
+        --------------------------------------------------
+        - Webpack creates separate chunks for js and css.
+    
+    2. Dynamic Imports:
+
+        - useEffect(()=>{
+            import("./my_css.css");
+        },[]);
+
+----------------------------------------------------------------------------------------------

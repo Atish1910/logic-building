@@ -1,0 +1,206 @@
+# Short-circuit Evaluation:
+    - It stops the execution as soon as possible without evaluatiing another expression.
+    - we have "OR" condition, so if the first statement is true then we are not calculating about second statement.
+
+    exapmle1: 
+        // Logical AND
+        let result = false && ----
+        // here we no need to calculate about second expression as we get our result with first statement
+        Output => false
+    
+    example2:
+        // Logical OR
+        let result  = true || ----
+        // here we agin no need to calculate second expression.
+        output => True
+----------------------------------------------------------------------------
+# Array methods:
+    1. find ():
+        - Find the First occurrence which match the condition.
+
+        const arr = [1,2,3,4,5];
+        let result = arr.find((num)=>num % 2==0);
+        console.log(result)           // 2
+    
+    -----------------------------------------------------------
+    2. filter ():
+        - filter out the result which match the given condition.
+        - create a new array with results.
+
+        const arr = [1,2,3,4,5];
+        let result = arr.filter((num)=> num%2==0);
+        console.log(result)            // [2,4]
+    
+    ------------------------------------------------------------
+    3. slice ():
+        - cut the array as an slice and return.
+
+        const arr = [1,2,3,4,5];
+        let result = arr.slice(1,4);        // 0 base index, n-1 value
+        console.log(result);         // output-> [2,3,4]
+    
+    ----------------------------------------------------------
+    4. splice ():
+        - The splice method is used to Add, Remove or Replace elements in an array.
+        - Syntax: --> slice(start_index, delete_count, elements_to_add ...);
+
+        A. Remove elements:
+            let fruits = ["apple", "banana", "cherry","date"];
+            let removed = fruits.slice(1,2);
+            # Here start index is 1 - for 0th base index
+            # delete count is 2 ---> which will be stored in removed variable
+            output ==> fruits = ["apple", "date"]
+                        and
+                        removed = ["banana", "cherry"]  // these two are removed.
+
+        B. Add elements:
+            let colors = ["red", "blue"];
+            colors.splice(1,0,"green","yellow");
+            console.log(colors);
+
+            # here we have start index 1 for 0th base indexing
+            # remove count is 0 -> delete 0 elements
+            # add new elements "green" and "yellow" after the start index.
+
+            output ==> colors = ["red","green","yellow","blue"];
+        
+        C. Replcae elements:
+            let colors = ["red", "blue"];
+            colors.splice(1,2,"green","yellow");
+            console.log(colors);
+
+            # here we have start index 1 for 0 base indexing.
+            # remove count is 2 --> remove 2 elements from the start index.
+            # add new elements from start index.
+
+            Output ==> colors = ["green","yellow"];
+        
+        D. Remove all from start index:
+            let num = [10,20,30,40,50];
+            num.splice(2);
+
+            # here we added start index "2"
+            # remove count we have not added which means all the elements from start index
+
+            output ==> num = [10,20];
+    ---------------------------------------------------------------------------------------
+    Q.1 difference between the slice() and  splice() methods of an Array?
+    ans ->  
+            - The slice() method is used get a subset of the array from the start 
+            index to the end index(end not included).
+            - The splice() method is used to add, remove, or replace elements in an array
+    -----------------------------------------------------------------------------------------
+    5. map function:
+        - map function is used to pperform some action on array and return a new array.
+
+        let arr1 = [1,2,3];
+        let mapArray = arr1.map((e)=>e*2);
+        console.log(mapArray); // 2,4,6
+
+        # It return a New array as an output.
+    ------------------------------------------------------------------------------
+    6. forEach():
+        - It iterate overs the array but doesn't return anything.
+
+        let arr1 = [1,2,3];
+        arr1.forEach((e)=>{
+            console.log(e*2);   // 2,4,6
+        });
+        console.log(arr1);   // 1,2,3
+
+        --------------------
+        # if we try to assign varible to the forEach function:
+
+        let arr1 = [1,2,3];
+        let arr2 = arr1.forEach((e)=>{
+                    console.log(e*2);
+                });
+        console.log(arr2)             // ndefined --> forEach not return anything.
+
+    --------------------------------------------------------------------------------------------------------------
+    # Difference map() and forEach() array methods of an Array:
+        - map() :   The map() method is used when you want to modify each element 
+                    of an array and create a new array with the modified values.
+        - forEach(): The forEach() method is used when you want 
+                    to perform some operation on each element 
+                     of an array without creating a new array.
+
+--------------------------------------------------------------------------------------------------------------------
+# Array Destructuring:
+    - Array Destructuring allows us to extract elements from an array and assign them variables.
+    let arr1 = ["first_data", "second_data", "third_data"];            // 1. create an array
+    let [first_01, second_02, third_03] = arr1;                        // 2. Assign them values by Destructuring.
+
+    console.log(first_01);    // first_data
+    console.log(second_02);   // second_data
+    console.log(third_03);    // third_data
+
+------------------------------------------------------------------------------------------------------------------
+# Array-like Objects:
+    - Array-like objects have indexed based elements. e.g. obj1[0], obj1[1], obj1[2] etc.
+    - Array-like objects have length property by defalt. e.g. obj1.length = 1 // defines length of arr
+    - Array-like Objects does not have array methods. such as they can not use arr.pop(), arr.push(), arr.map(), arr.filter() etc.
+
+    1. Array-like objects using "String":
+        let name = "Shubham";
+        console.log(name[0])   // here we calling 0th the index --> "S"
+        console.log(name.length)  // length is paramater which provides lentgh of the elements --> 7
+
+    2. Array-like objects using "arguments objects":
+        function example(){
+            console.log(arguments);       // Print all the arguments using arguments keyword.  ---> 1,2,3
+            console.log(arguments.length);  // get the length paramater by default   ---> 3
+            console.log(arguments[1]);      // get the element which is at 1st index  ---> 2
+        }
+
+        // calling function
+        example(1,2,3);
+    
+    3. Array-like objects using "DOM Node List":
+        let divs = document.querySelectorAll("div");
+        console.log(divs);           // print the Nodelist array-like object strcture
+        console.log(divs.length);    // access the length parameter.
+        console.log(divs[1]);        // access the 1st indexed element among the array.
+
+------------------------------------------------------------------------------------------------------
+# Convert Array-like Object to Array:
+    - we can convert Array-like object to array using:
+
+    1. Using Array.from():
+        let arr = Array.from(arguments);
+    
+    2. using Spread Operator:
+        let arr = [...arguments];
+    
+    3. using "Array.prototype.slice.call()":
+        let arr = Array.prototype.slice.call(arguments);
+
+-----------------------------------------------------------------------------------------------------
+# forEach:
+    - forEach method iterate over the array. 
+    - Can not used break and continue in forEach.
+
+    let arr = [10,20,30,40,50];
+    arr.forEach((value)=>{
+        console.log(value);
+    });
+
+    # If we used "break" or "continue":
+
+    arr.forEach((value)=>{
+        if (value==20){
+            continue;    <---- Get an error - 
+        }
+        console.log(value);
+    });
+--------------------------------------------------------------------------------------------------
+# How to pass arguments to an function:
+    1. Positional Argument:
+        funct_01(10,20);
+    
+    2. Named arguments:
+        funct_01(a,b);
+    
+    3. Argument Object:
+        passing multiple arguments and taking with "arguments" keyword.
+-----------------------------------------------------------------------------

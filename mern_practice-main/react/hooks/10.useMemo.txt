@@ -1,0 +1,38 @@
+# useMemo:
+    - Memoize the function Output.
+    - when function gets same input then it will give same output. through Memoization - without need to Run/Execute again
+    - useMemo is performance optimization hook,
+    - It Memoize the result of expensive calculation so no need to re-run the expensive computation on every re-render.
+    - It memoize only the privious output not older outputes.
+
+    Syntax:
+
+        const value_01 = useMemo(()=>{
+            // Expensive Operation
+        },[dependencies])  <------------ Dependency List
+
+-----------------------------------------------------------
+# Without useMemo:
+    - React calculates every thing on re-render
+    - React re-calculates the expensive function
+    - want to avoid unnecessary expensive functions calculations then use useMemo.
+
+--------------------------------------------------------------
+# useMemo v/s useCallback hook:
+
+    # useMemo:
+        - Memoize the "Value" which is result of expensive function.
+        - chache stores the result of expensive function.
+    # useCallback:
+        - Memoize the "function" which avoid unneccesarry re-calculation.
+        - cache stores the entire function and stop re-creation until dependecy changes.
+
+-------------------------------------------------------------------
+# When to use useMemo:
+    - calculation is expensive.
+    - Commponents renders frequently i.e. more times.
+
+# When to use useCallback:
+    - Function is passed to child component as Props.
+    - child component is memoized.
+    - You have performance issue.

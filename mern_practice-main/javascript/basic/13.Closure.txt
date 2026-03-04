@@ -1,0 +1,85 @@
+# Closure:
+    - Closure is called when fuction is called (return) inside another function, where inner fuction takes and refernce value from outer function.
+    - It is a concept in javascript where data of outer varible and inner function is stored in lexical environment.
+
+    function outer(){
+        let count = 0;
+
+        return function inner(){
+            count ++;
+            console.log(count);
+        }
+    }
+
+    let counter = outer();
+
+    counter(); // op: 1
+    counter(); // op: 2
+    counter(); // op: 3
+    counter(); // op: 4
+
+    Here:
+        - Inner function is closure, and it has access to outer function variable even if the outer is done its execution.
+        - count is preserved across multiple calls.
+---------------------------------------
+
+    - It combines Function + Varibales and their data in Lexicol Environment.
+    - Variable is created by refernce not by value copy.
+    - A closure lets a function "remember" the environment in which it was created.
+
+-------------------------------------
+# Clouser is Nestead:
+
+---------------------------------------------------------------------------------------
+# Real Life use cases of Closure:
+    1. Data Privacy/ Encapsulation:
+        - In real projects, we often want to hide data from outside access.
+
+        function createAccount(initialBalance){
+            let balance = initialBalance;
+
+            return{
+                deposite(amount){
+                    balance += amount;
+                    console.log("Balance: ",balance);
+                },
+                withdraw(amount){
+                    balance -= amount;
+                    console.log("Balance: ",balance);
+                },
+                PrintBalance(){
+                    console.log("Balance: ",balance);
+                }
+            };
+        }
+
+        const account = createAccount(1000);
+        account.deposite(500);
+        account.withdraw(200);
+
+        console.log(account.balance);  // undefined
+
+    2. Closures are auto matically used when working with:
+        - setTimeout, setInterval, Event Listeners
+
+        function greet(name) {
+            setTimeout(function () {
+                console.log("Hello " + name);
+            }, 2000);
+        }
+
+        greet("Shubham");
+
+    3. React Hooks:
+        - Even useEffect works because of closures, useMemo etc.
+        - useEffect with handleClick function:
+
+            function Counter() {
+                const [count, setCount] = useState(0);
+
+                function handleClick() {
+                    setCount(count + 1);
+                }
+
+                return <button onClick={handleClick}>{count}</button>;
+            }

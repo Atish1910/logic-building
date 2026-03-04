@@ -1,0 +1,51 @@
+# Problem:
+    - If we have multiple asynchronous function which can be Promise.
+    - we want to run all the Promises in Nestead way, but they are too many (50 promise functions) to add then() block on each promise.
+    - Instead of adding then() block on each promise output we can add "await".
+
+    - If we want to run the promises in Queue then we can use "await".
+    - If we not used "await" then it will be called parallaly.
+
+--------------------------------------------------------------------------
+# Async Function:
+    - Async function is created using async keyword:
+
+    async function utility(){
+
+        // Promise - 1
+        let delhi_mausam_01 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log("Delhi me bahut garmi hai");
+                resolve("Delhi Resolved");
+            }, 5000);
+        });
+
+        // Promise - 2
+        let pune_mausam_02 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                console.log("Pune me bahut thand hai");
+                resolve("Pune Resolved");
+            }, 10000);
+        });
+
+        // Adding await in this ----> if we doesn't add await then it will parallaly worked
+        let promise_01 = await delhi_mausam_01;
+        let promise_02 = await pune_mausam_02;
+
+        return [promise_01, promise_02];
+    }
+
+    // Calling the Async Function:
+    utility().then((res)=>{
+        console.log("Result: ",res);
+    })
+
+---------------------------------------------------------------------------------
+# Difference between Async-awiat and Promises:
+    - Promises can be nestaed but managing them can becomes harder for may sequential steps.
+    - Async/await can provide easy access to read and write sequential steps.
+
+    - Promises uses then() & catch();
+    - async-await uses try{} & catch{};
+
+---------------------------------------------------------------------------------

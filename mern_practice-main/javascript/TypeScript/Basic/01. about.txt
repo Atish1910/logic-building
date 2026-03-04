@@ -1,0 +1,35 @@
+# TypeScript:
+    - TypeScript is strongly typed language.
+    - TypeScript is a superset of JavaScript.
+    - It has Object oriendted features.
+    - Detect error at compile time.
+    - Browser can't execute TypeScript, so finally TS compiler wwill convert the TS to JS only. 
+        which browser can understand.
+
+    npm install -g typescript           // g for gloabl
+
+---------------------------------------------------------------------------------------------
+# Type Anotation:
+    - Type Anotations helps the compiler in checking the types of variable and avoid errors.
+    - Shows compile time errors.
+
+        let i:number;
+
+        i = 1;
+        i = "Shubhamzz";           // <-- It will show compile time error
+
+---------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------
+# What is "any" type in TS:
+
+    - when variable is declared with "any" type then no typechecking and no compile time error.
+    - It jsut give any type of data is acceptable.
+
+    let x:any;
+    x = 1;            <- Number
+    x = "shubh";       <- string
+    x = true;          <- boolean
+    x();               <- function
+    x.property = 10;    <- Object

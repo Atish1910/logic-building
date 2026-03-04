@@ -1,0 +1,46 @@
+# React-Profiler:
+    - It is an built-in React component used to measure the performance of the React Components/part of code.
+
+    # Why React.Profiler is used?
+        - Measure render duration of Components
+        - Detect slow Components
+        - Find unneccessary re-renders.
+        - Analyze the performance in code.
+        -----------------------------------------------------
+
+        <React.Profiler id="MyComponent" onRender={callback} >
+            <MyComponent/>
+        </React.Profiler/>
+
+        ## OR ##---------------------------------------------
+
+        import { Profiler } from 'react';
+
+        <Profiler id="MyComponent" onRender={callback}>
+            <MyComponent/>
+        </Profiler>
+
+        -------------------------------------------------------
+
+    # How to use React-Profiler:
+        - Wrap the code inside Profiler.
+        - Using above code.
+
+-------------------------------------------------------------------------------------
+# onRender callback in React-Profiler:
+    - Example
+
+        function callback( id, phase, actualDuration, baseDuration, startTime, commitTime, interactions){
+                console.log({ id, phase, actualDuration });
+            }
+    
+    - This function contains Data and we can perform any operation on that data.
+
+    # Parameters:
+        - id: Profiler Name
+        - phase: "mount" or "update"
+        - actualDuration: Time taken for this render.
+        - baseDuration: Time to render without memoization.
+        - startTime: when render started.
+        - commitTime: When updates were committed.
+        - interactions: related to user interactions.

@@ -1,0 +1,24 @@
+# React.memo:
+    - Memoize the props data.
+    - while Child Component is wrapped under the React.memo.
+    - It avoids the child component to re-render.
+
+    - As we known when the State of the Parent component is changed -> Parent Component is getting Re-render -> Child component also get re-render -> 
+        -> React.memo avoids the Re-render of the Child component when the Parent component chages.
+
+    - It allows to Re-render child component only when the "Props" changes.
+
+# Drawbacks:
+    - When we passing any function as an props, the child component is get re-render.
+        - As we known the parent compoennt is re-render the Function is also re-render/re-created and deu to this child gets updated (new) function as an props an it gets re-rendr.
+---------------------------------------------------------------------------------------------------------
+        const ChildComponent = React.Memo(
+            (props)=>{
+                // Logic
+                return(
+                    // JSX code
+                )
+            };
+        );
+
+        export default ChildComponent;

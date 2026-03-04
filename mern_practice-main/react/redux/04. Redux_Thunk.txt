@@ -1,0 +1,112 @@
+# Difference Between Regular Action Creator & Thunk Action Creator:
+
+    - Regular Action Creator:
+        - It return plain javascript object with a "type" property & "payload" property is optional.
+        - "type" parameter defines the type of action to be performed.
+        
+            function increment(){
+                return {
+                    type: "INCREMENT",
+                    payload: "data"
+                };
+            };
+
+    - Thunk Action Creator:
+        - A Thunk action creator is a function, that returns another function.
+        - A Thunk Action Creator is a special type of action creator, that returns a function instead of an action object.
+        - This returned function dispatched to the redux store.
+        - Thunks can be used to perform complex async operations, such as data fetching or API calls,
+          based on data fetched action will be decided.
+
+        - Use Cases:
+            - API Calls. ( Fetch data from API -> wait for response -> Then dispatch success or failure )
+            - Async Operations.
+            - Delayed Dispatch.
+            - Conditional Dispatch.
+
+        - Syntax:
+
+            const fetchUser = () => {
+                return function (dispatch, getState) {
+                    // async logic
+                }
+            }
+
+            OR ------ without curly brackets in arrow function
+
+            const fetchUser = () => async (dispatch, getState) =>{
+                // async logic
+            }
+
+----------------------------------------------------------------------------------------------------------
+# Thunk Action Creator:
+
+    - userSlice: 
+
+            // here we define "pending", "fulfilled", "rejected" Reducers - Which is used by Redux Thunk
+
+        const userSlice = createSlice ({
+            name: "user",
+            initialState: { loading:false, data:null, error:null },
+            extraReducers: (builder) =>{
+                builder.addCase(fetchUser.pending, (state)=>{
+                    state.loading = true;
+                })
+                .addCase(fetchUser.fulfilled, (state,action)=>{
+                    state.loading = false,
+                    state.data = action.payload;
+                })
+                .addCase(fetchUser.rejected, (state,action)=>{
+                    state.loading = false,
+                    state.error = action.error.message;
+                });
+            }
+        });
+
+    ---------------------------------------------------------
+    ---------------------------------------------------------
+
+    - use the "createAsyncThunk()" from "@reduxjs/toolkit":
+
+        import { createAsyncThunk } from "@reduxjs/toolkit";
+
+        export const fetchUser = createAsyncThunk(
+            "user/fetchUser",
+            async () => {
+                const response = await fetch("https://api.example.com/user");
+                return response.json();
+            }
+        );
+
+    --------------------------------------------------------
+    --------------------------------------------------------
+    - Redux Toolkit automatically convert above code to:
+
+        export const fetchUser = () => async (dispatch) =>{
+
+            dispatch({ type: "user/fetchUser/pending" });
+
+            try {
+            const result = await asyncFunction();
+            dispatch({
+                type: "user/fetchUser/fulfilled",
+                payload: result
+            });
+            } 
+            
+            catch (error) {
+            dispatch({
+                type: "user/fetchUser/rejected",
+                error: error
+            });
+            }
+
+        }
+
+    ----------------
+    # Here above createAsyncThunk uses:
+        "user/fetchUser" means "sliceName/actionName" where redux toolkit auto adds pending/rejected/fullfilled.
+
+        user/fetchUser/rejected
+        user/fetchUser/fullfilled
+        user/fetchUser/pending

@@ -1,0 +1,10 @@
+# JWT:
+    - JWT (JSON Web Token).
+    - It is a URL safe token format used for authentication and securee data exchange. 
+    - In Node.js it is commonly implemented using "jsonwebtoken" library.
+
+    Syntax:
+        - It has parts:
+            header.payload.signature          <-- separated by dots, each part is Base64 URL encoded
+
+    - If any one changes the payload would be change in signature also.

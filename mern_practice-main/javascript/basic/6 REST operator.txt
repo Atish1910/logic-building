@@ -1,0 +1,49 @@
+# Escape Notation
+    - / used in string.
+
+# Tempate Literal:
+
+    let name = "Shubh";
+    let string_01 = `my name is ${name}`;  <-- Template Literal & Also work similar like (pre tag)
+
+# Object Literal:
+    {}
+
+# Arrow Functions
+
+----------------------------------
+
+Arrays:
+# Filter
+
+    let arr = [1,2,-9,8];
+    let op = arr.filter(value => value >=0 );   // [1,2,8]
+
+----------------------------------
+# Take multiple parameters as iput using "argument"
+
+        function sum (a,b){
+            let total = 0;
+            for (let value of arguments){
+                total = total + value;
+            }
+            return total;
+        }
+
+        sum(10,20,30,40,50,60); // passing multiple parameters.
+
+-----------------------------------------
+# Rest Operator:
+    add the rest parameters in function
+
+    function print_text (a,b, ...args){
+        console.log(a);
+        console.log(b);
+        console.log(args);
+    }
+
+    print_text(10,20,30,40,50,60,70,20,80);
+----------------------------------------------
+
+Error Handling:
+    - Try & Catch

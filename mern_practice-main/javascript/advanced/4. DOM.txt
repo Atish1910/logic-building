@@ -1,0 +1,63 @@
+# DOM Methods:
+    1. Selectors:
+        - getElementById('id_name')
+        - getElementsByClassName('class_name')
+        - getElementsByTagName('tag_name')
+        - getElementsByName('input_name')
+        - querySelector('id_or_class etc.')
+        - querySelectorAll('id_or_class etc.')
+    
+    2. Modify elements properties and methods:
+        - textContent:
+            element.textContent = "Hello World";
+        - innerHTML:
+            element.innerHTML = "Hello";
+        - setAttribute():
+            element.setAttribute('data-info', 'new_value');
+            <div data-info='new_value'></div>
+        - removeAttribute():
+            element.removeAttribute('data-info');
+        - style.setProperty():
+            element.setProperty("color", "blue");
+            <div style="color:blue"> </div>
+        - classList.add()
+        - classList.remove()
+        - classList.toggle()  // make opposite - e.g. if present then remove or not present then add
+    
+    3. Create new elements in DOM:
+        - createElement():
+                const newDiv = document.createElement('div');
+                newDiv.textContent = "Hello";
+                document.body.appendChild(newDiv);
+        - cloneNode(boolean_value):
+            - It clones the entire node with its child nodes also.
+
+            const element = document.getElementById('id_name');
+            const cloned_node = element.cloneNode(true)
+        - createTextNode():
+            - var new_text_node = element.createTextNode('this is new node');
+
+            <div>
+                <h1>Hello</h1>
+                "this is new node"
+            </div>
+        - appendChild():
+            document.body.appendChild(newDiv);
+    
+    4. Remove elements:
+        - remove():                              // This is ES6 based
+            
+            let messgae_01 = document.getElementById('message');
+            messgae_01.remove();     // element node is removed
+
+        - removeChild(node_name):                // This is before ES6
+            document.body.removeChild(newDiv);
+    
+    5. Add or Remove EventListener:
+        - addEventListener(type, listener):
+            - Type => "click", "input", "keydown"
+            - listener => Function
+
+        - removeEventListener(type, listener):
+            - Type => "click", "input", "keydown"
+            - listener => Function

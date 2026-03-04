@@ -1,0 +1,200 @@
+# What are the Types of functions:
+    1. Name Function
+    2. Arrow Function
+    3. Anonymouse Function
+    4. Function Expression
+    5. IIFE
+    6. Callback Function
+    7. Higher Order Function
+-----------------------------------------------------------
+# 1. Name Function:
+    - normal function decalred using function keyword.
+
+        function shubh(name){
+            console.log("Name is ",name);
+        }
+        shubh();
+
+-----------------------------------------------------------
+# 2. Arrow Function:
+    - introduced in ES6.
+    - Defined using arrow - no need to declare function keyword.
+    - difference is 
+        - can not be called as constuctor
+        - argumnets keyword not works.
+        - this keyword taks data from self arrow functional scope only.
+        - no need to return if we don't used brackets. - if we used brackets then need to return the data.
+        - Hoisting -> considers it as an varibale. (if we use normal function then it will be get called using hoisting).
+    
+    const shubhamzz = () => {
+        console.log("Heeloo World!);
+    }
+    shubhamzz();
+
+---------------------------------------------------------------
+# 3. Anonymouse Function:
+    - a function which is decalred withot a name 
+    - by default arrow functions are Anonymouse functions.
+
+    const my_fun = function(){
+        console.log("Hello World");
+    }
+    my_fun();
+
+-----------------------------------------------------------------
+# 4. Function Expression:
+    - a function that is assigned to a varibale.
+    - these functions can be named or Anonymouse.
+    - by dedfault arrow functions are Function Expression.
+    - by default Anonymouse functions are alo Function Expression.
+
+    const my_function = function(){
+        console.log("Helloe Wordl);
+    }
+    my_function();
+
+------------------------------------------------------------------
+#5 IIFE - Immediately Invoked Function Expression
+    - This function runs Immediately after being Defined.
+
+    (function(){
+        console.log("Hello World!);
+    })();
+
+----------------------------------------------------------------
+# 6 Callback Function:
+    - A function that is passed as an argument to another function.
+    
+    function funct_01 (callback_funct_01){              // Function contains an parameter 
+        console.log("Return an Function with Name");
+        const name = "Shubhzz";
+        callback_funct_01(name);
+    }
+
+    funct_01((name)=>{
+        console.log("Hello ",name);           <-- Here we passing Entire function as an argument
+    });
+
+----------------------------------------------------------
+# 7. Higher Order Function:
+    - A function that takes an function as an argument and return a function. (new/previous as it is/modified)
+
+    function sayHello(){                ----------- Simple function to be passed as an argument
+        console.log("Hello Brother");
+    }
+
+    function funct_01 (higher_funct){        ------- Taking an function as an parameter.
+        higher_funct();                    --------- Here we are calling/Executing that function
+    }
+
+    funct_01 (sayHello);    ------- Passing the function as an argumnet
+
+---------------------------------------------------------
+# Error Handling:
+    - To handle errors in javascript we use "Try and Catch" blocks.
+-------------------------------------------------------------------------------------
+# What are "First-class Function" in JS:
+    - A functions whih are treated like object is called as "First-class" Functions.
+
+    1. Assinging function to an variable.
+        const shubh_01 = function(){     // function is decalred as an variable
+            console.log("Hello World");
+        }
+        shubh_01();
+
+    2. Passing function as an argumnet to other function.
+        function funct_01 (get_input){
+            get_input();
+        }
+        funct_01(shubh_01);  // passing an function as an varibale to another function.
+
+    3. Function returns an another function as an retrun value/variable.
+        function funct_01 (){
+            return function(){              // function retrun the another function
+                console.log("Hello World!");
+            }
+        }
+        const my_funct = funct_01();      // return function is get into variable.
+        my_funct();                       // calling returned function only ---- closure 
+-------------------------------------------------------------------------------------------
+# Pure and Impure Functions:
+    1. Pure Function:
+        - Pure function are those functions which gives same output when we give the same input again.
+
+        function add(a,b){
+            return a+b;
+        }
+        console.log(4,2);   // Output --> 6
+        console.log(4,2);   // Output --> 6
+
+    2. Impure Function:
+        - Impure Function are those functions which gives different output even we give same input again.
+
+        let total = 0;
+        function add(num){
+            return total += num;
+        }
+
+        console.log(5); // Output --> 5
+        console.log(5); // Output --> 10
+-------------------------------------------------------------------------------------------------
+
+# Function Currying in JS:
+    - here we using closure - nestead function.
+    - returned function can take parameters.
+    - passing the arguments in nestead function. 
+    - If there are complex function and required multiple arguments then we can broken down into small reusable functions with fewer argument.
+
+    function multiplication(a){
+        return function multiplication_02 (a){
+            console.log(a*b);
+        }
+    }
+
+    // calling the function
+    const my_return_function = multiplication(2);   // It always returns 2*b
+
+    // calling returned function 
+    my_return_function(5);   // Output -> 10 2*5
+
+--------------------------------------------------------------------------------------------------------
+# Call, Apply and Bind methods in JS:
+    - these three methods are used with "Functions" and control how they are Invoked.
+    - these methods provide a way to manipulate "this" value.
+
+    // function contains "this", but don't have any value need to apply/bind/call this value
+
+    function shubh_01(message){
+        console.log(`${message}, ${this.name}!`);
+    }
+
+    // varibale which is object
+    const name_value = { name:"Shubham" };
+    
+    1. Call:
+        - Invoke the function with specific context and argument.
+        example:
+            shubh_01.call(name_value, "Hello");
+
+            // Output --> Hello Shubham
+    
+    2. Apply:
+        - Invoke the function with specific context and array of arguments.
+        example:
+            shubh_01.apply(name_value, ["Hi"]);
+
+            // Output --> Hi Shubham
+    
+    3. Bind:
+        - Bind the specific context. and Invoke later.
+        - It doesn't invoked immediately.
+        
+        const new_01 = shubh_01.bind(name_value);
+        new_01("Hii");
+
+# Smmary:
+    1. call -> invoked with specific context and arguments.
+    2. Apply -> invoked with specific conetxt and arguments array.
+    3. Bind -> Doesn't invoked immediately. just bind the specific context and then invoked later.
+-----------------------------------------------------------------------------
+####

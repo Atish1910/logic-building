@@ -1,0 +1,197 @@
+# React-Routes:
+    - React is SPA react router allows to update.
+    - To use routes in react we uses 'react-router-dom'
+
+-------------------------------------------------------
+
+Step 1: BrowserRouter:
+    - Wrap the app component in BrowserRouter.
+
+        <BrowserRouter>
+            <App/>
+        <BrowserRouter>
+
+Step 2: Create Routes in App:
+
+        <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/*" element={<NotFound/>} />
+            <Route path="/services" element={<Services/>}>         <--- Nestead Routes 
+                <Route path="/web-dev" element={<WebsiteDev/>} />
+                <Route path="/ppc" element={<PPC/>} />
+                <Route path="/seo" element={<SEO/>} />
+            </Routes>
+        </Routes>
+
+Step 3: Create the Navigation bar:
+        1. Link:
+            <Link to="/about"> About </Link>
+
+            - Basic use, No styling info about active route.
+
+        2. NavLink:
+            <NavLik to="/about"> About </NavLink/>
+
+            - Knows which route is active, used in menu/navbar
+            - allows active styling.
+
+            <NavLink to="/about" className={({ isActive }) => ( isActive? "active" : "" )}> About </NavLink>
+
+------------------------------------------------------------------------------
+# Nestead Routes:
+    - In Nestead Route 'Outlet' is used.
+
+        <Routes>
+            <Route path="/services" element={<Services/>}>
+                <Route path="/web-dev" element={<WebsiteDev/>} />
+                <Route path="/ppc" element={<PPC/>} />
+                <Route path="/seo" element={<SEO/>} />
+            </Route>
+        </Routes>
+
+# Dynamic Routes:
+
+        <Routes>
+            <Route path="/user/:id" element={<User/>} />
+        </Routes>
+--------------------------------------------------------------------------------------
+# Hooks:
+    1. useParams
+    2. useNavigate
+    3. useLocation
+    4. useSearchParams
+
+    1. useParams:
+        - It is mostly used in Dynamic Routes.
+        - Used to take parameter values from URL.
+        - If the Dynamic route is :
+            <Route path="/user/:id" element={<User/>} />
+
+        - User.jsx:
+
+            import { useParams } from 'react-router-dom';
+
+            const User = () =>{
+                const { id } = useParams();       <--- It directly takes parameter value from URL
+                return (<div></div>)
+            }
+        
+    2. useNavigate:
+
+        const navigation = useNavigate();
+        navigate("/login");
+        navigate(-1);   <--- Go Prevoius page.
+
+    3. useLocation:
+        - Access the current URL Location Object
+
+                import { useLocation } from 'react-router-dom';
+
+                function myComponent = () =>{
+                    const location = useLocation();
+                    return(
+                        <div>
+                            <p>Path Name: {location.pathname} </p>
+                        </div>
+                    );
+                }
+        
+        - It return following Location Object:
+
+                {
+                    pathname: "/products",
+                    search: "?category=books",
+                    hash: "#top",
+                    state: { from "/login" },
+                    key: "abc123"
+                }
+
+        ------------------------------------
+        If we want to access domain name:
+            windows.location.origin --> https://shubhzz.com
+        
+    4. useSearchParams:
+        - useSearchParams is used to exrtact only for query parameters in the URL.
+
+        https://example.com/products?category=books&page=2
+
+        const [ searchParams, setSearchParams ] = useSearchParams();
+        
+        const category = searchParams.get("category");
+        const page = searchParams.get("page");
+
+        // Updating query parameters
+        setSearchParams({ catgegory:"movies", page: "1" });
+
+        ----------------------------------------------------
+        # setSearchParams:
+            - It update the URL but not load the page.
+            - If we reloaded the page as we known state will change but URL is updated through setSearchParams,
+              so if page is reloaded then also we can update state through URL.
+            - to update the URL using setSearchParams, we need to use useEffect.
+            - Example:
+
+                setSearchParams({ catgegory:"movies", page: "1" });
+                useEffect(()=>{
+                    console.log("state is changed");
+                },[searchParams]);
+
+---------------------------------------------------------------------------------------
+# Outlet:
+    - Outlet is placeholder component that renders child routes inside a parent route.
+
+        <Routes>
+            <Route path="/services" element={<Services/>}>
+                <Route path="/web-dev" element={<WebsiteDev/>} />
+                <Route path="/ppc" element={<PPC/>} />
+                <Route path="/seo" element={<SEO/>} />
+            </Route>
+        </Routes>
+        --------------------------------------------------------
+
+        import { Outlet } from 'react-router-dom';
+
+        const my_component = () =>{
+            return(
+                <div>
+                    <p> Hello </p>
+                    <Outlet/>
+                </div>
+            );
+        }
+
+------------------------------------------------------------------------------------------------
+# Protected Routes:
+    - Routes that only login users can access will be protected routes.
+
+        import { Navigate } from 'react-router-dom';
+
+        const ProductedRout = ({children}) =>{
+            const isAuth = true;   <--- comes from the state
+            return isAuth ? children : <Navigate to="/login"/>;
+        }
+
+    -------- use above Component in Routes as Protected Route:
+
+        <Route path="/profile" element={
+            <ProtectedRoute>
+                <Profile/>
+            </ProtectedRoute>
+        }/>
+
+------------------------------------------------------------------------------------------------
+# Switch Component:
+    - Switch component ensure that only the first matching <Route> is rendered rest are ignored.
+    - Switch is used to avoid 404 Not found pages.
+
+    <Switch>
+        <Route path="/users" element={<UserList/>} />
+        <Route path="/users/:id" element={<UserProfile/>} />
+    </Switch>
+
+-------------------------------------------------------------------------------------------------
+# exact prop:
+    - If we passed exact prop then it will render component if the path matches exactly.
+
+        <Route path="/about" exact element={<About/>} />

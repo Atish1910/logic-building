@@ -1,0 +1,64 @@
+# String Methods:
+    1. substr(start, length):
+        - retrun string with starting index and length upto.
+        - start => Starting index
+        - length => Number of elements
+
+        const name = "shubhamzz";
+        console.log(name.substr(2,5));  // Output -> ubham
+
+    2. substring(start,end):
+        - return string from start to end -1.
+        - start => Starting index.
+        - end => end-1
+
+        const name="shubhamzz";
+        console.log(name.substring(2,5)); // we get 2,3,4 as an Output --> ubh
+    
+    3. slice(start, end):
+        - same as substring but can take negative numbers also.
+    
+        const name = "shubhamzz";
+        console.log(name.slice(-2,2));  // ubham
+
+    4. indexOf(substring)
+    5. lastIndexOf(substring)
+    6. includes(substring)
+    7. search(regular_expression):
+        - finding substring using regular_expression.
+        
+        const text = "Learning JavaScript is fun";
+        let result = text.search(/javascript/i);    // using case-insensitive  flag "i"
+        console.log(result)    // 9
+    
+    8. match(regular_expression)
+        - Returns array of matching elements as per using above regular_expression.
+
+        const text = "Learning JavaScript is JavaScript fun JavaScript";
+        let result = text.match(/javascript/gi);            // using case-insensitive  flag "i" and global flag "g"
+        console.log(result);                                 // [ 'JavaScript', 'JavaScript', 'JavaScript' ]
+
+    9. replace(search_value, new_value)
+    10. concat(string_02)
+    11. split("seperatore_value")
+    12. toLowerCase()
+    13. toUpperCase()
+    14. charAt(index) --> return character at given index
+    15. charCodeAt(index)  --> return unicode of character at given index
+    16. trim()  --> remove white space from both ends
+    17. toString()  --> convert value to string
+    18. valueOf():
+        - returns primitive value of the string
+        - If we declare the String using "New" keyword then it will be object.
+        - it converts object to string.
+
+        const name = new String("Shubhamzz");
+        console.log(name);                   // This is an Object --> [String : 'Shubhamzz']
+        console.log(name.typeOf());          // This will convert to primitive string --> 'Shubhamzz'
+
+------------------------------------------------------------------------------------------------
+# Array to String:
+    - Using Join() method
+
+    let arr = ['a', 'b', 'c', 'd'];
+    let string_01 = arr.join(' ');  // we are joining using space

@@ -1,0 +1,37 @@
+# useReducer:
+    - useReducer is used for state management with complex logic.
+
+    - useReducer is alternative to useState when:
+        - State has multiple related values
+        - State Update depends on prevoius state.
+        - You want to predictable next state, on the basis of prevoius state.
+
+------------------------------------------------------------------------
+    Syntax:
+        const [state, dispatch] = useReducer(reducer, initialState);
+
+        where:
+            state => Curerent State
+            dispatch => Update the State          --- which will be added to action Object (like action.type, action.name etc.)
+            initialState => contains Object of Initial State Values.
+            reducer => a Function that takes (state , action) and Updated the state
+
+            example of Reducer Function:
+
+                function reducer(state, action){
+                    switch(action.type){
+                        case "increament":
+                            return { count : state.count+1 };
+                        case "decreament":
+                            return { count : state.count-1 };
+                        default: 
+                        return state;
+                    }
+                }
+
+
+--------------------------------------------------------------------------
+# When to use useReducer:
+    - Multiple realted state values.
+    - Complex update logic
+    - State depends on Previous State i.e. future is predictable

@@ -1,0 +1,5 @@
+# useLayoutEffect:
+    - Its syntax is same as useEffect hook.
+    - It word Synchounuously where as useEffect works Asynchounuosly
+    - It is used to update side effects which are related to UI.
+    - It runs on when browser is printing the UI which useEffect run when browser has printed the UI.

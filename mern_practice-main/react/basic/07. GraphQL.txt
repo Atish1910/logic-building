@@ -1,0 +1,42 @@
+# GraphQL:
+    - GraphQL is a query language and runtime for APIs.
+    - GraphQL can used to get the exactly data we want not more and not less.
+    - here we defined the strtucture of data and we get same amount stucture and Order of data through API.
+
+# Why GraphQL:
+    - Each component can request only the data in needs.
+    - Fewer network requests.
+    - Client (React) controlls the response.
+
+# Difference between REST API and GraphQL API:
+    
+    # REST APIs:
+        - REST API contains multiple endpoints.
+            GET /users
+            GET /users/1 etc.
+        - Over/under fetching (Get more or less data - for more data required to another api call)
+        - Backend controlls the response.
+        - Harder to evolve APIs.
+            - If we change the API response structure from Backend then it will break existing clinets code.
+            - to maintain API response structure we use versioning.
+        
+    # GraphQL APIs:
+        - Single Endpoint.
+            POST /graphql  <-- only one Endpoint 
+            - only one Endpoint handles all data requests.
+            - The query it self definds what data you will get.
+        - Get the exact data
+        - clinets controlls response.
+        - Esay to add fields.
+
+-----------------------------------------------------------------------------------
+# How to validate Authentication of user:
+
+    Step 1: Client send the username and password to server.
+    Step 2: Server Authenticate and create JWT
+    Step 3: Server return JWT token in response to client.
+    Step 4: Client store the JWT to local storage.
+    Step 5: Client request some data and passing JWT in Header.
+    Step 6: Server validate the JWT token signature.
+    Step 7: After validation server send the data.
+    Step 8: Client displays the data.

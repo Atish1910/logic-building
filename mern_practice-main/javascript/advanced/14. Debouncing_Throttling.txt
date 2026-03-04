@@ -1,0 +1,52 @@
+# Debouncing:
+    - Runs the function only after user stops triggering the event of certain time.
+    - Example: Used in Search Input -- When user stops typing then API call is done.
+
+    How it works:
+        - Every time function runs -> Clear the previous timer
+        - Start a new timer
+        - Only the last one executes
+
+    - waits until user stops.
+    - Best for search inputs
+    - Executes last event
+
+# Throttling:
+    - Runs the function at most once every X miliseconds.
+    - Scroll event - limit function execution.
+
+    How it works:
+        - Stores last execution time 
+        - checks if enough time pass
+        - Executes only if delay is completed.
+
+    - Runs at fixed Interval
+    - Best for Scroll/Resize window
+    - Executes first (or fixed interval)
+
+
+import React, { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("Scroll event triggered");
+    };
+
+    const throttledScroll = throttle(handleScroll, 1000);
+
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+    };
+  }, []);
+
+  return (
+    <div style={{ height: "200vh", padding: "20px" }}>
+      <h1>Scroll Down</h1>
+    </div>
+  );
+}
+
+export default App;

@@ -5,11 +5,9 @@
 <!-- Temporal dead zone -->
 <!-- Hoisting -->
 <!-- Prototypes in js -->
-
-Prototype object
-
 <!-- Prototype chaining -->
 
+Prototype object
 Closures
 Pass by reference vs pass by value
 Currying in js

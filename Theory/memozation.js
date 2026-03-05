@@ -1,15 +1,22 @@
-function memozation(){
-  let iResult = {};
-  return function (a){
-    if(iResult[a]){
-      return console.log(" calculate from", iResult[a]);
+// how to memoize the function
+
+function memoize() {
+  iResult = {};
+  // const iResult = {
+  //   n: false,
+  // };
+  return function (n) {
+    if (iResult.n) {
+      return console.log("here is cache result...", iResult.n);
     }
-    iResult[a] = a * a;
-    return console.log(" calculate result", iResult[a]);
-  }
+    iResult.n = n * n;
+    return console.log("here is calculated result...", iResult.n);
+  };
 }
-const add = memozation();
-add(10);
-add(10);
-add(10);
-add(10);
+const square = memoize();
+square(10);
+square(10);
+square(10);
+square(10);
+square(10);
+square(10);

@@ -1,24 +1,25 @@
 <!-- Scope in js ( Global, functional, block ) -->
-<!-- b  -->
+<!-- Scope chaining -->
 <!-- Primitive , non-primitive in js -->
 <!-- Var, let and const -->
 <!-- Temporal dead zone -->
 <!-- Hoisting -->
 <!-- Prototypes in js -->
+<!-- 08 ✅ Prototype Object in JavaScript -->
 <!-- Prototype chaining -->
-<!-- Prototype object -->
-<!-- Closures -->
-<!-- Pass by reference vs pass by value -->
-<!-- Currying in js -->
-<!-- Infinite currying problem -->
-<!-- Memoization in js -->
-<!-- Rest parameter -->
-<!-- Spread operators -->
-<!-- How many ways you can create object in js -->
-<!-- Generator functions in js -->
-<!-- Javascript single threaded language -->
-<!-- Callbacks, why we need -->
+<!-- 10 : 2️⃣ Difference between **proto** and prototy -->
 
+Closures
+Pass by reference vs pass by value
+Currying in js
+Infinite currying problem
+Memoization in js
+Rest parameter
+Spread operators
+How many ways you can create object in js
+Generator functions in js
+Javascript single threaded language
+Callbacks, why we need
 Event loops
 Callback queue
 Microtask queue
@@ -34,14 +35,12 @@ Debounce
 How javascript parse and compile your code, step by step
 If a microtask has a function which continuously puts its return function in the microtask queue infinite, how to handle this ?
 First class functions in js
-
 Immediate invoke functions
 Call, apply and bind, why do we use this
 Maplimit
 Async and await
 Then and catch
 Variable shadowing
-
 What does static mean in a JavaScript class?
 Undefined vs not-defined, null in js
 High order functions
@@ -54,7 +53,6 @@ Callstack
 Garbage collection
 Equality ( === vs == )
 Strict mode
-
 Lexical env
 
 Polyfills-

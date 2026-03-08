@@ -8,29 +8,29 @@
 <!-- 08 ✅ Prototype Object in JavaScript -->
 <!-- Prototype chaining -->
 <!-- 10 : 2️⃣ Difference between **proto** and prototy -->
+<!-- Closures -->
+<!-- Pass by reference vs pass by value -->
+<!-- Currying in js -->
+<!-- Infinite currying problem -->
+<!-- Memoization in js -->
+<!-- Rest parameter -->
+<!-- Spread operators -->
+<!-- How many ways you can create object in js -->
+<!-- Generator functions in js -->
+<!-- Javascript single threaded language -->
+<!-- Callbacks, why we need -->
+<!-- Event loops -->
+<!-- Callback queue -->
+<!-- Microtask queue -->
+<!-- Promises -->
 
-Closures
-Pass by reference vs pass by value
-Currying in js
-Infinite currying problem
-Memoization in js
-Rest parameter
-Spread operators
-How many ways you can create object in js
-Generator functions in js
-Javascript single threaded language
-Callbacks, why we need
-Event loops
-Callback queue
-Microtask queue
-Promises
-Event propagation
-Event bubbling
-Event capturing
-Event stop propagation
-Event delegation
-Type coercion vs conversion in js
-Throttle
+<!-- Event propagation -->
+<!-- Event bubbling -->
+<!-- Event capturing -->
+<!-- Event stop propagation -->
+<!-- Event delegation -->
+<!-- Type coercion vs conversion in js -->
+<!-- Throttle -->
 Debounce
 How javascript parse and compile your code, step by step
 If a microtask has a function which continuously puts its return function in the microtask queue infinite, how to handle this ?

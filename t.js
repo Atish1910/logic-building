@@ -1,7 +1,11 @@
-function showAge() {
-  var age = 25;
-  console.log(age);
-}
+function* idGenertor () {
+  let id = 1;
 
-showAge();
-console.log(age);
+  while(true){
+    yield id++;
+  }
+}
+const gen = idGenertor();
+
+console.log(gen.next().value);
+console.log(gen.next().value);

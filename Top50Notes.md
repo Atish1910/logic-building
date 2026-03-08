@@ -184,10 +184,10 @@ function calculatePrice(discount, price) {
 console.log(calculatePrice(0.1, 1000));
 console.log(calculatePrice(0.1, 2000));
 
+---
+## With Currying javascript
 
-## With Currying
 
-```javascript
 function discount(discountPercent) {
   return function (price) {
     return price - price * discountPercent;
@@ -199,10 +199,17 @@ const tenPercentDiscount = discount(0.1);
 console.log(tenPercentDiscount(1000));
 console.log(tenPercentDiscount(2000));
 
-
+---
 ===================
 ✅ Memoization in JavaScript
-Memoization is an optimization technique where we cache the result of a function call so that if the same inputs occur again, we return the cached result instead of recalculating it.
+Memoization in JavaScript is an optimization technique where we cache the result of a function call so that if the same input occurs again, we return the stored result instead of recalculating it.
+
+In simple terms, memoization stores previous results to improve performance and avoid repeated computations.
+
+Real Life Example
+A common real-life example is API data caching in frontend applications.
+For example, if a user opens a product page, the app fetches product details from an API.
+If the user visits the same product again, instead of calling the API again, the application returns the stored response from cache.
 
 ===================
 ✅ Rest Parameter in JavaScript

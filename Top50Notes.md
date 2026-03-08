@@ -6,8 +6,7 @@
 # Total speaking time: 40–60 seconds
 
 =====================================================
-01 : 📘 Scope in JavaScript (Global, Functional, Block)
-
+ 
 "Scope in JavaScript defines where a variable can be accessed in the program. It controls the visibility of variables.
 
 There are mainly three types of scope:

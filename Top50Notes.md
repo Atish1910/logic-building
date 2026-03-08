@@ -159,8 +159,46 @@ Currying is a technique where a function with multiple arguments is transformed 
 
 ===================
 ✅ Infinite Currying in JavaScript
-Infinite currying is a technique where a function keeps returning another function and allows unlimited chained calls until a final terminating condition is met.
-sum(1)(2)(3)(4)()
+# Infinite Currying in JavaScript
+
+## Definition
+**Infinite Currying in JavaScript** is where a function can accept arguments continuously through chained function calls without a fixed limit, and it returns the final result when a termination condition is met.
+
+In simple terms, instead of calling a function once with multiple arguments, we keep calling it **one argument at a time indefinitely**.
+
+---
+
+# Real-Life Example: E-commerce Discount
+
+Imagine an **e-commerce app** where the **discount percentage is fixed**, but the **price changes for different products**.
+
+---
+
+## Without Currying
+
+```javascript
+function calculatePrice(discount, price) {
+  return price - price * discount;
+}
+
+console.log(calculatePrice(0.1, 1000));
+console.log(calculatePrice(0.1, 2000));
+
+
+## With Currying
+
+```javascript
+function discount(discountPercent) {
+  return function (price) {
+    return price - price * discountPercent;
+  };
+}
+
+const tenPercentDiscount = discount(0.1);
+
+console.log(tenPercentDiscount(1000));
+console.log(tenPercentDiscount(2000));
+
 
 ===================
 ✅ Memoization in JavaScript

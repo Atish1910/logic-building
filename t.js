@@ -1,13 +1,11 @@
-let a = 10;
+function* idGenertor() {
+  let id = 1;
 
-function outer() {
-  let b = 20;
-
-  function inner() {
-    console.log(a, b);
+  while (true) {
+    yield id++;
   }
-
-  inner();
 }
+const gen = idGenertor();
 
-outer();
+console.log(gen.next().value);
+console.log(gen.next().value);

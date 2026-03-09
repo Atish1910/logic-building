@@ -6,8 +6,7 @@
 # Total speaking time: 40–60 seconds
 
 =====================================================
-01 : 📘 Scope in JavaScript (Global, Functional, Block)
-
+ 
 "Scope in JavaScript defines where a variable can be accessed in the program. It controls the visibility of variables.
 
 There are mainly three types of scope:
@@ -196,12 +195,57 @@ Currying helps in: Function reusability
 
 ===================
 ✅ Infinite Currying in JavaScript
-Infinite currying is a technique where a function keeps returning another function and allows unlimited chained calls until a final terminating condition is met.
-sum(1)(2)(3)(4)()
+# Infinite Currying in JavaScript
 
+## Definition
+**Infinite Currying in JavaScript** is where a function can accept arguments continuously through chained function calls without a fixed limit, and it returns the final result when a termination condition is met.
+
+In simple terms, instead of calling a function once with multiple arguments, we keep calling it **one argument at a time indefinitely**.
+
+---
+
+# Real-Life Example: E-commerce Discount
+
+Imagine an **e-commerce app** where the **discount percentage is fixed**, but the **price changes for different products**.
+
+---
+
+## Without Currying
+
+```javascript
+function calculatePrice(discount, price) {
+  return price - price * discount;
+}
+
+console.log(calculatePrice(0.1, 1000));
+console.log(calculatePrice(0.1, 2000));
+
+---
+## With Currying javascript
+
+
+function discount(discountPercent) {
+  return function (price) {
+    return price - price * discountPercent;
+  };
+}
+
+const tenPercentDiscount = discount(0.1);
+
+console.log(tenPercentDiscount(1000));
+console.log(tenPercentDiscount(2000));
+
+---
 ===================
 ✅ Memoization in JavaScript
-Memoization is an optimization technique where we cache the result of a function call so that if the same inputs occur again, we return the cached result instead of recalculating it.
+Memoization in JavaScript is an optimization technique where we cache the result of a function call so that if the same input occurs again, we return the stored result instead of recalculating it.
+
+In simple terms, memoization stores previous results to improve performance and avoid repeated computations.
+
+Real Life Example
+A common real-life example is API data caching in frontend applications.
+For example, if a user opens a product page, the app fetches product details from an API.
+If the user visits the same product again, instead of calling the API again, the application returns the stored response from cache.
 
 ===================
 ✅ Rest Parameter in JavaScript

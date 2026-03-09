@@ -8,9 +8,9 @@
 <!-- 08 ✅ Prototype Object in JavaScript -->
 <!-- Prototype chaining -->
 <!-- 10 : 2️⃣ Difference between **proto** and prototy -->
+<!-- Closures -->
+<!-- Pass by reference vs pass by value -->
 
-Closures
-Pass by reference vs pass by value
 Currying in js
 Infinite currying problem
 Memoization in js
@@ -23,6 +23,7 @@ Callbacks, why we need
 Event loops
 Callback queue
 Microtask queue
+Macrotask queue
 Promises
 Event propagation
 Event bubbling

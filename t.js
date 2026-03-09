@@ -1,7 +1,13 @@
-function showAge() {
-  var age = 25;
-  console.log(age);
+let a = 10;
+
+function outer() {
+  let b = 20;
+
+  function inner() {
+    console.log(a, b);
+  }
+
+  inner();
 }
 
-showAge();
-console.log(age);
+outer();

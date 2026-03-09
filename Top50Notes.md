@@ -137,6 +137,7 @@ Points to the object's internal prototype
 <!-- ================= -->
 
 10 ✅ Closures in JavaScript
+
 A closure is created when a function remembers and can access variables from its outer (lexical) scope even after the outer function has finished executing.
 In simple words, a closure allows an inner function to access variables of its parent function.
 Closures are commonly used for :
@@ -147,16 +148,51 @@ functions like setTimeout or event handlers.
 
 ===================
 1️⃣ What is Lexical Scope?
+Lexical scope means that a function can access variables from its parent scope based on where it is defined in the code, not where it is executed.
 
 ===================
 
 ✅ Pass by Value vs Pass by Reference in JavaScript
-🔹 1️⃣ Pass by Value (Primitive Types)
-🔹 2️⃣ Pass by Reference (Non-Primitive Types)
+In JavaScript, values passed to function in 2 ways: pass by value and pass by reference Reference.
+
+Pass by Value:
+When we pass primitive data types like number, string, or boolean to a function, a copy of the value is passed.
+So if we change the value inside the function, it does not affect the original variable.
+
+Pass by Reference:
+When we pass non-primitive data types like objects or arrays, the reference of the object is passed.
+So if we modify the object inside the function, it affects the original object.
+
+Also, technically JavaScript always passes by value, but in the case of objects the value passed is the reference.
 
 ===================
 ✅ Currying in JavaScript
-Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
+Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
+In simple terms, instead of passing all arguments at once, we pass them one by one using nested functions.
+
+Example (Normal Function)
+
+function add(a, b, c) {
+return a + b + c;
+}
+
+console.log(add(1, 2, 3)); // 6
+
+Curried Version
+function add(a) {
+return function (b) {
+return function (c) {
+return a + b + c;
+};
+};
+}
+console.log(add(1)(2)(3)); // 6
+
+<!-- ------------- -->
+
+===================
+✅ Why Currying is Used
+Currying helps in: Function reusability
 
 ===================
 ✅ Infinite Currying in JavaScript

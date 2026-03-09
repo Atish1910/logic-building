@@ -6,7 +6,7 @@
 # Total speaking time: 40–60 seconds
 
 =====================================================
- 
+
 "Scope in JavaScript defines where a variable can be accessed in the program. It controls the visibility of variables.
 
 There are mainly three types of scope:
@@ -195,9 +195,11 @@ Currying helps in: Function reusability
 
 ===================
 ✅ Infinite Currying in JavaScript
+
 # Infinite Currying in JavaScript
 
 ## Definition
+
 **Infinite Currying in JavaScript** is where a function can accept arguments continuously through chained function calls without a fixed limit, and it returns the final result when a termination condition is met.
 
 In simple terms, instead of calling a function once with multiple arguments, we keep calling it **one argument at a time indefinitely**.
@@ -288,3 +290,4 @@ File reading
 Database operations
 
 # ===================
+```

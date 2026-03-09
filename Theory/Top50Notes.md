@@ -1,5 +1,5 @@
-<!-- Scope in js ( Global, functional, block ) -->
-<!-- Scope chaining -->
+<!-- 1 Scope in js ( Global, functional, block ) -->
+<!-- 2 Scope chaining -->
 <!-- Primitive , non-primitive in js -->
 <!-- Var, let and const -->
 <!-- Temporal dead zone -->
@@ -10,30 +10,6 @@
 <!-- 10 : 2️⃣ Difference between **proto** and prototy -->
 <!-- Closures -->
 <!-- Pass by reference vs pass by value -->
-<<<<<<< HEAD
-
-Currying in js
-Infinite currying problem
-Memoization in js
-Rest parameter
-Spread operators
-How many ways you can create object in js
-Generator functions in js
-Javascript single threaded language
-Callbacks, why we need
-Event loops
-Callback queue
-Microtask queue
-Macrotask queue
-Promises
-Event propagation
-Event bubbling
-Event capturing
-Event stop propagation
-Event delegation
-Type coercion vs conversion in js
-Throttle
-=======
 <!-- Currying in js -->
 <!-- Infinite currying problem -->
 <!-- Memoization in js -->
@@ -55,7 +31,7 @@ Throttle
 <!-- Event delegation -->
 <!-- Type coercion vs conversion in js -->
 <!-- Throttle -->
->>>>>>> b7499225d184488b17bdddcf5f2eac0bc0519694
+
 Debounce
 How javascript parse and compile your code, step by step
 If a microtask has a function which continuously puts its return function in the microtask queue infinite, how to handle this ?

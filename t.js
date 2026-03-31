@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 // 29 : flatten an array
 let iArr = [10,11,12,[12,45,67,8],[10]];
 function display(iArr){

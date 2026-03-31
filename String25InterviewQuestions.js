@@ -60,11 +60,11 @@ const iStr4 = "atishvinayakkamble";
 
 const iUnique = iStr4
   .split("")
-  .reduce((acc, curr) => {
-    if (!acc.includes(curr)) {
-      acc.push(curr);
+  .reduce((prev, curr) => {
+    if (!prev.includes(curr)) {
+      prev.push(curr);
     }
-    return acc;
+    return prev;
   }, [])
   .join("");
 
@@ -83,10 +83,10 @@ console.log(iResult);
 
 // 5. Count the Occurrences of Each Character
 const iStr6 = "atishatishatishatishatish";
-const iResult2 = iStr6.split("").reduce((acc, curr) => {
-  acc[curr] = (acc[curr] || 0) + 1;
-  return acc;
-}, []);
+const iResult2 = iStr6.split("").reduce((prev, curr) => {
+  prev[curr] = (prev[curr] || 0) + 1;
+  return prev;
+}, {});
 
 console.log(iResult2);
 // ================================================================================================
@@ -152,8 +152,8 @@ console.log(iRemove);
 // 24. Find the Shortest Word in a String
 const iString = "atish vinayak kamble working as web developer";
 ///////////////// Method One
-const iSHortest = iString.split(" ").reduce((acc, curr) => {
-  return curr.length < acc.length ? curr : acc;
+const iSHortest = iString.split(" ").reduce((prev, curr) => {
+  return curr.length < prev.length ? curr : prev;
 });
 console.log("Find the Shortest Word : ", iSHortest);
 

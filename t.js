@@ -1,11 +1,6 @@
-function* idGenertor() {
-  let id = 1;
+// 4. Find the First Non-Repeating Character
 
-  while (true) {
-    yield id++;
-  }
-}
-const gen = idGenertor();
-
-console.log(gen.next().value);
-console.log(gen.next().value);
+const iStr = "atishatipshatishatish";
+const iNonRepeatChar = iStr
+  .split("")
+  .find((ch) => iStr.indexOf(ch) == iStr.lastIndexOf(ch));

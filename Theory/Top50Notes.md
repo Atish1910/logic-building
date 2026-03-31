@@ -1,5 +1,5 @@
-<!-- Scope in js ( Global, functional, block ) -->
-<!-- Scope chaining -->
+<!-- 1 Scope in js ( Global, functional, block ) -->
+<!-- 2 Scope chaining -->
 <!-- Primitive , non-primitive in js -->
 <!-- Var, let and const -->
 <!-- Temporal dead zone -->
@@ -31,22 +31,13 @@
 <!-- Event delegation -->
 <!-- Type coercion vs conversion in js -->
 <!-- Throttle -->
+
 Debounce
-How javascript parse and compile your code, step by step
-If a microtask has a function which continuously puts its return function in the microtask queue infinite, how to handle this ?
-First class functions in js
-Immediate invoke functions
 Call, apply and bind, why do we use this
-Maplimit
 Async and await
 Then and catch
 Variable shadowing
-What does static mean in a JavaScript class?
-Undefined vs not-defined, null in js
-High order functions
 Callback hell
-This concept in js
-Function declaration, expression, anonymous functions, arrow functions
 Async vs defer
 Execution context
 Callstack
@@ -54,6 +45,18 @@ Garbage collection
 Equality ( === vs == )
 Strict mode
 Lexical env
+Deep vs shallow copy
+
+How javascript parse and compile your code, step by step
+If a microtask has a function which continuously puts its return function in the microtask queue infinite, how to handle this ?
+First class functions in js
+Immediate invoke functions
+Maplimit
+What does static mean in a JavaScript class?
+Undefined vs not-defined, null in js
+High order functions
+This concept in js
+Function declaration, expression, anonymous functions, arrow functions
 
 Polyfills-
 

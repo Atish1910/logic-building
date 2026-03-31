@@ -6,7 +6,7 @@
 # Total speaking time: 40–60 seconds
 
 =====================================================
- 
+
 "Scope in JavaScript defines where a variable can be accessed in the program. It controls the visibility of variables.
 
 There are mainly three types of scope:
@@ -107,8 +107,6 @@ In JavaScript, every object has an internal property called [[Prototype]], which
 prototype oject is created automatically when we call a constructor function. it is used to share properties & methods among all object created from that contructor.
 in simple terms prototype objects is like a parent, & object created from contructor function can inhearit the method & properties from it.
 
-# =====================
-
 =====================
 09 : 1️⃣ What is Prototype Chain?
 The prototype chain is the mechanism JavaScript uses to look for properties or methods in parent objects.
@@ -136,6 +134,7 @@ Points to the object's internal prototype
 <!-- ================= -->
 
 10 ✅ Closures in JavaScript
+
 A closure is created when a function remembers and can access variables from its outer (lexical) scope even after the outer function has finished executing.
 In simple words, a closure allows an inner function to access variables of its parent function.
 Closures are commonly used for :
@@ -145,23 +144,60 @@ callbacks, and
 functions like setTimeout or event handlers.
 
 ===================
-1️⃣ What is Lexical Scope?
+11 What is Lexical Scope?
+Lexical scope means that a function can access variables from its parent scope based on where it is defined in the code, not where it is executed.
 
 ===================
 
-✅ Pass by Value vs Pass by Reference in JavaScript
-🔹 1️⃣ Pass by Value (Primitive Types)
-🔹 2️⃣ Pass by Reference (Non-Primitive Types)
+12 :✅ Pass by Value vs Pass by Reference in JavaScript
+In JavaScript, values passed to function in 2 ways: pass by value and pass by reference Reference.
+
+Pass by Value:
+When we pass primitive data types like number, string, or boolean to a function, a copy of the value is passed.
+So if we change the value inside the function, it does not affect the original variable.
+
+Pass by Reference:
+When we pass non-primitive data types like objects or arrays, the reference of the object is passed.
+So if we modify the object inside the function, it affects the original object.
+
+Also, technically JavaScript always passes by value, but in the case of objects the value passed is the reference.
 
 ===================
-✅ Currying in JavaScript
-Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
+13 : ✅ Currying in JavaScript
+Currying is a technique in functional programming where a function with multiple arguments is transformed into a sequence of functions, each taking one argument at a time.
+In simple terms, instead of passing all arguments at once, we pass them one by one using nested functions.
+
+Example (Normal Function)
+
+function add(a, b, c) {
+return a + b + c;
+}
+
+console.log(add(1, 2, 3)); // 6
+
+Curried Version
+function add(a) {
+return function (b) {
+return function (c) {
+return a + b + c;
+};
+};
+}
+console.log(add(1)(2)(3)); // 6
+
+<!-- ------------- -->
+
+===================
+14 : ✅ Why Currying is Used
+Currying helps in: Function reusability
 
 ===================
 ✅ Infinite Currying in JavaScript
+
 # Infinite Currying in JavaScript
 
 ## Definition
+
 **Infinite Currying in JavaScript** is where a function can accept arguments continuously through chained function calls without a fixed limit, and it returns the final result when a termination condition is met.
 
 In simple terms, instead of calling a function once with multiple arguments, we keep calling it **one argument at a time indefinitely**.
@@ -252,3 +288,46 @@ File reading
 Database operations
 
 # ===================
+```
+
+<!-- /////////////////////////////////// -->
+
+# Call, Apply, and Bind in JavaScript
+
+`call`, `apply`, and `bind` are methods used to **control the value of `this`** when calling a function.
+
+They allow a function to **borrow methods from another object**.
+
+---
+
+# Why Do We Use Call, Apply, and Bind?
+
+1. To **manually set the value of `this`**
+2. For **function borrowing**
+3. To **reuse functions with different objects**
+
+---
+
+# 1. call()
+
+## Definition
+
+The `call()` method **invokes a function immediately** and allows you to pass arguments **one by one**.
+
+### Syntax
+
+```javascript
+function.call(thisArg, arg1, arg2, arg3)
+```
+
+2. apply()
+   Definition
+
+The apply() method works similar to call(), but arguments are passed as an array.
+
+3. bind()
+   Definition
+
+The bind() method does not call the function immediately.
+
+Instead, it returns a new function with this permanently bound.

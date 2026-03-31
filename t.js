@@ -1,11 +1,22 @@
-function* idGenertor () {
-  let id = 1;
 
-  while(true){
-    yield id++;
+
+
+
+
+
+
+// 29 : flatten an array
+let iArr = [10,11,12,[12,45,67,8],[10]];
+function display(iArr){
+  let iResult = []
+  for(let i = 0; i < iArr.length; i++){
+    if(Array.isArray(iArr[i])){
+      iResult = iResult.concat(display(iArr[i]))
+    }else{
+      iResult.push(iArr[i]);
+    }
   }
-}
-const gen = idGenertor();
+  return iResult;
+};
 
-console.log(gen.next().value);
-console.log(gen.next().value);
+console.log(display(iArr));

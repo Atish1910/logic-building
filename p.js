@@ -1,23 +1,16 @@
-function countService(iStr) {
-  var payments = JSON.parse(iStr);
+// 3. Remove Duplicates from a String
 
-  var iMax = {};
+const iStr = [10, 11, 12,10, 11, 12,10, 11, 12,10, 11, 12];
 
-  for (var i = 0; i < payments.length; i++) {
-    var service = payments[i][0];
-    var amount = payments[i][1];
+function display(iStr){
+  var iUnique = [];
+  isDuplicate = false;
 
-    if (!iMax[service] || amount > iMax[service]) {
-      iMax[service] = amount;
-    }
-    var iCnt = 0;
-    var allServices = Object.keys(iMax);
-
-    for (var j = 0; j < allServices.length; j++) {
-      if (iMax[allServices[j]] < 200) {
-        iCnt++;
-      }
-    }
-    return iCnt;
+  for(let i = 0; i < iStr.length; i++){
+    iUnique.push(iStr[i])
   }
+
+  console.log(iUnique);
 }
+
+display(iStr);

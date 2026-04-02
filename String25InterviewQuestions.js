@@ -15,12 +15,15 @@
 // 19. Replace Spaces with %20 (URL Encoding)
 // 18. Convert a String to a Character Array
 // 11. Find the Most Frequent Character
+// 11. 4️⃣ Count Character Frequency
 // 26. Find longest word from string "Atish vinayak kamble";
 // remove dupliacte from below array
 // 1️⃣ Remove duplicate elements from an array
 // Find second largest number in array
+// 29 : flatten an array
 
 // 16. Convert a String to Title Case
+// 27. Convert a Array to Title Case
 // 8. Find the Longest Substring Without Repeating Characters
 // 27 convert a number into Array
 
@@ -174,7 +177,6 @@ console.log(iStr0010.split(" ").join(""));
 // ================================================================================================
 
 //  25. Find the Longest Palindromic Substring
-
 let iStr011 = "atishvinaynitinakambldade";
 
 function longestPelendrome(str) {
@@ -428,3 +430,61 @@ function Display(iArr) {
 
 Display(iArr);
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// 27. Convert a Array to Title Case
+const iArr01 = ["manthan shinde", "atish kamble ", "nirya"];
+
+const iNewArrTitleCase = iArr01.map((word) => {
+  return word[0].toUpperCase() + word.slice(1);
+});
+console.log(iNewArrTitleCase);
+
+// ==========================================
+const iFlattenArr = [10,11,[12,23,15], [19]];
+
+function display(iFlattenArr){
+    let iNewArr01 = [];
+    for(let i = 0; i < iFlattenArr.length; i++){
+        if(Array.isArray(iFlattenArr[i])){
+            iNewArr01 = iNewArr01.concat(display(iFlattenArr[i]));
+        }else{
+            iNewArr01.push(iFlattenArr[i]);
+        }
+    }
+    return iNewArr01;
+  }
+
+console.log(display(iFlattenArr));
+  
+// ==========================================
+// 11. Find the Most Frequent Character
+// 4️⃣ Count Character Frequency
+let iString01 = "atishatishatishatishatish";
+
+function display(iStr){
+  let freq = {}
+  for(let i = 0; i < iStr.length; i++){
+    if(freq[iStr[i]]){
+      freq[iStr[i]]++
+    }else{
+      freq[iStr[i]] = 1
+    }
+  }
+  console.log(freq);
+}
+
+display(iString01)
+
+// without inbuilt
+
+// 4️⃣ Count Character Frequency
+let iString02 = "atishatishatishatishatish";
+
+let iResult1 = iString.split("").reduce((prev, curr) => {
+  prev[curr] = (prev[curr] || 0) + 1;
+
+  return prev;
+}, {});
+
+console.log(iResult1);

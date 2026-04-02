@@ -2,6 +2,15 @@
 
 ---
 
+
+## 🔹 1. Node Basics
+
+- What is Express.js?
+- Why do we use Express instead of Node’s http module?
+- What is middleware in Express?
+- What are `req`, `res`, and `next`?
+- How does Express handle routing?
+
 ## 🔹 1. Express Basics
 
 - What is Express.js?

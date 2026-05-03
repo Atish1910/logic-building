@@ -1,10 +1,26 @@
-// Input: Whole = [1, 2], Fraction = [3, 4]
-// Output: 12.34
+let iStr = "atish vinayak kambletuytutuyt";
+function display(iStr){
+    let iLongest = "";  
+    let iMax = 0;  
+    let iCurrentWord = ""; 
 
+    for(let i = 0; i < iStr.length; i++){
+        if(iStr[i] != " "){
+            iCurrentWord = iCurrentWord + iStr[i];
+        }else{
+            if(iCurrentWord.length > iMax){
+                iMax = iCurrentWord.length;
+                iLongest = iCurrentWord;
+            }
+            iCurrentWord = "";
+        }
+    }
+    if(iCurrentWord.length > iMax){
+        iMax = iCurrentWord.length;
+        iLongest = iCurrentWord;
+    }
 
-let whole = [1,2];
-let Fraction = [3,4];
+    console.log(iLongest, iMax);
 
-functiondisplay(whole, Fraction){
-    
 }
+display(iStr);

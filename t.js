@@ -1,15 +1,15 @@
-// 29 : flatten an array
-let iArr = [10,11,12,[12,45,67,8],[10]];
+const iFlattenArr = [10,11,[12,23,15], [19]];
+
 function display(iArr){
-  let iResult = []
-  for(let i = 0; i < iArr.length; i++){
+  iNewArr = [];
+  for (let i = 0; i < iArr.length; i++) {
     if(Array.isArray(iArr[i])){
-      iResult = iResult.concat(display(iArr[i]))
+      iNewArr.concat(iArr[i]);
     }else{
-      iResult.push(iArr[i]);
+      iNewArr.push(iArr[i]);
     }
   }
-  return iResult;
-};
+  console.log(iNewArr);
+}
 
-console.log(display(iArr));
+display(iFlattenArr)

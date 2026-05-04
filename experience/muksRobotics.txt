@@ -1,0 +1,11 @@
+- Asked about Python + Django
+
+1. Replace the vowels from given string:
+    string = "Hello"
+2. Check given number is Prime or not
+3. Code for Abstraction
+4. Bubble Sort
+
+5. Difference between Tuple and List data type
+6. Django -> what is async.io module ?
+7. HTML to Django w

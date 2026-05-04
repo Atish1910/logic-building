@@ -1,0 +1,58 @@
+Good morning, and thank you for giving me this opportunity.
+
+My name is Shubham Lingayat, and I am a MERN Stack Developer with 1 year and 11 months of professional
+experience at GladOwl Web Solutions Pvt. Ltd. During this time, I have primarily worked on Frontend technologies building responsive,
+scalable, and user-centric web applications, with a strong focus on React.js and modern frontend development practices.
+I completed my Bachelor’s degree in Artificial Intelligence and Data Science in 2024 from Zeal College of Engineering
+and Research, Pune. Along with my academics, I developed a strong interest in Data Structures and Algorithms, which
+helped me build a solid programming foundation and significantly improved my problem-solving and logical thinking
+skills. This background allows me to write cleaner, more optimized, and maintainable code.
+At GladOwl, I have worked on multiple production-grade projects for well-known educational institutions, e-commerce
+platforms, and enterprise clients. Some of the key projects I’ve contributed to include:
+
+1. D Y Patil, Navi Mumbai – Admission Portal, where I worked on responsive UI development and form-based workflows
+2. Symbiosis Merchandise Store, an e-commerce platform with product listings, cart flows, and user-friendly UI
+3. Symbiosis International Conference Platform, which included an admin dashboard, user management, and payment integration
+using BillDesk for both domestic and international users
+4. Veloura World, a complete e-commerce solution
+6. Pillai University Navi Mumbai 
+5. Univista EdTech, an ongoing Learning Management System project
+6. A fully customized Real Estate website, currently under development
+
+Across these projects, my role mainly involved React.js development, implementing reusable components, handling complex
+forms, managing state, integrating APIs, and ensuring cross-device responsiveness. I have worked closely with designers
+and backend developers, which helped me understand real-world product requirements and deliver features efficiently.
+Apart from MERN stack projects, I have also worked extensively with Core PHP, SQL, HTML, CSS, JavaScript, and Bootstrap,
+especially during the initial phase of my career. Using these technologies, I have individually developed 30+ landing
+pages for admission campaigns of universities such as Symbiosis (SCIE, SUAS, SSPU), D Y Patil Navi Mumbai, DYPBS, ALARD
+University, Avantika University, Amity University (Kolkata, Ranchi, Patna, Dubai), and CSMU Panvel.
+This experience strengthened my core web fundamentals, improved my understanding of layouts, forms, validations, and
+gave me strong hands-on practice in building complete pages from scratch.
+
+From a technical skill perspective, I have strong expertise in JavaScript, React.js, HTML, CSS, Bootstrap, Tailwind CSS,
+Material UI, and Python. I am comfortable working with TypeScript, Next.js, and commonly used React libraries such as
+React Router, Redux, React Forms, and related ecosystem tools. I focus on writing clean component-based code and
+following best practices for performance and reusability.
+
+I also have basic to intermediate backend knowledge, including Node.js, Express.js, and MongoDB, which helps me
+collaborate effectively with backend teams and understand API design. I have worked with tools like Socket.IO,
+Nodemailer, and REST APIs, and I understand how frontend and backend systems integrate in real applications.
+
+In terms of problem-solving, I have completed a Data Structures and Algorithms course using Python from GeeksforGeeks
+and have solved 300+ DSA problems across multiple platforms. This has helped me improve my approach to breaking down
+problems, optimizing logic, and writing efficient solutions—skills that directly reflect in my development work.
+Beyond development, I also have hands-on experience in project deployment and DevOps-related tasks. I have deployed
+applications on Hostinger VPS using terminal-based Linux environments, which gave me practical exposure to server
+management. I have worked on CI/CD pipelines using GitLab, and I have experience with AWS services such as EC2, AMI, S3,
+Lambda, and API Gateway. This knowledge helps me understand the complete lifecycle of a project, from development to
+deployment.
+
+Additionally, I have completed multiple certifications to strengthen my foundation, including a MERN Stack Development
+course from CodeHelp, and React.js and Node.js training from Internshala. These helped me reinforce best practices and
+industry-level concepts.
+To summarize, I see myself as a frontend-oriented developer with strong React expertise, solid backend understanding,
+good problem-solving skills, and real-world experience in delivering production applications. I enjoy building clean
+user interfaces, learning new technologies, and contributing to impactful products.
+I’m looking forward to opportunities where I can grow as a frontend developer, take more ownership, and add value to the
+team.
+Thank you.

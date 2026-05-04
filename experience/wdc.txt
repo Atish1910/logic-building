@@ -1,0 +1,47 @@
+World Development Corporation (WDC) - Kharadi
+
+# Tell me about your Self
+# What is Callback
+# What is Callback Hell
+# What is Event Loop?
+# What is middleware
+# What is populate() method
+# What is lookup in mongodb aggregation
+# What is microservices and monolith 
+# which architecture you are using monolith or microservices
+# advantages and disadvantages of vertical and horizontal scaling
+# Difference between monolith and MVC architecture
+# What is indexing in mongodb
+# Which ORM Library you are using
+# Which ODM Library you have used?
+# without ODM library can we still connect to MongoDB?
+# If you need to design whatsapp application then which Database you will prefer and why
+# Have you used multer
+# have you implemented cron jobs?
+# If you need to implement subscription module how would you implement?
+# What is libuv?
+# Difference Between horizontal and vertical scaling.
+# advantages of microservices over the monolith.
+# If API takes 3 to 4 sec how would you optimize?
+# If you are using find() method to find user details how would you optimize it further
+# What is workers? cluster?
+# If there is XSS attack how would you avoid?
+# What is CORS?
+# How would you secure your APIs.
+# Difference between DDOS and DOS attack.
+# Explain me working of Payment Integration step by step
+# Difference between server shutdown and server restart
+# If you want to vertical scale the sever how would it will be implemented
+# have you used bcrypt
+# what is garbage collection ? how it would work?
+# How would you implemented Role Based Access
+# What is Webhook?
+# What is Indempotency?
+# Diiference between MongoDB and SQL
+# Have you use Redis cache?
+# Debouncing and Throttling
+# Access Token v/s Refresh Token
+# how to achive 0 downtime in nodeApp
+# aggregation, lookup 
+# how to avoid memory leak in nodeJs
+# 

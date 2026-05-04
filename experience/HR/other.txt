@@ -1,0 +1,20 @@
+# Where should you see yourself in Next 5 Years?
+
+In five years, I see myself as a senior-level software engineer with strong expertise in frontend development,
+especially in React-based enterprise applications like CRM and LMS platforms. I want to take ownership of features,
+mentor juniors, and contribute to architectural decisions while continuously improving my technical and problem-solving
+skills.
+
+-----------------------------------------------------------------------------------------
+# Why Did You Want to Switch?
+    - There are mainly 3 reasons:
+    1. Career Growth:
+        I have gained solid hands-on experince in MERN Stack over the past 2 Years, Now i am looking for the more challenging 
+        projects where i can work on scalable systems and contribute architecture level decisions.
+
+    2. Learning Opportunities:
+        I want to work in an environment which follows best practices such as microservices, Ci/CD Pipelines, and cloud native deployments. 
+        I am eager to enhance my skills in system design and devops.
+
+    3. Impact & Ownership:
+        In my current role, the team size is small, and growth opportunities are limited. I am looking for an compa

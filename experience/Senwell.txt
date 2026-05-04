@@ -1,0 +1,9 @@
+# How you stay updated ?
+# JS concepts:
+    Closure, let/const/var, Promise v/s Async await, event delegation, 
+# React concepts:
+    What is React?
+    Virtual Dom, Reconcilation, useState v/s useEffect, 
+
+# Coding question:
+    pass the data from parent to child and then update data at child and pass back.

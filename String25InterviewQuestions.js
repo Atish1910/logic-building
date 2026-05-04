@@ -32,7 +32,7 @@
 // 12. Find All Substrings of a Given String
 // 15. Check if a String is a Valid Shuffle of Two Strings
 // 17. Find the Longest Common Prefix
-
+// 28. merge 2Array & remove duplicates
 // ====================================================================================
 
 // 1. Reverse a String
@@ -431,7 +431,6 @@ function Display(iArr) {
 Display(iArr);
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-
 // 27. Convert a Array to Title Case
 const iArr01 = ["manthan shinde", "atish kamble ", "nirya"];
 
@@ -441,40 +440,40 @@ const iNewArrTitleCase = iArr01.map((word) => {
 console.log(iNewArrTitleCase);
 
 // ==========================================
-const iFlattenArr = [10,11,[12,23,15], [19]];
+const iFlattenArr = [10, 11, [12, 23, 15], [19]];
 
-function display(iFlattenArr){
-    let iNewArr01 = [];
-    for(let i = 0; i < iFlattenArr.length; i++){
-        if(Array.isArray(iFlattenArr[i])){
-            iNewArr01 = iNewArr01.concat(display(iFlattenArr[i]));
-        }else{
-            iNewArr01.push(iFlattenArr[i]);
-        }
+function display(iFlattenArr) {
+  let iNewArr01 = [];
+  for (let i = 0; i < iFlattenArr.length; i++) {
+    if (Array.isArray(iFlattenArr[i])) {
+      iNewArr01 = iNewArr01.concat(display(iFlattenArr[i]));
+    } else {
+      iNewArr01.push(iFlattenArr[i]);
     }
-    return iNewArr01;
   }
+  return iNewArr01;
+}
 
 console.log(display(iFlattenArr));
-  
+
 // ==========================================
 // 11. Find the Most Frequent Character
 // 4️⃣ Count Character Frequency
 let iString01 = "atishatishatishatishatish";
 
-function display(iStr){
-  let freq = {}
-  for(let i = 0; i < iStr.length; i++){
-    if(freq[iStr[i]]){
-      freq[iStr[i]]++
-    }else{
-      freq[iStr[i]] = 1
+function display(iStr) {
+  let freq = {};
+  for (let i = 0; i < iStr.length; i++) {
+    if (freq[iStr[i]]) {
+      freq[iStr[i]]++;
+    } else {
+      freq[iStr[i]] = 1;
     }
   }
   console.log(freq);
 }
 
-display(iString01)
+display(iString01);
 
 // without inbuilt
 
@@ -488,3 +487,32 @@ let iResult1 = iString.split("").reduce((prev, curr) => {
 }, {});
 
 console.log(iResult1);
+
+// =====================================================
+
+// 28. merge 2Array & remove duplicates
+let iArr1 = ["atish", "kamble"];
+let iArr2 = ["vinayak", "kamble"];
+
+function mergeAndRemoveDuplicates(iArr1, iArr2) {
+  let imergeiArr = iArr1;
+  let iUniqueArr = [];
+  for (let i = 0; i < iArr2.length; i++) {
+    imergeiArr.push(iArr2[i]);
+  }
+
+  for (let i = 0; i < imergeiArr.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < iUniqueArr.length; j++) {
+      if (imergeiArr[i] == iUniqueArr[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+    if (!isDuplicate) {
+      iUniqueArr.push(imergeiArr[i]);
+    }
+  }
+  console.log(iUniqueArr);
+}
+mergeAndRemoveDuplicates(iArr1, iArr2);

@@ -1,0 +1,17 @@
+- Difference between List and Tuple - Python
+- In razorpay, if our api endpoint is down then how would you track the payment success or failure.
+- How would you define the structure of the React app for mid-level project.
+- Difference between mongodb aggregation lookup and 
+- Difference between singly, doubly and circular linkedlist 
+- What is two-pointer approach technique
+- How would you optimze Backend API if gets more time.
+- What would you use controlled vs uncontrolled component in react.
+- React life cycle.
+- If you are running express code, how it will works at server end.
+- event loop node.JS
+- middleware in Node.JS
+- Authorization and implicit in Node.JS
+- What AI tools you used in development.
+- In Claude.ai have you work on scheduling task at same time of interval.
+- major issue you have faced at backend and how you debug and solved.
+- how you debug the backend issues.

@@ -1,16 +1,12 @@
-// 3. Remove Duplicates from a String
-
-const iStr = [10, 11, 12,10, 11, 12,10, 11, 12,10, 11, 12];
-
-function display(iStr){
-  var iUnique = [];
-  isDuplicate = false;
-
-  for(let i = 0; i < iStr.length; i++){
-    iUnique.push(iStr[i])
+const iNum = 678;
+function display(iNum){
+  let iRev = 0;
+  
+  while(iNum != 0){
+    let iDigit = iNum % 10;
+    iNum = (iNum/10 ) | 0;
+    iRev = iRev * 10 + iDigit; 
   }
-
-  console.log(iUnique);
+  console.log(iRev);
 }
-
-display(iStr);
+display(iNum);

@@ -21,6 +21,7 @@
 // 1️⃣ Remove duplicate elements from an array
 // Find second largest number in array
 // 29 : flatten an array
+// 16. Convert a Array to Title Case
 
 // 16. Convert a String to Title Case
 // 27. Convert a Array to Title Case
@@ -95,7 +96,7 @@ console.log(iResult2);
 // ================================================================================================
 
 // 6. Reverse Words in a Sentence
-const iStr7 = "Tejshree khupp chan aahe ";
+const iStr7 = "ishuuu khupp chan aahe ";
 const iReverrseWord = iStr7.split(" ").reverse().join(" ");
 console.log(iReverrseWord);
 
@@ -488,31 +489,21 @@ let iResult1 = iString.split("").reduce((prev, curr) => {
 
 console.log(iResult1);
 
-// =====================================================
+// =============================================================
+// 16. Convert a Array to Title Case
 
-// 28. merge 2Array & remove duplicates
-let iArr1 = ["atish", "kamble"];
-let iArr2 = ["vinayak", "kamble"];
+const iArrWithNames = [
+  "atish vinayak kamble",
+  "Akshay vinayak kamble",
+  "karishma ashish rankhambe",
+];
 
-function mergeAndRemoveDuplicates(iArr1, iArr2) {
-  let imergeiArr = iArr1;
-  let iUniqueArr = [];
-  for (let i = 0; i < iArr2.length; i++) {
-    imergeiArr.push(iArr2[i]);
-  }
-
-  for (let i = 0; i < imergeiArr.length; i++) {
-    let isDuplicate = false;
-    for (let j = 0; j < iUniqueArr.length; j++) {
-      if (imergeiArr[i] == iUniqueArr[j]) {
-        isDuplicate = true;
-        break;
-      }
-    }
-    if (!isDuplicate) {
-      iUniqueArr.push(imergeiArr[i]);
-    }
-  }
-  console.log(iUniqueArr);
-}
-mergeAndRemoveDuplicates(iArr1, iArr2);
+const iTitleCaseArray = iArrWithNames.map((name) => {
+  return name
+    .split(" ")
+    .map((word) => {
+      return word[0].toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+});
+console.log(iTitleCaseArray);

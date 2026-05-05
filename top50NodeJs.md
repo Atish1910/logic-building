@@ -1,3 +1,5 @@
+## 1. Core JavaScript Fundamentals
+
 **Q:** How Node.js works internally
 **A:** Node.js runs on the V8 engine and uses a single-threaded event loop. It executes synchronous code via the call stack and handles asynchronous operations using queues. libuv manages async I/O operations, making Node.js non-blocking and efficient.
 
@@ -64,7 +66,7 @@ Horizontal: Add multiple EC2 instances + load balancer
 Difference between monolith and MVC architecture
 Monolith = system architecture (how app is built & deployed)
 MVC = design pattern (how code is structured inside the app)
-Monolith is an architectural style where the entire application is built and deployed as a single unit, 
+Monolith is an architectural style where the entire application is built and deployed as a single unit,
 while MVC is a design pattern used to organize code into Model, View, and Controller. They are not mutually exclusive — MVC is often used within a monolithic application to structure the code.
 
 What is indexing in mongodb
@@ -111,14 +113,11 @@ For a WhatsApp-like system, I would prefer a NoSQL database like DynamoDB for st
 Have you used multer
 I used it as middleware in Express to handle multipart/form-data and store files on the server using disk storage. I also configured filename and destination, and handled single file uploads using upload.single().
 
-
 What is libuv?
 libuv is a C library used by Node.js to implement the event loop and handle asynchronous operations like file system and network I/O using a thread pool and OS-level APIs.
 
-
 If API takes 3 to 4 sec how would you optimize?
 If an API is taking 3–4 seconds, I would first identify the bottleneck using logging. Then I would optimize database queries using indexing and efficient queries, implement caching for repeated data, reduce unnecessary API calls, and optimize business logic. If needed, I would also scale the system horizontally
-
 
 If you are using find() method to find user details how would you optimize it further
 Use Indexing db.users.createIndex({ email: 1 });
@@ -127,14 +126,12 @@ Limit Results User.find().limit(10);
 Avoid Unnecessary populate()
 Cache frequent queries: Redis
 
-
 What is workers? cluster?
 workers : Worker threads allow Node.js to run CPU-intensive tasks in parallel without blocking the main event loop.
 Cluster is:
 A module that creates multiple Node.js instance
-Each instance runs on a separate CPU core 
+Each instance runs on a separate CPU core
 Cluster is used to scale Node.js applications by creating multiple instances (processes) of the app to handle more requests.
-
 
 If there is XSS attack how would you avoid?
 

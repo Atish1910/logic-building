@@ -1,8 +1,10 @@
-Q1 : How Node.js works internally
--> Node.js runs on the V8 engine and uses a single-threaded event loop. It executes synchronous code via the call stack and handles asynchronous operations using queues. libuv manages async I/O operations, making Node.js non-blocking and efficient.
+**Q:** How Node.js works internally
+**A:** Node.js runs on the V8 engine and uses a single-threaded event loop. It executes synchronous code via the call stack and handles asynchronous operations using queues. libuv manages async I/O operations, making Node.js non-blocking and efficient.
 
-What is Callback
--> A callback is a function passed as an argument to another function, which is executed after the completion of a task, commonly used in asynchronous operations in Node.js.
+**Q:** What is Callback
+**A:** A callback is a function passed as an argument to another function, which is executed after the completion of a task, commonly used in asynchronous operations in Node.js.
+
+->
 
 What is Callback Hell
 ->Callback hell is a situation where multiple nested callbacks make the code difficult to read and maintain. It is usually solved using promises or async/await for cleaner and more manageable asynchronous code.

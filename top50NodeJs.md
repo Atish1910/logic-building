@@ -13,6 +13,7 @@ What is Callback Hell
 
 What is Event Loop?
 -> The event loop in Node.js is responsible for handling asynchronous operations. It continuously monitors the call stack and, when it’s empty, executes tasks from the microtask queue first and then from the callback queue.
+
 What is middleware
 
 What is populate() method

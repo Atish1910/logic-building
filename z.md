@@ -165,7 +165,6 @@ Better performance under high traffic
 
 ---
 
----
 
 ## Q.20 What is libuv?
 
@@ -265,45 +264,92 @@ Better performance under high traffic
   `const hashedPassword = await bcrypt.hash(password, 10);`
 
 ## Q.34 what is garbage collection ? how it would work?
-
+- Garbage collection is the process of automatically removing unused memory from the application so that memory is not wasted.
 ---
 
 ## Q.35 How would you implemented Role Based Access
-
+- RBAC is implemented by assigning roles to users and checking those roles in middleware before allowing access to APIs.
 - ***
 
 ## Q.36 What is Webhook?
-
+- A webhook is a way for one system to automatically send data to another system when an event happens
 - ***
 
 ## Q.37 What is Indempotency?
-
+- Idempotency ensures that multiple identical requests produce the same result without creating duplicates
+- 👉 Online payment:
+  You click “Pay” twice
+  Amount should be charged only once
 ---
 
 ## Q.38 Diiference between MongoDB and SQL
+- 🔹 MongoDB
+  Stores data as documents (JSON)
+  Flexible structure (schema-less)
+  Good for fast development
+  Scaling easy (horizontal)
 
+- 🔹 SQL (MySQL, PostgreSQL)
+  Stores data in tables
+  Fixed structure (schema)
+  Good for structured data
+  scaling Harder
 ---
 
 ## Q.39 Have you use Redis cache?
+Redis is used to cache frequently used data in memory to improve performance and reduce database load.
+`
+const redis = require("redis");
+const client = redis.createClient();
 
+app.get("/users", async (req, res) => {
+  const cache = await client.get("users");
+
+  if (cache) {
+    return res.json(JSON.parse(cache)); // return from cache
+  }
+
+  const users = await User.find();
+
+  await client.setEx("users", 60, JSON.stringify(users)); // cache for 60 sec
+
+  res.json(users);
+});`
 - ***
-
-## Q.40 Debouncing and Throttling
-
-- ***
-
-## Q.41 Access Token v/s Refresh Token
 
 ---
 
 ## Q.42 how to achive 0 downtime in nodeApp
-
+- Zero downtime is achieved by running multiple server instances, using load balancers, and deploying updates gradually without stopping the application.
 ---
 
 ## Q.43 aggregation, lookup
+- Aggregation in MongoDB is used to process and transform data, like filtering, grouping, and calculating results.
+- 👉 It works like a pipeline:
+  Step 1 → filter data
+  Step 2 → group data
+  Step 3 → calculate result
 
+- lookup is use to join 2 collections & fetch realted data in array format
 ---
 
 ## Q.44 how to avoid memory leak in nodeJs
+- To avoid memory leaks in Node.js, we should properly manage variables, remove unused references, clean up resources like timers and listeners, and avoid storing large data in memory
 
 - ***
+
+## what is difference between require & import
+- require is CommonJS and loads modules dynamically, while import is ES6 module syntax and loads modules statically.
+
+## what is differce between package.json & package-lock.json
+
+- package.json defines project dependencies and scripts, while package-lock.json stores the exact versions of installed packages to ensure consistent installs
+
+## what is differce between ~ and ^
+- Example: 4.18.2
+  MAJOR.MINOR.PATCH
+- ^ can update MINOR & PATCH
+- ~ can update PATCH
+
+# Access Token v/s Refresh Token
+- Access token is used to access APIs and is short-lived, while refresh token is used to generate a new access token and is long-lived.

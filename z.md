@@ -109,87 +109,160 @@ Better performance under high traffic
 
 ## Q.13 Which ORM Library you are using
 
----
-
-## Q.14 Which ODM Library you have used?
+- Since I work with MongoDB, Mongoose acts as an ODM (Object Document Mapper) rather than a traditional ORM.
+- It helps me define schemas, perform validations, and interact with the database in a structured way instead of writing raw queries.
 
 ---
 
 ## Q.15 without ODM library can we still connect to MongoDB?
 
-- ***
+- Yes, we can connect to MongoDB without using an ODM like Mongoose by using the official MongoDB Node.js driver.
+- However, using an ODM provides additional features like schema validation and easier data modeling, which simplifies development.
+
+---
 
 ## Q.16 If you need to design whatsapp application then which Database you will prefer and why
+
+- 1️⃣ Message Storage → NoSQL (Amazon DynamoDB)
+  Why:
+  Handles huge write volume
+  Distributed architecture
+  High availability
+  Fast reads/writes
+
+- 2️⃣ User Data → SQL DB
+  Why:
+  Structured data (users, relationships)
+  ACID transactions
+
+- 3️⃣ Caching → Redis
+  Online status
+  Recent chats
+
+- 4️⃣ Media Storage
+  Amazon S3
+
+- For a WhatsApp-like system, I would prefer a NoSQL database like DynamoDB for storing messages because it supports high write volume and horizontal scalability. For structured data like user profiles, I would use a relational database like PostgreSQL. This hybrid approach ensures both performance and data consistency.
 
 - ***
 
 ## Q.17 Have you used multer
 
+- I used it as middleware in Express to handle multipart/form-data and store files on the server using diskStorage.
+- I also configured filename and destination , and handled single file uploads using upload.single().
+
+`const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); // folder
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+`
+
 - ***
 
-## Q.18 have you implemented cron jobs?
-
 ---
-
-## Q.19 If you need to implement subscription module how would you implement?
 
 ---
 
 ## Q.20 What is libuv?
 
-- ***
-
-## Q.21 Difference Between horizontal and vertical scaling.
-
-- ***
-
-## Q.22 advantages of microservices over the monolith.
+- libuv is a C library used by Node.js to implement the event loop and handle asynchronous operations like file system and network I/O using a thread pool and OS-level APIs.
 
 ---
 
 ## Q.23 If API takes 3 to 4 sec how would you optimize?
 
+- If an API is taking 3–4 seconds, I would first identify the bottleneck using logging.
+- Then I would optimize database queries using indexing,
+- implement caching for repeated data, reduce unnecessary API calls.
+- If needed, I would also scale the system horizontally
+
 ---
 
 ## Q.24 If you are using find() method to find user details how would you optimize it further
+
+- If you are using find() method to find user details how would you optimize it further
+- Use Indexing db.users.createIndex({ email: 1 });
+- Select Only Required Fields User.find({ email: "test@gmail.com" }).select("name email");
+- Limit Results User.find().limit(10);
+- Avoid Unnecessary populate()
 
 - ***
 
 ## Q.25 What is workers? cluster?
 
-- ***
+- A worker is a separate thread used to do heavy work so the main app doesn’t get slow.
+- You hire a helper (worker) You cook & Helper cuts vegetables
+
+- Cluster means running multiple Node.js processes to handle more users.
+- You open 4 counters (cluster) then you can 4 customers handled at once
 
 ## Q.26 If there is XSS attack how would you avoid?
 
----
+- “XSS (Cross-Site Scripting) happens when malicious scripts are injected into a webpage via input.
+- I sanitize and validate user input, avoid rendering raw HTML, and use security headers like CSP(content security policy)
 
 ## Q.27 What is CORS?
+
+- CORS (Cross-Origin Resource Sharing) is a security feature in the browser that controls which websites are allowed to access APIs from another domain.
 
 ---
 
 ## Q.28 How would you secure your APIs.
 
+- 1. Authentication (who are you?),
+- 2. Authorization (what can you access?),
+- 3. Input validation (Prevent attacks like SQL injection),
+- 4. Rate limiting (Prevent too many requests),
+- 5. Security headers Use Helmet in Node.js (Use Helmet in Node.js)
+
 - ***
 
 ## Q.29 Difference between DDOS and DOS attack.
+
+- DoS (Denial of services) Attack from one computer
+  Sends too many requests
+  Server becomes slow
+
+- DDoS
+  Attack from many computers (bots)
+  All send requests together
 
 ---
 
 ## Q.30 Explain me working of Payment Integration step by step
 
----
+- Payment integration works by creating an order on the backend, sending it to the frontend, opening the Razorpay checkout, and then verifying the payment on the server.
+  steps ->
+- On frontend User selects product and clicks Pay Now
+- Backend creates order (You call Razorpay API from Node)
+- 3. Send order to frontend
+- Open Razorpay checkout (frontend) & User completes payment
+- Razorpay sends response
+- Verify payment
 
 ## Q.31 Difference between server shutdown and server restart
 
-- ***
+- Server shutdown means completely stopping the server, while server restart means stopping the server and then starting it again.
+- 🔹 Server Shutdown
+  Server is stopped completely
+  No requests are handled
+  Needs manual start again
+
+- 🔹 Server Restart
+  Server is stopped and started again automatically
 
 ## Q.32 If you want to vertical scale the sever how would it will be implemented
 
-- ***
+- Vertical scaling means upgrading the server’s resources like CPU and RAM, and in Node.js we can use cluster to utilize multiple cores.
 
 ## Q.33 have you used bcrypt
 
-- ***
+- “Yes, I have used bcrypt to hash user passwords before storing them in the database for security.”
+  `const hashedPassword = await bcrypt.hash(password, 10);`
 
 ## Q.34 what is garbage collection ? how it would work?
 

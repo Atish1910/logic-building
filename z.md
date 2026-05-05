@@ -1,6 +1,8 @@
-## Q.2 How Node.js works internally
+## Q.1 How Node.js works internally
 
-- Node.js runs on the V8 engine and uses a single-threaded event loop. It executes synchronous code via the call stack and handles asynchronous operations using queues. libuv manages async I/O operations, making Node.js non-blocking and efficient.
+- Node.js runs on the V8 engine and uses a single-threaded event loop.
+- It executes synchronous code via the call stack and handles asynchronous operations using queues.
+- libuv manages async I/O operations, making Node.js non-blocking and efficient.
 
 ## Q.2 What is Callback
 
@@ -20,38 +22,88 @@
 
 ## Q.5 What is middleware
 
-- ***
+- middleware are function that can handle req & respose & pass a controller to next middleware we use middle ware for auth & authurization & we invoke
 
 ## Q.6 What is populate() method
 
-- populate() in Mongoose is used to fetch related documents by replacing ObjectId references with actual data from another collection, similar to a join in relational databases.
+- populate() in Mongoose is used to fetch data from another collection. It replaces the ObjectId with actual related data, like a join in SQL.
 
 ---
 
 ## Q.7 What is lookup in mongodb aggregation
 
-- $lookup in MongoDB is an aggregation stage used to perform a join between two collections by matching fields and returning combined results as an array.
+- $lookup in MongoDB is used to join data from two collections. It matches fields and returns the related data together as an array.
 
 ---
 
 ## Q.8 What is microservices and monolith
 
 - monolith : A monolithic architecture is a single application where all functionalities are tightly coupled and deployed together.
-- microservices : Microservices architecture is a design where an application is divided into small, independent services that communicate with each other via APIs.
+- microservices : Microservices architecture is a design where an application is divided into small independent services that communicate with each other via APIs.
 
 ## Q.9 which architecture you are using monolith or microservices
 
--
+- I’m currently using a monolithic architecture in my projects because it’s easier to build and manage for small-scale applications.
+- All modules like authentication, booking, and payments are handled in a single backend.
+- However, I understand microservices architecture and how it helps in scaling large applications by splitting services independently
+
+## Q.10 what is vertical and horizontal scaling
+
+- Vertical: Upgrade instance (more RAM/CPU)
+- Horizontal: Add multiple EC2 instances + load balancer
 
 ## Q.10 advantages and disadvantages of vertical and horizontal scaling
+
+advantages and disadvantages of vertical and horizontal scaling
+
+--- ⬆️ Vertical Scaling (Scale Up)
+
+- 👉 Increase resources of a single server
+- ✅ Advantages
+- Simple to implement — no architecture change
+- No code changes needed
+- Easier to manage (single system)
+
+❌ Disadvantages
+
+- Limited scalability (hardware limit)
+- Single point of failure ⚠️
+- Can become very expensive
+- Downtime may be required for upgrades
+
+➡️ Horizontal Scaling (Scale Out)
+👉 Add multiple servers and distribute load
+✅ Advantages
+Highly scalable (add more machines anytime)
+Fault tolerant (one server fails ≠ system down)
+Better performance under high traffic
+
+❌ Disadvantages
+
+- Complex architecture
+- Requires load balancer
+- Debugging & monitoring is harder
 
 ---
 
 ## Q.11 Difference between monolith and MVC architecture
 
+- Monolith = system architecture (how app is built & deployed)
+- Monolith is an architectural style where the entire application is built and deployed as a single unit,
+- MVC = design pattern (how code is structured inside the app)
+- while MVC is a design pattern used to organize code into Model, View, and Controller.
+
 ---
 
 ## Q.12 What is indexing in mongodb
+
+- Indexing is a way to:
+- Improve query performance
+- Allow MongoDB to find data faster without scanning entire collection
+- index craete saparate column in sorted way
+- use only for read intensive database
+
+`db.users.createIndex({email : 1})`
 
 - ***
 

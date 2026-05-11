@@ -105,8 +105,6 @@ Better performance under high traffic
 
 `db.users.createIndex({email : 1})`
 
-- ***
-
 ## Q.13 Which ORM Library you are using
 
 - Since I work with MongoDB, Mongoose acts as an ODM (Object Document Mapper) rather than a traditional ORM.
@@ -165,7 +163,6 @@ Better performance under high traffic
 
 ---
 
-
 ## Q.20 What is libuv?
 
 - libuv is a C library used by Node.js to implement the event loop and handle asynchronous operations like file system and network I/O using a thread pool and OS-level APIs.
@@ -178,6 +175,8 @@ Better performance under high traffic
 - Then I would optimize database queries using indexing,
 - implement caching for repeated data, reduce unnecessary API calls.
 - If needed, I would also scale the system horizontally
+
+- To optimize the API, I would first implement pagination so we don’t send all 10,000 records at once. Then I would use database indexing to improve query performance. I would also add caching using Redis for frequently requested data. Additionally, I would only select required fields instead of full data. If traffic is high, I can scale the server using clustering or load balancing.
 
 ---
 
@@ -264,25 +263,32 @@ Better performance under high traffic
   `const hashedPassword = await bcrypt.hash(password, 10);`
 
 ## Q.34 what is garbage collection ? how it would work?
+
 - Garbage collection is the process of automatically removing unused memory from the application so that memory is not wasted.
+
 ---
 
 ## Q.35 How would you implemented Role Based Access
+
 - RBAC is implemented by assigning roles to users and checking those roles in middleware before allowing access to APIs.
 - ***
 
 ## Q.36 What is Webhook?
+
 - A webhook is a way for one system to automatically send data to another system when an event happens
 - ***
 
 ## Q.37 What is Indempotency?
+
 - Idempotency ensures that multiple identical requests produce the same result without creating duplicates
 - 👉 Online payment:
   You click “Pay” twice
   Amount should be charged only once
+
 ---
 
 ## Q.38 Diiference between MongoDB and SQL
+
 - 🔹 MongoDB
   Stores data as documents (JSON)
   Flexible structure (schema-less)
@@ -294,36 +300,42 @@ Better performance under high traffic
   Fixed structure (schema)
   Good for structured data
   scaling Harder
+
 ---
 
 ## Q.39 Have you use Redis cache?
+
 Redis is used to cache frequently used data in memory to improve performance and reduce database load.
 `
 const redis = require("redis");
 const client = redis.createClient();
 
 app.get("/users", async (req, res) => {
-  const cache = await client.get("users");
+const cache = await client.get("users");
 
-  if (cache) {
-    return res.json(JSON.parse(cache)); // return from cache
-  }
+if (cache) {
+return res.json(JSON.parse(cache)); // return from cache
+}
 
-  const users = await User.find();
+const users = await User.find();
 
-  await client.setEx("users", 60, JSON.stringify(users)); // cache for 60 sec
+await client.setEx("users", 60, JSON.stringify(users)); // cache for 60 sec
 
-  res.json(users);
+res.json(users);
 });`
+
 - ***
 
 ---
 
 ## Q.42 how to achive 0 downtime in nodeApp
+
 - Zero downtime is achieved by running multiple server instances, using load balancers, and deploying updates gradually without stopping the application.
+
 ---
 
 ## Q.43 aggregation, lookup
+
 - Aggregation in MongoDB is used to process and transform data, like filtering, grouping, and calculating results.
 - 👉 It works like a pipeline:
   Step 1 → filter data
@@ -331,14 +343,17 @@ app.get("/users", async (req, res) => {
   Step 3 → calculate result
 
 - lookup is use to join 2 collections & fetch realted data in array format
+
 ---
 
 ## Q.44 how to avoid memory leak in nodeJs
+
 - To avoid memory leaks in Node.js, we should properly manage variables, remove unused references, clean up resources like timers and listeners, and avoid storing large data in memory
 
 - ***
 
 ## what is difference between require & import
+
 - require is CommonJS and loads modules dynamically, while import is ES6 module syntax and loads modules statically.
 
 ## what is differce between package.json & package-lock.json
@@ -346,10 +361,22 @@ app.get("/users", async (req, res) => {
 - package.json defines project dependencies and scripts, while package-lock.json stores the exact versions of installed packages to ensure consistent installs
 
 ## what is differce between ~ and ^
+
 - Example: 4.18.2
   MAJOR.MINOR.PATCH
 - ^ can update MINOR & PATCH
 - ~ can update PATCH
 
 # Access Token v/s Refresh Token
+
 - Access token is used to access APIs and is short-lived, while refresh token is used to generate a new access token and is long-lived.
+
+# How will you implement authentication using JWT step by step?
+
+- Step 1: User Login (Frontend → Backend) 👉 User enters: Email Password
+- Step 2: Verify User (Backend) Finds user in DB & Compares password using bcrypt
+- Step 3: Generate JWT Token Backend creates token & send to frontend
+- Step 4: Frontend Store token in localStorage
+- Step 5: Access Protected API Frontend sends token
+- Step 6: Verify Token (Middleware)
+- Step 7: Access Resource

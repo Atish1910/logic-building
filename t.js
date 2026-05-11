@@ -1,16 +1,16 @@
-<<<<<<< HEAD
-const iFlattenArr = [10,11,[12,23,15], [19]];
-=======
-// concat & remove duplicate
->>>>>>> atish
+const users = [
+  { name: "A", city: "Pune" },
+  { name: "B", city: "Mumbai" },
+  { name: "D", city: "Pune" },
+  { name: "E", city: "Mumbai" },
+  { name: "F", city: "Nashik" },
+  { name: "G", city: "Pune" },
+  { name: "H", city: "Mumbai" },
+];
 
-let iArr = ["atish kamble", "manthan shinde"];
-
-<<<<<<< HEAD
-display(iFlattenArr)
-=======
-let iResult = iArr.map((word) => {
-  return word[0].toUpperCase() + word.slice(1)
-});
+const iResult = users.reduce((prev, user) => {
+  prev[user.city] = prev[user.city] || [];
+  prev[user.city].push(user);
+  return prev;
+}, {});
 console.log(iResult);
->>>>>>> atish

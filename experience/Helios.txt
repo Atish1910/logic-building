@@ -1,6 +1,0 @@
-1. Why Should you want to join our company?
-2. Machine Learning Questions - Numpy, pandas, matplotlib etc.
-3. What are the features included in ES6+
-4. Difference between REST API and GraphQL API
-5. AWS AMI
-6. Recent Trends New any five.
